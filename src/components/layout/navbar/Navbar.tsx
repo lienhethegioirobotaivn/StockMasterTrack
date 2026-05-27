@@ -267,16 +267,18 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex size-12 items-center justify-center rounded-md lg:hidden"
+          className="flex size-12 shrink-0 items-center justify-center rounded-md lg:hidden text-gray-900 active:bg-gray-100"
         >
-          {mobileOpen ? <X className="size-8" /> : <Menu className="size-8" />}
+          {mobileOpen ? <X className="size-7" /> : <Menu className="size-7" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`overflow-hidden border-t border-gray-100 bg-white transition-all duration-300 lg:hidden ${
-          mobileOpen ? "max-h-screen overflow-y-auto" : "max-h-0"
+        className={`border-t border-gray-100 bg-white transition-all duration-300 lg:hidden ${
+          mobileOpen
+            ? "max-h-[calc(100vh-82px)] overflow-y-auto opacity-100"
+            : "max-h-0 overflow-hidden opacity-0"
         }`}
       >
         <div className="space-y-1 px-5 py-4">
@@ -377,7 +379,7 @@ export function Navbar() {
             );
           })}
 
-          <div className="pt-4">
+          <div className="pt-2">
             <Button className="h-12 w-full text-white rounded-xl bg-fuchsia-700 text-base font-bold shadow-md hover:bg-fuchsia-800 active:scale-[0.98] transition-transform">
               ĐĂNG KÝ NGAY
             </Button>
