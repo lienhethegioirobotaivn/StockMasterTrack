@@ -57,7 +57,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex h-11.5 shrink-0 items-center gap-2">
           <Image
-            src="/home/logo.png"
+            src="/home/Logo.png"
             alt="Stock MasterTrack"
             width={200}
             height={200}

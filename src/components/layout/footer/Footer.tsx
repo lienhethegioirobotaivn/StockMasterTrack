@@ -39,7 +39,7 @@ export function Footer() {
             <Link href={"/"} className="flex items-center gap-2">
               <div className="relative size-10.5 shrink-0">
                 <Image
-                  src="/home/logo.png"
+                  src="/home/Logo.png"
                   alt="STOCK MASTERTRACK LOGO"
                   fill
                   sizes="32px"
