@@ -143,7 +143,7 @@ export function Navbar() {
                               ))}
                             </ul>
                           </div>
-                          <Link href="/courses/mastertrack">
+                          <Link href="/courses/stock-mastertrack">
                             <Button
                               variant="outline"
                               className="mt-4 h-9 w-full justify-between rounded-lg border-lime-500 px-4 text-xs font-bold text-lime-600 hover:bg-lime-50 hover:text-lime-600"
@@ -318,10 +318,10 @@ export function Navbar() {
                   >
                     {/* Course 1 */}
                     <Link
-                      href="/courses/mastertrack"
+                      href="/courses/stock-mastertrack"
                       onClick={() => setMobileOpen(false)}
                       className={`flex items-center justify-between rounded-xl p-3.5 transition-all border ${
-                        pathname === "/courses/mastertrack"
+                        pathname === "/courses/stock-mastertrack"
                           ? "bg-lime-50/70 border-lime-200"
                           : "bg-gray-50 border-transparent active:bg-gray-100"
                       }`}
