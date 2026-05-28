@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { CourseRegisterDialog } from "@/components/dialog";
 
 const modules = [
   {
@@ -109,10 +110,12 @@ export function Courses() {
                 <p className="text-xl font-black tracking-tight text-fuchsia-700">
                   4.000.000đ
                 </p>
-                <Button className="h-9 rounded-lg bg-lime-600 px-4 text-xs font-bold text-white hover:bg-lime-700 gap-1.5">
-                  ĐĂNG KÝ NGAY
-                  <ArrowRight className="size-3.5" />
-                </Button>
+                <CourseRegisterDialog>
+                  <Button className="h-9 rounded-lg bg-lime-600 px-4 text-xs font-bold text-white hover:bg-lime-700 gap-1.5">
+                    ĐĂNG KÝ NGAY
+                    <ArrowRight className="size-3.5" />
+                  </Button>
+                </CourseRegisterDialog>
               </div>
             </div>
           </div>

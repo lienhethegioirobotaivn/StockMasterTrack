@@ -15,6 +15,7 @@ import { FaGraduationCap } from "react-icons/fa";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { CourseRegisterDialog } from "@/components/dialog";
 
 const navItems = [
   {
@@ -259,9 +260,11 @@ export function Navbar() {
 
         {/* CTA */}
         <div className="hidden lg:block shrink-0">
-          <Button className="h-11.5 rounded-md bg-fuchsia-700 px-7 text-[13px] font-bold text-white shadow-none hover:bg-fuchsia-800">
-            ĐĂNG KÝ NGAY
-          </Button>
+          <CourseRegisterDialog>
+            <Button className="h-11.5 rounded-md bg-fuchsia-700 px-7 text-[13px] font-bold text-white shadow-none hover:bg-fuchsia-800">
+              ĐĂNG KÝ NGAY
+            </Button>
+          </CourseRegisterDialog>
         </div>
 
         {/* Mobile Toggle */}
@@ -380,9 +383,14 @@ export function Navbar() {
           })}
 
           <div className="pt-2">
-            <Button className="h-12 w-full text-white rounded-xl bg-fuchsia-700 text-base font-bold shadow-md hover:bg-fuchsia-800 active:scale-[0.98] transition-transform">
-              ĐĂNG KÝ NGAY
-            </Button>
+            <CourseRegisterDialog>
+              <Button
+                onClick={() => setMobileOpen(false)}
+                className="h-12 w-full text-white rounded-xl bg-fuchsia-700 text-base font-bold shadow-md hover:bg-fuchsia-800 active:scale-[0.98] transition-transform"
+              >
+                ĐĂNG KÝ NGAY
+              </Button>
+            </CourseRegisterDialog>
           </div>
         </div>
       </div>
