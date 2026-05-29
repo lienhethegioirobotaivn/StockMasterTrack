@@ -15,7 +15,7 @@ import { FaGraduationCap } from "react-icons/fa";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { CourseRegisterDialog } from "@/components/dialog";
+import { CourseRegisterDialog } from "@/components/layout/dialog";
 
 const navItems = [
   {

@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui";
-import { CourseRegisterDialog } from "@/components/dialog";
+import { CourseRegisterDialog } from "@/components/layout/dialog";
 
 const mentorFeatures = [
   "10+ năm kinh nghiệm đầu tư và phân tích thị trường",

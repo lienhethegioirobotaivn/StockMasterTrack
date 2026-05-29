@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { CourseRegisterDialog } from "@/components/dialog";
+import { CourseRegisterDialog } from "@/components/layout/dialog";
 
 const modules = [
   {
