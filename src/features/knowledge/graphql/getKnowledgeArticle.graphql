@@ -1,0 +1,47 @@
+query GetKnowledgeArticle($slug: ID!) {
+  knowledgeArticle(id: $slug, idType: SLUG) {
+    id
+    title
+    date
+    slug
+    content
+    excerpt
+
+    featuredImage {
+      node {
+        sourceUrl
+        altText
+      }
+    }
+
+    knowledgeArticleFields {
+      readingTime
+
+      author {
+        nodes {
+          ... on Author {
+            title
+
+            authorFields {
+              role
+
+              avatar {
+                node {
+                  sourceUrl
+                  altText
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    knowledgeCategories {
+      nodes {
+        name
+        slug
+      }
+    }
+  }
+}

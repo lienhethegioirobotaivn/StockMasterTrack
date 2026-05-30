@@ -1,73 +1,37 @@
 import Image from "next/image";
 import { Eye, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui";
+import { KnowledgeArticle } from "@/features/knowledge/types";
+import Link from "next/link";
 
-type Article = {
-  title: string;
-  category: string;
-  image: string;
-  date: string;
-  views: string;
-  comments: number;
-  catColor: string;
-  catBg: string;
-};
+interface LatestArticlesProps {
+  articles: KnowledgeArticle[];
+}
 
-const featuredArticle: Article = {
-  title: "Nhận định thị trường chứng khoán tuần 20–24/05: Cơ hội & rủi ro",
-  category: "Phân tích thị trường",
-  image: "/knowledge/post-1.jpg",
-  date: "20/05/2024",
-  views: "1.2K",
-  comments: 12,
-  catColor: "text-emerald-700 border-emerald-600/30",
-  catBg: "bg-white",
-};
+function getColorsFromString(str: string = "default") {
+  const colors = [
+    "bg-lime-50 text-lime-700 border-lime-600/30",
+    "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-600/30",
+    "bg-indigo-50 text-indigo-700 border-indigo-600/30",
+    "bg-orange-50 text-orange-700 border-orange-600/30",
+    "bg-emerald-50 text-emerald-700 border-emerald-600/30",
+    "bg-cyan-50 text-cyan-700 border-cyan-600/30",
+  ];
 
-const sideArticles: Article[] = [
-  {
-    title: "5 chỉ số tài chính quan trọng nhà đầu tư cần biết",
-    category: "Phân tích cơ bản",
-    image: "/knowledge/post-2.jpg",
-    date: "18/05/2024",
-    views: "892",
-    comments: 8,
-    catColor: "text-lime-700",
-    catBg: "bg-lime-50",
-  },
-  {
-    title: "Hướng dẫm đọc biểu đồ nến cho người mới bắt đầu",
-    category: "Phân tích kỹ thuật",
-    image: "/knowledge/post-3.jpg",
-    date: "16/05/2024",
-    views: "1.1K",
-    comments: 15,
-    catColor: "text-fuchsia-700",
-    catBg: "bg-fuchsia-50",
-  },
-  {
-    title: "Nguyên tắc cắt lỗ: Bảo vệ vốn để tồn tại trên thị trường",
-    category: "Quản trị rủi ro",
-    image: "/knowledge/post-4.jpg",
-    date: "14/05/2024",
-    views: "732",
-    comments: 6,
-    catColor: "text-indigo-700",
-    catBg: "bg-indigo-50",
-  },
-  {
-    title: "3 sai lầm tâm lý khiến nhà đầu tư thua lỗ liên tục",
-    category: "Tâm lý đầu tư",
-    image: "/knowledge/post-5.jpg",
-    date: "12/05/2024",
-    views: "854",
-    comments: 9,
-    catColor: "text-orange-700",
-    catBg: "bg-orange-50",
-  },
-];
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
 
-export function LatestArticles() {
+  const index = Math.abs(hash) % colors.length;
+  return colors[index];
+}
+
+export function LatestArticles({ articles }: LatestArticlesProps) {
+  if (!articles || articles.length === 0) return null;
+
+  const firstArticle = articles[0];
+
   return (
     <section className="w-full px-6 lg:px-12 pt-6 lg:pt-4">
       <div className="mb-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
@@ -81,92 +45,94 @@ export function LatestArticles() {
       </div>
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <div className="flex flex-col rounded-2xl border border-gray-100 bg-white shadow-xs">
-          <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+        <Link
+          href={`knowledge/${firstArticle.slug}`}
+          className="flex flex-col rounded-2xl border border-gray-100 bg-white shadow-xs overflow-hidden"
+        >
+          <div className="relative aspect-16/11 sm:aspect-video w-full overflow-hidden">
             <Image
-              src={featuredArticle.image}
-              alt={featuredArticle.title}
+              src={firstArticle.image?.url ?? ""}
+              alt={firstArticle.image?.alt ?? ""}
               fill
-              className="object-cover"
+              className="object-fill"
             />
           </div>
 
-          <div className="mt-4 flex flex-1 flex-col justify-between p-4">
+          <div className="mt-4 sm:mt-2 flex flex-1 flex-col justify-between p-4">
             <div>
               <div className="flex items-center justify-between gap-2">
                 <span
-                  className={`rounded-md border px-2.5 py-0.5 text-[11px] font-semibold md:text-xs ${featuredArticle.catColor}`}
+                  className={`rounded-md border px-2.5 py-0.5 text-[11px] font-semibold md:text-xs ${getColorsFromString(firstArticle.category?.name)}`}
                 >
-                  {featuredArticle.category}
+                  {firstArticle.category?.name}
                 </span>
-                <span className="text-[11px] text-gray-400 md:text-xs">
-                  {featuredArticle.date}
+                <span className="text-[11px] text-gray-400 sm:text-xs">
+                  {firstArticle.date}
                 </span>
               </div>
 
-              <h3 className="mt-3 text-base sm:text-lg lg:text-xl font-bold text-slate-900 line-clamp-2">
-                {featuredArticle.title}
+              <h3 className="mt-3 text-base sm:text-lg lg:text-[22px] font-bold text-slate-900 line-clamp-2">
+                {firstArticle.title}
               </h3>
 
-              <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-gray-500 md:text-sm">
-                Thị trường bước vào giai đoạn tích lũy sau nhịp tăng mạnh. NĐT
-                cần lưu ý các vùng hỗ trợ quan trọng và chiến lược giao dịch...
-              </p>
+              <div
+                className="mt-2 line-clamp-2 lg:line-clamp-3 text-xs sm:text-[14.5px] leading-relaxed text-gray-500"
+                dangerouslySetInnerHTML={{ __html: firstArticle.excerpt ?? "" }}
+              />
             </div>
 
             <div className="mt-4 flex items-center justify-between border-t border-gray-100 pt-3">
-              <div className="flex gap-2">
-                <div className="relative size-4 overflow-hidden">
+              <div className="flex items-center gap-2">
+                <div className="size-6 shrink-0 overflow-hidden rounded-full">
                   <Image
-                    src={"/home/Logo.png"}
-                    alt="Stock MasterTrack Team"
-                    width={25}
-                    height={25}
-                    className="size-full"
+                    src={firstArticle.author?.avatar?.url ?? ""}
+                    alt={firstArticle.author?.avatar?.alt ?? ""}
+                    width={16}
+                    height={16}
+                    className="size-full object-contain"
                   />
                 </div>
-                <span className="text-xs font-medium text-gray-600">
-                  Stock MasterTrack Team
+                <span className="text-xs sm:text-[13px] font-medium text-gray-600">
+                  {firstArticle.author?.name}
                 </span>
               </div>
 
               <div className="flex items-center gap-3 text-xs text-gray-400">
                 <div className="flex items-center gap-1">
-                  <Eye className="size-3.5" />
-                  {featuredArticle.views}
+                  <Eye className="size-3.5" /> 0
                 </div>
                 <div className="flex items-center gap-1">
-                  <MessageCircle className="size-3.5" />
-                  {featuredArticle.comments}
+                  <MessageCircle className="size-3.5" /> 0
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Link>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {sideArticles.map((article) => (
-            <div
+          {articles.slice(1).map((article) => (
+            <Link
               key={article.title}
-              className="flex flex-col rounded-2xl border border-gray-100 bg-white shadow-xs"
+              href={`/knowledge/${article.slug}`}
+              className="flex flex-col rounded-2xl border border-gray-100 bg-white shadow-xs overflow-hidden"
             >
-              <div className="relative aspect-16/7 w-full overflow-hidden rounded-xl">
+              <div className="relative aspect-16/10 w-full overflow-hidden">
                 <Image
-                  src={article.image}
-                  alt={article.title}
+                  src={article.image?.url ?? ""}
+                  alt={article.image?.alt ?? ""}
                   fill
-                  className="object-cover"
+                  className="object-fill"
                 />
-                <div className="absolute left-3 top-3">
+                <div className="absolute left-3 top-2">
                   <span
-                    className={`rounded-md px-2.5 py-0.5 text-[11px] font-bold ${article.catBg} ${article.catColor}`}
+                    className={`rounded-md border px-2.5 py-0.5 text-[11px] font-bold ${getColorsFromString(article.category?.name)}`}
                   >
-                    {article.category}
+                    {article.category?.name}
                   </span>
                 </div>
               </div>
 
-              <div className="mt-3 flex flex-1 flex-col justify-between p-4">
+              <div className="mt-1.5 flex flex-1 flex-col justify-between pb-4 px-4">
                 <div>
                   <span className="text-[10px] text-gray-400 md:text-[11px]">
                     {article.date}
@@ -178,16 +144,14 @@ export function LatestArticles() {
 
                 <div className="mt-4 flex items-center gap-3 text-xs text-gray-400">
                   <div className="flex items-center gap-1">
-                    <Eye className="size-3.5" />
-                    {article.views}
+                    <Eye className="size-3.5" /> 0
                   </div>
                   <div className="flex items-center gap-1">
-                    <MessageCircle className="size-3.5" />
-                    {article.comments}
+                    <MessageCircle className="size-3.5" /> 0
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

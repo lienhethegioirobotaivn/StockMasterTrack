@@ -7,8 +7,14 @@ import {
   Teachers,
   Testimonials,
 } from "@/app/(home)/_components";
+import { getKnowledgeArticles } from "@/features/knowledge/api";
+import { mapKnowledgeArticleList } from "@/features/knowledge/utils/mapKnowledgeArticle";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const knowledgeData = await getKnowledgeArticles();
+  const rawArticles = knowledgeData.knowledgeArticles?.nodes ?? [];
+  const articles = rawArticles.slice(0, 4).map(mapKnowledgeArticleList);
+
   return (
     <>
       <main className="overflow-hidden">
@@ -18,7 +24,7 @@ export default function HomePage() {
         <Teachers />
         <Testimonials />
         <Community />
-        <Knowledge />
+        <Knowledge articles={articles} />
       </main>
     </>
   );

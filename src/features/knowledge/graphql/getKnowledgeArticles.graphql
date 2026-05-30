@@ -1,0 +1,48 @@
+query GetKnowledgeArticles($first: Int = 10) {
+  knowledgeArticles(first: $first) {
+    nodes {
+      id
+      title
+      date
+      slug
+      excerpt
+
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+
+      knowledgeArticleFields {
+        readingTime
+
+        author {
+          nodes {
+            ... on Author {
+              title
+
+              authorFields {
+                role
+
+                avatar {
+                  node {
+                    sourceUrl
+                    altText
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      knowledgeCategories {
+        nodes {
+          name
+          slug
+        }
+      }
+    }
+  }
+}

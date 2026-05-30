@@ -5,99 +5,73 @@ import { Link2, ThumbsDown, ThumbsUp } from "lucide-react";
 import { FaFacebook } from "react-icons/fa";
 import { Button } from "@/components/ui";
 import { SiZalo } from "react-icons/si";
+import { KnowledgeArticle } from "@/features/knowledge/types";
 
-export type PostDetail = {
-  title: string;
-  category: string;
-  date: string;
-  readTime: string;
-  views: string;
-  summary: string;
-  toc: string[];
-  authorImage: string;
-  featuredImage: string;
-  chartImage: string;
-};
+interface ArticleContentProps {
+  article: KnowledgeArticle;
+}
 
-const postData: PostDetail = {
-  title: "Nhận định thị trường chứng khoán tuần 20-24/05: Cơ hội & rủi ro",
-  category: "PHÂN TÍCH THỊ TRƯỜNG",
-  date: "20/05/2024",
-  readTime: "8 phút đọc",
-  views: "1.2K lượt xem",
-  summary:
-    "Thị trường bước vào giai đoạn tích lũy sau nhịp tăng mạnh. NĐT cần lưu ý các vùng hỗ trợ quan trọng và chiến lược giao dịch phù hợp trong bối cảnh dòng tiền có dấu hiệu phân hóa.",
-  toc: [
-    "Tổng quan thị trường tuần qua",
-    "Phân tích kỹ thuật",
-    "Phân tích vĩ mô & dòng tiền",
-    "Kịch bản thị trường tuần 20-24/05",
-    "Chiến lược giao dịch đề xuất",
-    "Danh mục cổ phiếu theo dõi",
-  ],
-  authorImage: "/images/avatar-team.jpg",
-  featuredImage: "/images/featured-market.jpg",
-  chartImage: "/images/chart-technical.jpg",
-};
+// const convertToId = (text: string) => {
+//   return text
+//     .toLowerCase()
+//     .normalize("NFD")
+//     .replace(/[\u0300-\u036f]/g, "")
+//     .replace(/[đĐ]/g, "d")
+//     .replace(/[^a-z0-9\s-]/g, "")
+//     .trim()
+//     .replace(/\s+/g, "-");
+// };
 
-const convertToId = (text: string) => {
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[đĐ]/g, "d")
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-");
-};
+export function ArticleContent({ article }: ArticleContentProps) {
+  // const handleScroll = (title: string) => {
+  //   const targetId = convertToId(title);
+  //   const element = document.getElementById(targetId);
+  //   if (element) {
+  //     const headerOffset = 120;
+  //     const elementPosition = element.getBoundingClientRect().top;
+  //     const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-export function ArticleContent() {
-  const handleScroll = (title: string) => {
-    const targetId = convertToId(title);
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 120;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
+  //     window.scrollTo({
+  //       top: offsetPosition,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
   return (
     <article className="w-full">
       <div className="flex flex-col items-start gap-3">
         <span className="rounded-full bg-lime-50 px-2 py-2 text-xs font-semibold text-lime-600">
-          {postData.category}
+          {article.category?.name}
         </span>
         <h1 className="text-2xl lg:text-3xl font-bold leading-tight text-slate-900">
-          {postData.title}
+          {article.title}
         </h1>
       </div>
 
       <div className="mt-4 flex flex-col gap-4 border-b border-gray-100 pb-5 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
-          <div className="relative size-9 shrink-0 overflow-hidden rounded-full">
+          <div className="relative size-9 shrink-0 overflow-hidden rounded-full bg-slate-100 flex items-center justify-center">
             <Image
-              src={postData.authorImage}
-              alt="Stock MasterTrack Team"
+              src={article.author?.avatar?.url ?? ""}
+              alt={article.author?.avatar?.alt ?? ""}
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div>
             <p className="text-xs font-semibold text-slate-900 md:text-sm">
-              Stock MasterTrack Team
+              {article.author?.name}
             </p>
             <div className="mt-0.5 flex items-center gap-2 text-[11px] text-gray-400 md:text-xs">
-              <span>{postData.date}</span>
+              <span>{article.date}</span>
               <span>•</span>
-              <span>{postData.readTime}</span>
+              <span>{article.readingTime} đọc</span>
               <span>•</span>
-              <span>{postData.views}</span>
+              <span>
+                {/* View number */}
+                {/* {postData.views} */}0 lượt xem
+              </span>
             </div>
           </div>
         </div>
@@ -116,21 +90,23 @@ export function ArticleContent() {
         </div>
       </div>
 
-      <div className="relative mt-6 aspect-21/9 w-full overflow-hidden rounded-xl">
+      <div className="mt-6 w-full overflow-hidden rounded-xl">
         <Image
-          src={postData.featuredImage}
-          alt={postData.title}
-          fill
+          src={article.image?.url ?? ""}
+          alt={article.image?.alt ?? ""}
+          width={0}
+          height={0}
+          sizes="100vw"
           priority
-          className="object-cover"
+          className="h-auto w-full object-cover"
         />
       </div>
 
-      <blockquote className="mt-6 border-l-4 border-lime-600 bg-lime-50/30 p-4 text-[13px] md:text-sm font-medium leading-relaxed text-slate-800">
+      {/* <blockquote className="mt-6 border-l-4 border-lime-600 bg-lime-50/30 p-4 text-[13px] md:text-sm font-medium leading-relaxed text-slate-800">
         {postData.summary}
-      </blockquote>
+      </blockquote> */}
 
-      <div className="mt-6 rounded-xl bg-slate-50 p-4 md:p-6">
+      {/* <div className="mt-6 rounded-xl bg-slate-50 p-4 md:p-6">
         <h2 className="text-[13px] sm:text-sm font-bold uppercase text-slate-900">
           Nội dung bài viết
         </h2>
@@ -147,9 +123,9 @@ export function ArticleContent() {
             </li>
           ))}
         </ol>
-      </div>
+      </div> */}
 
-      <div className="mt-8 space-y-8 border-b border-gray-100 pb-8 text-[13px] sm:text-sm leading-relaxed text-slate-800">
+      {/* <div className="mt-8 space-y-8 border-b border-gray-100 pb-8 text-[13px] sm:text-sm leading-relaxed text-slate-800">
         <div id={convertToId("Tổng quan thị trường tuần qua")}>
           <h3 className="text-[15px] sm:text-base font-bold text-slate-900">
             1. Tổng quan thị trường tuần qua
@@ -210,7 +186,26 @@ export function ArticleContent() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <div
+        className="mt-8 border-b border-gray-100 pb-8 
+                  text-sm sm:text-base leading-relaxed text-slate-800
+                  [&>h1]:font-bold [&>h1]:text-slate-900
+                  [&>h2]:font-bold [&>h2]:text-slate-900
+                  [&>h3]:font-bold [&>h3]:text-slate-900
+                  [&>h4]:font-bold [&>h4]:text-slate-900
+                  [&>h2]:text-lg sm:[&>h2]:text-xl [&>h2]:mt-6 [&>h2]:mb-2
+                  [&>h3]:text-base sm:[&>h3]:text-lg [&>h3]:mt-4 [&>h3]:mb-1
+                  [&>p]:mt-2 [&>p]:text-slate-600
+                  [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-700
+                [&_a_*]:text-blue-600 hover:[&_a_*]:text-blue-700
+                  [&>img]:rounded-lg [&>img]:mt-4 [&>img]:w-full [&>img]:h-auto
+                  [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-1 [&>ul]:mt-2
+                  [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:space-y-1 [&>ol]:mt-2
+                  [&_li]:text-slate-600"
+        dangerouslySetInnerHTML={{ __html: article.content ?? "" }}
+      />
 
       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-2">

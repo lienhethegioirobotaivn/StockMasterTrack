@@ -1,35 +1,14 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui";
+import { KnowledgeArticle } from "@/features/knowledge/types";
+import Link from "next/link";
 
-const articles = [
-  {
-    image: "/home/blog1.png",
-    date: "20.05.2024",
-    category: "PHÂN TÍCH",
-    title: "Triển vọng thị trường chứng khoán nửa cuối năm 2024",
-  },
-  {
-    image: "/home/blog2.png",
-    date: "18.05.2024",
-    category: "KIẾN THỨC",
-    title: "5 nguyên tắc vàng quản trị rủi ro cho nhà đầu tư cá nhân",
-  },
-  {
-    image: "/home/blog3.png",
-    date: "15.05.2024",
-    category: "PHÂN TÍCH",
-    title: "Đọc báo cáo tài chính: Những chỉ số quan trọng cần biết",
-  },
-  {
-    image: "/home/blog4.png",
-    date: "12.05.2024",
-    category: "KINH NGHIỆM",
-    title: "Tư duy đầu tư dài hạn: Chìa khóa của sự giàu có bền vững",
-  },
-];
+interface KnowledgeProps {
+  articles: KnowledgeArticle[];
+}
 
-export function Knowledge() {
+export function Knowledge({ articles }: KnowledgeProps) {
   return (
     <section className="w-full bg-[#fcfdfd] py-12 md:py-16">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,23 +17,26 @@ export function Knowledge() {
             KIẾN THỨC MỚI NHẤT
           </h2>
 
-          <Button className="inline-flex items-center gap-1 text-sm font-bold text-gray-800 uppercase transition-all hover:text-gray-600">
-            XEM TẤT CẢ BÀI VIẾT
-            <ArrowRight className="size-3.5" />
-          </Button>
+          <Link href={"/knowledge"}>
+            <Button className="inline-flex items-center gap-1 text-sm font-bold text-gray-800 uppercase transition-all hover:text-gray-600">
+              XEM TẤT CẢ BÀI VIẾT
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </Link>
         </div>
 
         <div className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4">
           {articles.map((article) => (
-            <article
+            <Link
               key={article.title}
+              href={`/knowledge/${article.slug}`}
               className="flex flex-col justify-between overflow-hidden rounded-xl bg-white border border-gray-100/60 shadow-sm"
             >
               <div>
                 <div className="relative aspect-16/10 w-full bg-gray-50">
                   <Image
-                    src={article.image}
-                    alt={article.title}
+                    src={article.image?.url ?? ""}
+                    alt={article.image?.alt ?? ""}
                     fill
                     sizes="(max-w-768px) 100vw, 25vw"
                     className="object-cover"
@@ -65,7 +47,7 @@ export function Knowledge() {
                   <div className="flex items-center justify-between text-[11px] font-semibold">
                     <span className="text-gray-400">{article.date}</span>
                     <span className="text-emerald-600/90 bg-emerald-50/50 px-2 py-0.5 rounded-md border border-emerald-100/30">
-                      {article.category}
+                      {article.category?.name}
                     </span>
                   </div>
 
@@ -81,7 +63,7 @@ export function Knowledge() {
                   <ArrowRight className="size-3" />
                 </button>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
