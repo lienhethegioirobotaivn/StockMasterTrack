@@ -60,7 +60,7 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
                 {[
                   "Học trực tiếp cùng chuyên gia giàu kinh nghiệm",
                   "Case study thực tế, dễ hiểu, áp dụng ngay",
-                  "Tham gia cộng đồng hỗ trợ trọn đời",
+                  "Tham gia cộng đồng hỗ trợ nhanh chóng",
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-lime-600" />
@@ -154,7 +154,7 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
                         Cộng đồng
                       </p>
                       <p className="text-[11px] sm:text-[10px] font-medium text-gray-500">
-                        Hỗ trợ trọn đời
+                        Hỗ trợ nhanh chóng
                       </p>
                     </div>
                   </div>

@@ -70,7 +70,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
               <span>•</span>
               <span>
                 {/* View number */}
-                {/* {postData.views} */}0 lượt xem
+                {/* {postData.views} */}10.000 lượt xem
               </span>
             </div>
           </div>

@@ -23,9 +23,9 @@ const supportLinks = {
 };
 
 const contactItems = [
-  { icon: Mail, text: "hello@stockmastertrack.vn" },
-  { icon: Phone, text: "0586 123 456" },
-  { icon: MapPin, text: "TP. Hồ Chí Minh, Việt Nam" },
+  { icon: Mail, text: "lienhe@thegioirobot.ai.vn" },
+  { icon: Phone, text: "0394 783 239" },
+  { icon: MapPin, text: "184/1A Lê Văn Sỹ, Phú Nhuận, TPHCM" },
 ];
 
 const socialIcons = [FaFacebook, FaYoutube, MessageSquare, FaTiktok];
@@ -37,19 +37,15 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-12">
           <div className="space-y-4 lg:col-span-1">
             <Link href={"/"} className="flex items-center gap-2">
-              <div className="relative size-10.5 shrink-0">
+              <div className="relative h-15 w-45 shrink-0">
                 <Image
-                  src="/home/Logo.png"
+                  src="/home/Logo3.png"
                   alt="STOCK MASTERTRACK LOGO"
                   fill
-                  sizes="32px"
-                  className="object-contain"
+                  sizes="(max-width: 768px) 100px, 200px"
+                  className="object-contain object-left"
                 />
               </div>
-              <span className="font-black">
-                <p className="text-3xl text-lime-500">STOCK</p>
-                <p className="text-sm text-fuchsia-600">MASTERTRACK</p>
-              </span>
             </Link>
 
             <p className="text-[15px] lg:text-[12px] font-medium text-gray-400 lg:w-60">
@@ -59,13 +55,15 @@ export function Footer() {
 
             <div className="flex items-center gap-3 pt-2">
               {socialIcons.map((Icon, idx) => (
-                <a
+                <Link
                   key={idx}
-                  href="#"
+                  href={"https://zalo.me/g/tmf9comkbyxqsqiv2ler"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex size-8 items-center justify-center rounded-full border border-gray-700 bg-gray-900/40 text-gray-400 transition-colors hover:border-gray-500 hover:text-white"
                 >
                   <Icon className="size-4 fill-current stroke-1" />
-                </a>
+                </Link>
               ))}
             </div>
           </div>

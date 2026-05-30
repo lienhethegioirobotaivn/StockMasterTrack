@@ -13,7 +13,7 @@ export function Hero() {
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-white via-white/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-white to-transparent w-[25%]" />
       </div>
 
       <div className="relative mx-auto flex flex-col px-6 lg:px-12 lg:flex-row lg:items-center">
@@ -50,7 +50,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mt-8 aspect-21/9 w-full overflow-hidden rounded-xl lg:hidden">
+        <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-xl lg:hidden">
           <Image
             src="/knowledge/hero.jpg"
             alt="Knowledge Hero"

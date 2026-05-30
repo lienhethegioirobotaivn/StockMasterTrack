@@ -1,6 +1,7 @@
 import { CourseRegisterDialog } from "@/components/layout/dialog";
 import { Button } from "@/components/ui";
 import { MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 export function BottomCTA() {
   return (
@@ -30,13 +31,19 @@ export function BottomCTA() {
               </Button>
             </CourseRegisterDialog>
 
-            <Button
-              variant="outline"
-              className="h-10 w-full rounded-lg border border-gray-200 bg-white px-6 text-sm sm:text-base font-bold text-gray-700 shadow-xs hover:bg-gray-50 sm:w-auto"
+            <Link
+              href={"https://zalo.me/0394783239"}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <MessageCircle className="mr-1.5 size-4 text-lime-600" />
-              TƯ VẤN KHÓA HỌC
-            </Button>
+              <Button
+                variant="outline"
+                className="h-10 w-full rounded-lg border border-gray-200 bg-white px-6 text-sm sm:text-base font-bold text-gray-700 shadow-xs hover:bg-gray-50 sm:w-auto"
+              >
+                <MessageCircle className="mr-1.5 size-4 text-lime-600" />
+                TƯ VẤN KHÓA HỌC
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

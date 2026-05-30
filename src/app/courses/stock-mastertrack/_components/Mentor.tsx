@@ -13,12 +13,12 @@ import {
 
 import { Button } from "@/components/ui";
 import { CourseRegisterDialog } from "@/components/layout/dialog";
+import Link from "next/link";
 
 const mentorFeatures = [
-  "10+ năm kinh nghiệm đầu tư và phân tích thị trường",
-  "Cựu chuyên viên phân tích tại công ty chứng khoán top đầu Việt Nam",
-  "Đào tạo hơn 2000+ học viên",
-  "Phong cách giảng dạy thực tế, dễ hiểu, truyền cảm hứng",
+  "Hơn 15 năm kinh nghiệm tại VinaCapital, Maybank, Citibank, ANZ.",
+  "Chuyên gia cố vấn cho nhiều doanh nghiệp trong lĩnh vực tài chính, sản xuất và phân phối.",
+  "Giảng viên tại IBM Institute, Brainmark, BGS Global, xuất hiện trên VTV1, Dân Trí, HAWEE với vai trò chuyên gia tài chính doanh nghiệp.",
 ];
 
 const courseInfos = [
@@ -62,8 +62,8 @@ export function Mentor() {
             <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-start">
               <div className="relative mx-auto w-48 shrink-0 overflow-hidden sm:mx-0">
                 <Image
-                  src="/courses/stock-mastertrack/mentor.png"
-                  alt="Giảng viên Nguyễn Hoàng Nam"
+                  src="/home/Toan.jpg"
+                  alt="THS. NGUYỄN ANH TOÀN"
                   width={220}
                   height={260}
                   priority
@@ -73,10 +73,10 @@ export function Mentor() {
 
               <div className="flex-1 text-center sm:text-left">
                 <h3 className="text-[22px] sm:text-2xl font-extrabold text-gray-900">
-                  NGUYỄN HOÀNG NAM
+                  THS. NGUYỄN ANH TOÀN
                 </h3>
                 <p className="mt-1 text-[16px] font-medium text-gray-600">
-                  Founder Stock MasterTrack
+                  Chuyên gia Kinh tế – Cố vấn Tài chính Doanh nghiệp
                 </p>
 
                 <ul className="mt-4 space-y-3 text-left">
@@ -152,13 +152,19 @@ export function Mentor() {
                 </Button>
               </CourseRegisterDialog>
 
-              <Button
-                variant="outline"
-                className="h-11 w-full rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-700 shadow-xs hover:bg-gray-50"
+              <Link
+                href={"https://zalo.me/0394783239"}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <MessageCircleMore className="mr-1 size-3.5 text-lime-600" />
-                TƯ VẤN KHÓA HỌC
-              </Button>
+                <Button
+                  variant="outline"
+                  className="h-11 w-full rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-700 shadow-xs hover:bg-gray-50"
+                >
+                  <MessageCircleMore className="mr-1 size-3.5 text-lime-600" />
+                  TƯ VẤN KHÓA HỌC
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

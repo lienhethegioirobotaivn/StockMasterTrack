@@ -4,24 +4,24 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     content:
-      "Khóa học giúp mình thay đổi hoàn toàn tư duy về đầu tư. Nội dung dễ hiểu, thực tế và rất hữu ích.",
-    avatar: "/home/avatar.png",
-    name: "Tuấn Anh",
-    role: "Nhân viên văn phòng",
+      "Học được cách đầu tư không theo cảm xúc và fomo, biết được các phong cách đầu tư: phân tích cơ bản và phân tích kỹ thuật, tránh được các khoản đầu tư sai lầm",
+    avatar: "/home/DoanThanhSon.jpg",
+    name: "Anh Đoàn Thanh Sơn",
+    role: "Founder DNS Solutions ",
   },
   {
     content:
-      "Giảng viên nhiệt tình, chia sẻ nhiều kinh nghiệm thực chiến. Sau khóa học mình tự tin hơn hẳn.",
+      "Vui vẻ, giá trị kiến thức thực tế, thông tin bài bản, nhanh nhạy, 70% có thể áp dụng",
     avatar: "/home/avatar.png",
-    name: "Minh Thư",
-    role: "Kinh doanh tự do",
+    name: "Tăng Thị Thuỳ Dung",
+    role: "Phó phòng kinh doanh",
   },
   {
     content:
-      "Cộng đồng học viên rất chất lượng, hỗ trợ nhau nhiều sau khóa học. Đáng đồng tiền bát gạo!",
+      "Anh cảm thấy khoá Stock MasterTrack phải nói là quá OK, đáng học, nên học với anh thì xứng đáng với những gì anh bỏ ra. Tham gia khoá học có thể nói như được rút ngắn thời gian về kiến thức so vs mình tự học.",
     avatar: "/home/avatar.png",
-    name: "Hoàng Nam",
-    role: "Chủ cửa hàng",
+    name: "Trần Bỉnh Tường",
+    role: "",
   },
   {
     content:
@@ -51,20 +51,22 @@ export function Testimonials() {
               <div>
                 <Quote className="size-5 text-lime-700 transform scale-x-[-1] fill-current stroke-[0.5]" />
 
-                <p className="mt-3 text-base lg:text-sm font-medium leading-relaxed text-gray-600">
+                <p className="mt-3 text-base lg:text-sm font-medium leading-relaxed text-gray-600 whitespace-pre-wrap">
                   {item.content}
                 </p>
               </div>
 
               <div className="mt-6 flex items-center gap-3 border-t border-gray-100/60">
                 <div className="relative size-12 lg:size-10 shrink-0 overflow-hidden rounded-full bg-gray-100">
-                  <Image
-                    src={item.avatar}
-                    alt={item.name}
-                    fill
-                    sizes="40px"
-                    className="object-cover"
-                  />
+                  {item.avatar && (
+                    <Image
+                      src={item.avatar}
+                      alt={item.name}
+                      fill
+                      sizes="40px"
+                      className="object-cover"
+                    />
+                  )}
                 </div>
 
                 <div className="min-w-0">

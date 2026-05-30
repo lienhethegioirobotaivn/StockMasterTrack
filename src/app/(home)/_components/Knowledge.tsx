@@ -12,7 +12,7 @@ export function Knowledge({ articles }: KnowledgeProps) {
   return (
     <section className="w-full bg-[#fcfdfd] py-12 md:py-16">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-2 lg:gap-4 sm:flex-row sm:justify-between border-b border-gray-100 pb-5">
+        <div className="flex flex-col gap-2 lg:gap-4 sm:flex-row sm:justify-between border-b border-gray-100 pb-5 text-center sm:text-left">
           <h2 className="text-3xl font-black text-gray-900 uppercase text-center lg:text-left">
             KIẾN THỨC MỚI NHẤT
           </h2>

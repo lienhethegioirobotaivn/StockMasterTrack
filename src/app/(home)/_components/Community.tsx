@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function Community() {
   return (
@@ -25,17 +26,23 @@ export function Community() {
             </p>
 
             <div className="mt-6 flex">
-              <Button className="w-full lg:w-fit h-11 lg:h-9 rounded-lg bg-lime-600 px-4 text-base lg:text-sm font-bold text-white hover:bg-lime-700 gap-2">
-                <MessageSquare className="size-3.5 fill-current" />
-                THAM GIA CỘNG ĐỒNG ZALO
-              </Button>
+              <Link
+                href={"https://zalo.me/g/tmf9comkbyxqsqiv2ler"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full lg:w-fit h-11 lg:h-9 rounded-lg bg-lime-600 px-4 text-base lg:text-sm font-bold text-white hover:bg-lime-700 gap-2">
+                  <MessageSquare className="size-3.5 fill-current" />
+                  THAM GIA CỘNG ĐỒNG ZALO
+                </Button>
+              </Link>
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:col-span-8">
             <div className="relative aspect-7/8 w-full overflow-hidden rounded-xl border border-gray-100/60 bg-white shadow-sm">
               <Image
-                src="/home/community1.png"
+                src="/home/community1.jpg"
                 alt="Community feature 1"
                 fill
                 sizes="(max-w-1024px) 100vw, 25vw"
@@ -46,7 +53,7 @@ export function Community() {
 
             <div className="relative aspect-7/8 w-full overflow-hidden rounded-xl border border-gray-100/60 bg-white shadow-sm">
               <Image
-                src="/home/community2.png"
+                src="/home/community2.jpg"
                 alt="Community feature 2"
                 fill
                 sizes="(max-w-1024px) 100vw, 25vw"
@@ -57,7 +64,7 @@ export function Community() {
 
             <div className="relative aspect-7/8 w-full overflow-hidden rounded-xl border border-gray-100/60 bg-white shadow-sm sm:col-span-1">
               <Image
-                src="/home/community3.png"
+                src="/home/community3.1.jpg"
                 alt="Community event"
                 fill
                 sizes="(max-w-1024px) 100vw, 25vw"

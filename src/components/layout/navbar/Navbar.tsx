@@ -56,21 +56,15 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
       <div className="mx-auto flex h-20.5 max-w-295 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex h-11.5 shrink-0 items-center gap-2">
+        <Link href="/" className="flex h-fit shrink-0 items-center gap-2">
           <Image
-            src="/home/Logo.png"
+            src="/home/Logo3.png"
             alt="Stock MasterTrack"
             width={200}
             height={200}
-            className="h-full w-auto object-contain"
+            className="h-12 w-auto object-contain"
             priority
           />
-          <div className="flex flex-col justify-center leading-none">
-            <p className="text-[33px] font-black text-lime-500">STOCK</p>
-            <p className="-mt-0.5 text-[16px] font-black text-fuchsia-700">
-              MASTERTRACK
-            </p>
-          </div>
         </Link>
 
         {/* Desktop Menu */}
@@ -108,7 +102,7 @@ export function Navbar() {
                       <div className="flex gap-4">
                         <div className="relative h-full w-36 shrink-0 overflow-hidden rounded-xl bg-gray-100">
                           <Image
-                            src="/home/course1.png"
+                            src="/navbar/StockMasterTrack.jpg"
                             alt="Stock MasterTrack"
                             fill
                             className="object-cover"
@@ -159,7 +153,7 @@ export function Navbar() {
                       <div className="flex gap-4">
                         <div className="relative h-full w-36 shrink-0 overflow-hidden rounded-xl bg-gray-100">
                           <Image
-                            src="/home/course2.png"
+                            src="/navbar/MTPro.jpg"
                             alt="Stock MT Pro"
                             fill
                             className="object-cover"
@@ -194,7 +188,7 @@ export function Navbar() {
                               ))}
                             </ul>
                           </div>
-                          <Link href="/courses/mt-pro">
+                          <Link href="/courses/stock-mastertrack">
                             <Button
                               variant="outline"
                               className="mt-4 h-9 w-full justify-between rounded-lg border-fuchsia-500 px-4 text-xs font-bold text-fuchsia-600 hover:bg-fuchsia-50 hover:text-fuchsia-600"
@@ -223,7 +217,11 @@ export function Navbar() {
                           </p>
                         </div>
                       </div>
-                      <Link href="/contact">
+                      <Link
+                        href={"https://zalo.me/0394783239"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Button
                           variant="outline"
                           className="h-9 rounded-lg border-gray-200 bg-white px-4 text-xs font-bold text-gray-700 hover:bg-gray-50"
@@ -342,10 +340,10 @@ export function Navbar() {
 
                     {/* Course 2 */}
                     <Link
-                      href="/courses/mt-pro"
+                      href="/courses/stock-mastertrack"
                       onClick={() => setMobileOpen(false)}
                       className={`flex items-center justify-between rounded-xl p-3.5 transition-all border ${
-                        pathname === "/courses/mt-pro"
+                        pathname === "/courses/stock-mastertrack"
                           ? "bg-fuchsia-50/70 border-fuchsia-200"
                           : "bg-gray-50 border-transparent active:bg-gray-100"
                       }`}

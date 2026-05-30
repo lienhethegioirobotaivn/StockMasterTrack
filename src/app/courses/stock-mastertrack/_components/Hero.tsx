@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  BookOpen,
   CircleCheck,
   GraduationCap,
   MapPin,
+  BookOpen,
   MessageCircleMore,
   Users,
 } from "lucide-react";
@@ -38,7 +38,7 @@ const heroStats: HeroStat[] = [
   },
   {
     icon: BookOpen,
-    value: "Hỗ trợ trọn đời",
+    value: "Hỗ trợ nhanh chóng",
     label: "Trong cộng đồng",
   },
 ];
@@ -52,9 +52,20 @@ const benefits = [
 
 export function Hero() {
   return (
-    <section className="relative w-full bg-white font-sans">
-      <div className="mx-auto px-6 pt-4 lg:px-12 lg:pt-6">
-        <div className="flex flex-wrap items-center justify-between gap-1 text-xs text-gray-500">
+    <section className="relative w-full overflow-hidden bg-white py-6 lg:py-6 flex items-center font-sans">
+      <div className="lg:left-145 absolute inset-0 z-0 hidden lg:block">
+        <Image
+          src="/home/hero.jpg"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover object-left"
+        />
+        <div className="absolute inset-0 bg-linear-to-r from-white to-transparent w-[25%]" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full px-6 lg:px-12">
+        <div className="flex flex-wrap items-center justify-between gap-1 text-xs text-gray-500 mb-4">
           <div className="flex items-center gap-2">
             <Link href="/" className="hover:text-gray-900">
               Trang chủ
@@ -65,9 +76,7 @@ export function Hero() {
             <span className="text-gray-400">Stock MasterTrack</span>
           </div>
         </div>
-      </div>
 
-      <div className="relative mx-auto px-6 pt-8 lg:px-12 lg:pt-10">
         <div className="grid items-center gap-8 lg:grid-cols-12">
           <div className="z-10 lg:col-span-6 xl:col-span-7">
             <span className="text-base sm:text-sm font-bold uppercase text-lime-500">
@@ -83,7 +92,7 @@ export function Hero() {
               Nền tảng đầu tư bài bản – Tư duy vững chắc
             </p>
 
-            <p className="mt-2 max-w-xl text-sm sm:text-[16px] leading-relaxed text-gray-600">
+            <p className="mt-2 lg:w-130 text-sm sm:text-[16px] leading-relaxed text-gray-600">
               Khóa học 8 buổi giúp bạn xây dựng tư duy đúng đắn, nắm vững phương
               pháp phân tích và tự tin đưa ra quyết định đầu tư hiệu quả trên
               thị trường chứng khoán.
@@ -108,26 +117,30 @@ export function Hero() {
                 </Button>
               </CourseRegisterDialog>
 
-              <Button
-                variant="outline"
-                className="w-full lg:w-fit h-11 rounded-md border border-lime-500 bg-white px-6 text-base font-bold text-gray-700 hover:bg-lime-50"
+              <Link
+                href={"https://zalo.me/0394783239"}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                TƯ VẤN KHÓA HỌC
-                <MessageCircleMore className="ml-1 size-3.5" />
-              </Button>
+                <Button
+                  variant="outline"
+                  className="w-full lg:w-fit h-11 rounded-md border border-lime-500 bg-white px-6 text-base font-bold text-gray-700 hover:bg-lime-50"
+                >
+                  TƯ VẤN KHÓA HỌC
+                  <MessageCircleMore className="ml-1 size-3.5" />
+                </Button>
+              </Link>
             </div>
           </div>
 
-          <div className="relative w-full lg:absolute lg:right-0 lg:top-0 lg:col-span-6 lg:h-full lg:w-1/2 xl:col-span-5">
-            <div className="relative h-64 w-full sm:h-80 md:h-96 lg:h-full">
+          <div className="relative w-full lg:col-span-6 flex flex-col gap-4 lg:pl-4 lg:hidden">
+            <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-slate-100">
               <Image
-                src="/courses/stock-mastertrack/hero.jpg"
+                src="/home/hero.jpg"
                 alt="Stock MasterTrack Classroom"
                 fill
-                priority
-                className="object-cover object-center lg:object-right"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-r from-white via-white/80 to-transparent max-lg:bg-linear-to-t max-lg:from-white max-lg:via-white/20" />
             </div>
           </div>
         </div>

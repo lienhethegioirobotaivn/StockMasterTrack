@@ -13,25 +13,25 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Tuấn Anh",
-    role: "Nhân viên văn phòng",
-    avatar: "/courses/stock-mastertrack/avatar-1.jpg",
+    name: "Anh Đoàn Thanh Sơn",
+    role: "Founder DNS Solutions",
+    avatar: "/home/DoanThanhSon.jpg",
     content:
-      "Khóa học giúp mình thay đổi hoàn toàn tư duy về đầu tư. Nội dung dễ hiểu, thực tế và rất hữu ích.",
+      "Học được cách đầu tư không theo cảm xúc và fomo, biết được các phong cách đầu tư: phân tích cơ bản và phân tích kỹ thuật, tránh được các khoản đầu tư sai lầm",
   },
   {
-    name: "Minh Thư",
-    role: "Kinh doanh tự do",
+    name: "Tăng Thị Thuỳ Dung",
+    role: "Phó phòng kinh doanh",
     avatar: "/courses/stock-mastertrack/avatar-2.jpg",
     content:
-      "Giảng viên nhiệt tình, chia sẻ nhiều kinh nghiệm thực chiến. Sau khóa học mình tự tin hơn hẳn.",
+      "Vui vẻ, giá trị kiến thức thực tế, thông tin bài bản, nhanh nhạy, 70% có thể áp dụng",
   },
   {
-    name: "Hoàng Nam",
-    role: "Chủ cửa hàng",
+    name: "Trần Bỉnh Tường",
+    role: "",
     avatar: "/courses/stock-mastertrack/avatar-3.jpg",
     content:
-      "Cộng đồng học viên rất chất lượng, hỗ trợ nhau nhiều sau khóa học. Đáng đồng tiền bát gạo.",
+      "Anh cảm thấy khoá Stock MasterTrack phải nói là quá OK, đáng học, nên học với anh thì xứng đáng với những gì anh bỏ ra. Tham gia khoá học có thể nói như được rút ngắn thời gian về kiến thức so vs mình tự học.",
   },
 ];
 

@@ -9,6 +9,7 @@ import {
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui";
+import Link from "next/link";
 
 const highlights = [
   {
@@ -54,15 +55,15 @@ const stats = [
 export function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-white py-6 lg:py-10 flex items-center">
-      <div className="absolute inset-0 z-0 hidden lg:block">
+      <div className="lg:left-160 absolute inset-0 z-0 hidden lg:block">
         <Image
           src="/home/hero.jpg"
           alt="Hero Background"
           fill
           priority
-          className="object-cover object-right"
+          className="object-cover object-left"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-transparent w-[55%]" />
+        <div className="absolute inset-0 bg-linear-to-r from-white to-transparent w-[25%]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full px-6 lg:px-12">
@@ -83,15 +84,23 @@ export function Hero() {
             </p>
 
             <div className="mt-5 flex flex-wrap gap-4">
-              <Button className="w-full lg:w-fit inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-fuchsia-700 px-6 text-sm font-bold text-white transition-all hover:bg-fuchsia-800">
-                KHÁM PHÁ KHÓA HỌC
-                <ArrowRight className="size-4" />
-              </Button>
+              <Link href={"/courses/stock-mastertrack"}>
+                <Button className="w-full lg:w-fit inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-fuchsia-700 px-6 text-sm font-bold text-white transition-all hover:bg-fuchsia-800">
+                  KHÁM PHÁ KHÓA HỌC
+                  <ArrowRight className="size-4" />
+                </Button>
+              </Link>
 
-              <Button className="w-full lg:w-fit inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 text-sm font-bold text-gray-700 transition-all hover:bg-gray-50">
-                THAM GIA CỘNG ĐỒNG
-                <Users className="size-4 text-lime-600" />
-              </Button>
+              <Link
+                href={"https://zalo.me/g/tmf9comkbyxqsqiv2ler"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full lg:w-fit inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 text-sm font-bold text-gray-700 transition-all hover:bg-gray-50">
+                  THAM GIA CỘNG ĐỒNG
+                  <Users className="size-4 text-lime-600" />
+                </Button>
+              </Link>
             </div>
 
             <div className="mt-8 flex flex-col lg:flex-row gap-6 border border-gray-300 rounded-xl p-6 lg:p-0 lg:border-none">

@@ -146,7 +146,7 @@ export function Curriculum() {
             <div className="relative flex justify-center lg:h-48 lg:w-1/2 lg:justify-end lg:self-end">
               <div className="relative h-40 w-full max-w-md lg:h-full lg:w-full">
                 <Image
-                  src="/courses/stock-mastertrack/bonus.png"
+                  src="/courses/stock-mastertrack/bonus2.jpg"
                   alt="Stock MasterTrack Bonus Image"
                   fill
                   priority

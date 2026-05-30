@@ -99,7 +99,7 @@ export function LatestArticles({ articles }: LatestArticlesProps) {
 
               <div className="flex items-center gap-3 text-xs text-gray-400">
                 <div className="flex items-center gap-1">
-                  <Eye className="size-3.5" /> 0
+                  <Eye className="size-3.5" /> 10.000
                 </div>
                 <div className="flex items-center gap-1">
                   <MessageCircle className="size-3.5" /> 0
@@ -144,7 +144,7 @@ export function LatestArticles({ articles }: LatestArticlesProps) {
 
                 <div className="mt-4 flex items-center gap-3 text-xs text-gray-400">
                   <div className="flex items-center gap-1">
-                    <Eye className="size-3.5" /> 0
+                    <Eye className="size-3.5" /> 10.000
                   </div>
                   <div className="flex items-center gap-1">
                     <MessageCircle className="size-3.5" /> 0

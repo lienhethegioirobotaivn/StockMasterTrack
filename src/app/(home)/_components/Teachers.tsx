@@ -4,32 +4,29 @@ import { Button } from "@/components/ui";
 
 const teachers = [
   {
-    image: "/home/teacher.png",
-    name: "NGUYỄN HOÀNG NAM",
-    role: "Founder Stock MasterTrack",
+    image: "/home/Toan.jpg",
+    name: "THS. NGUYỄN ANH TOÀN",
+    role: "Chuyên gia Kinh tế – Cố vấn Tài chính Doanh nghiệp.",
     experiences: [
-      "10+ năm kinh nghiệm đầu tư",
-      "Cựu chuyên viên phân tích tại công ty chứng khoán",
-      "Đào tạo 2000+ học viên",
+      "Hơn 15 năm kinh nghiệm tại VinaCapital, Maybank, Citibank, ANZ.",
+      "Chuyên gia cố vấn cho nhiều doanh nghiệp trong lĩnh vực tài chính, sản xuất và phân phối.",
+      "Giảng viên tại IBM Institute, Brainmark, BGS Global, xuất hiện trên VTV1, Dân Trí, HAWEE với vai trò chuyên gia tài chính doanh nghiệp.",
     ],
   },
   {
-    image: "/home/teacher.png",
-    name: "TRẦN MINH QUÂN",
-    role: "Chuyên gia phân tích",
+    image: "/home/Bao.jpg",
+    name: "ÔNG LƯƠNG CAO HOÀNG BẢO",
+    role: "Giám đốc Khu vực Công ty Cổ phần Chứng khoán Việt Nam Thịnh Vượng.",
     experiences: [
-      "8+ năm kinh nghiệm phân tích doanh nghiệp",
-      "Tư vấn đầu tư cho nhiều nhà đầu tư cá nhân và tổ chức",
+      "Hơn 16 năm kinh nghiệm tại các công ty Chứng khoán như CTCP Chứng khoán Á Châu (ACBS); CTCP Chứng khoán Hồ Chí Minh (HSC); Chứng khoán Bảo Việt(BVSC); Giám đốc Công ty TNHH Chứng khoán NH Việt Nam (NHSV).",
+      "Nhiều năm kinh nghiệm Quản lý cấp cao tại các doanh nghiệp như: Phó Tổng GĐ Công ty Kiểm toán Quốc tế Á Châu; Phó Giám đốc XNK PouYuen Việt Nam; Giám đốc Marketing TROPICDANE Việt Nam;... ",
     ],
   },
   {
-    image: "/home/teacher.png",
-    name: "LÊ HOÀNG ANH",
-    role: "Chuyên gia đầu tư giá trị",
-    experiences: [
-      "7+ năm kinh nghiệm đầu tư",
-      "Tập trung vào đầu tư dài hạn và quản trị rủi ro",
-    ],
+    image: "/home/Danh.jpg",
+    name: "Ông MÃ THANH DANH",
+    role: "Chủ tịch HĐQT Công Ty Cổ Phần Tư Vấn Quốc Tế ICC",
+    experiences: [],
   },
 ];
 
@@ -65,7 +62,7 @@ export function Teachers() {
               </div>
 
               <div className="flex-1 min-w-0 space-y-1">
-                <h3 className="text-base font-extrabold text-gray-950 uppercase truncate">
+                <h3 className="text-base font-extrabold text-gray-950 uppercase">
                   {teacher.name}
                 </h3>
 
