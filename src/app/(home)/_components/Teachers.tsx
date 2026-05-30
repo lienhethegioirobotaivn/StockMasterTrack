@@ -6,27 +6,33 @@ const teachers = [
   {
     image: "/home/Toan.jpg",
     name: "THS. NGUYỄN ANH TOÀN",
-    role: "Chuyên gia Kinh tế – Cố vấn Tài chính Doanh nghiệp.",
+    role: "Chuyên gia Kinh tế – Cố vấn Tài chính Doanh nghiệp",
     experiences: [
-      "Hơn 15 năm kinh nghiệm tại VinaCapital, Maybank, Citibank, ANZ.",
-      "Chuyên gia cố vấn cho nhiều doanh nghiệp trong lĩnh vực tài chính, sản xuất và phân phối.",
-      "Giảng viên tại IBM Institute, Brainmark, BGS Global, xuất hiện trên VTV1, Dân Trí, HAWEE với vai trò chuyên gia tài chính doanh nghiệp.",
+      "Hơn 15 năm kinh nghiệm tại VinaCapital, Maybank, Citibank, ANZ",
+      "Chuyên gia cố vấn cho nhiều doanh nghiệp trong lĩnh vực tài chính, sản xuất và phân phối",
+      "Giảng viên tại IBM Institute, Brainmark, BGS Global, xuất hiện trên VTV1, Dân Trí, HAWEE với vai trò chuyên gia tài chính doanh nghiệp",
     ],
   },
   {
     image: "/home/Bao.jpg",
     name: "ÔNG LƯƠNG CAO HOÀNG BẢO",
-    role: "Giám đốc Khu vực Công ty Cổ phần Chứng khoán Việt Nam Thịnh Vượng.",
+    role: "Giám đốc Khu vực Công ty Cổ phần Chứng khoán Việt Nam Thịnh Vượng",
     experiences: [
-      "Hơn 16 năm kinh nghiệm tại các công ty Chứng khoán như CTCP Chứng khoán Á Châu (ACBS); CTCP Chứng khoán Hồ Chí Minh (HSC); Chứng khoán Bảo Việt(BVSC); Giám đốc Công ty TNHH Chứng khoán NH Việt Nam (NHSV).",
+      "Hơn 16 năm kinh nghiệm tại các công ty Chứng khoán như CTCP Chứng khoán Á Châu (ACBS); CTCP Chứng khoán Hồ Chí Minh (HSC); Chứng khoán Bảo Việt(BVSC); Giám đốc Công ty TNHH Chứng khoán NH Việt Nam (NHSV)",
       "Nhiều năm kinh nghiệm Quản lý cấp cao tại các doanh nghiệp như: Phó Tổng GĐ Công ty Kiểm toán Quốc tế Á Châu; Phó Giám đốc XNK PouYuen Việt Nam; Giám đốc Marketing TROPICDANE Việt Nam;... ",
     ],
   },
   {
     image: "/home/Danh.jpg",
     name: "Ông MÃ THANH DANH",
-    role: "Chủ tịch HĐQT Công Ty Cổ Phần Tư Vấn Quốc Tế ICC",
-    experiences: [],
+    role: "Phó TGĐ Tập đoàn KIDO",
+    experiences: [
+      "Chủ tịch HĐQT Công Ty Cổ Phần Tư Vấn Quốc Tế ICC",
+      "Chủ tịch Công ty Tư vấn Quản lý Tài sản Quốc tế IWMC",
+      "Cố vấn Hiệp hội PR Việt Nam VNPR",
+      "Mentor Shark Tank Việt Nam và Blueventure",
+      "Strategy Advitor HR1Vietnam",
+    ],
   },
 ];
 

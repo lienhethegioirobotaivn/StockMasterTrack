@@ -102,7 +102,7 @@ export function Navbar() {
                       <div className="flex gap-4">
                         <div className="relative h-full w-36 shrink-0 overflow-hidden rounded-xl bg-gray-100">
                           <Image
-                            src="/navbar/StockMasterTrack.jpg"
+                            src="/navbar/StockMasterTrack2.jpg"
                             alt="Stock MasterTrack"
                             fill
                             className="object-cover"
@@ -153,7 +153,7 @@ export function Navbar() {
                       <div className="flex gap-4">
                         <div className="relative h-full w-36 shrink-0 overflow-hidden rounded-xl bg-gray-100">
                           <Image
-                            src="/navbar/MTPro.jpg"
+                            src="/navbar/MTPro2.jpg"
                             alt="Stock MT Pro"
                             fill
                             className="object-cover"

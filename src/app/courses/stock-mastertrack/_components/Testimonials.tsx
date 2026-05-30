@@ -20,6 +20,13 @@ const testimonials: Testimonial[] = [
       "Học được cách đầu tư không theo cảm xúc và fomo, biết được các phong cách đầu tư: phân tích cơ bản và phân tích kỹ thuật, tránh được các khoản đầu tư sai lầm",
   },
   {
+    name: "Phạm Thị Bảo Trân",
+    role: "Giám đốc Trazenic Global",
+    avatar: "/home/Tran.jpg",
+    content:
+      "Chị cảm thấy lớp học rất thực chiến, thiết thực. Ban đầu chị chưa có nhiều nền tảng, chưa biết nhiều về thị trường chứng khoán, nhưng bây giờ chị rất thích và học đến khóa thứ 5 luôn rồi.",
+  },
+  {
     name: "Tăng Thị Thuỳ Dung",
     role: "Phó phòng kinh doanh",
     avatar: "/courses/stock-mastertrack/avatar-2.jpg",

@@ -16,9 +16,9 @@ import { CourseRegisterDialog } from "@/components/layout/dialog";
 import Link from "next/link";
 
 const mentorFeatures = [
-  "Hơn 15 năm kinh nghiệm tại VinaCapital, Maybank, Citibank, ANZ.",
-  "Chuyên gia cố vấn cho nhiều doanh nghiệp trong lĩnh vực tài chính, sản xuất và phân phối.",
-  "Giảng viên tại IBM Institute, Brainmark, BGS Global, xuất hiện trên VTV1, Dân Trí, HAWEE với vai trò chuyên gia tài chính doanh nghiệp.",
+  "Hơn 15 năm kinh nghiệm tại VinaCapital, Maybank, Citibank, ANZ",
+  "Chuyên gia cố vấn cho nhiều doanh nghiệp trong lĩnh vực tài chính, sản xuất và phân phối",
+  "Giảng viên tại IBM Institute, Brainmark, BGS Global, xuất hiện trên VTV1, Dân Trí, HAWEE với vai trò chuyên gia tài chính doanh nghiệp",
 ];
 
 const courseInfos = [
@@ -62,7 +62,7 @@ export function Mentor() {
             <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-start">
               <div className="relative mx-auto w-48 shrink-0 overflow-hidden sm:mx-0">
                 <Image
-                  src="/home/Toan.jpg"
+                  src="/courses/stock-mastertrack/Toan.jpg"
                   alt="THS. NGUYỄN ANH TOÀN"
                   width={220}
                   height={260}
