@@ -22,6 +22,7 @@ import {
 } from "@/components/ui";
 import { ReactNode, useRef, useState } from "react";
 import { env } from "@/lib/env";
+import { toast } from "sonner";
 
 interface CourseRegisterDialogProps {
   children: ReactNode;
@@ -127,7 +128,7 @@ export function CourseRegisterDialog({
       const result = await response.json();
 
       if (result.status === "mail_sent") {
-        alert(
+        toast.success(
           "Gửi đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.",
         );
         setFormData(initialFormData);
@@ -158,14 +159,14 @@ export function CourseRegisterDialog({
             scrollToAndFocus(firstErrorField);
           }
         } else {
-          alert(
+          toast.error(
             result.message || "Gửi đăng ký thất bại! Vui lòng thử lại sau.",
           );
         }
       }
     } catch (error) {
       console.error("Error: ", error);
-      alert("Không thể kết nối đến máy chủ! Vui lòng thử lại sau.");
+      toast.error("Không thể kết nối đến máy chủ! Vui lòng thử lại sau.");
     } finally {
       setIsLoading(false);
     }
