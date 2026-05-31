@@ -20,15 +20,155 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui";
-import { ReactNode } from "react";
+import { ReactNode, useRef, useState } from "react";
+import { env } from "@/lib/env";
 
 interface CourseRegisterDialogProps {
   children: ReactNode;
+  formId?: string | number;
+  pageId?: string | number;
+  formIndex?: string | number;
 }
 
-export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
-  const handleSubmit = (e: React.SyntheticEvent) => {
+const initialFormData = {
+  name: "",
+  phone: "",
+  email: "",
+  job: "",
+  investor: "Mới bắt đầu",
+  source: "",
+};
+
+interface FormErrors {
+  name?: string;
+  phone?: string;
+  email?: string;
+}
+
+export function CourseRegisterDialog({
+  children,
+  formId = 59,
+  pageId = 1,
+  formIndex = 1,
+}: CourseRegisterDialogProps) {
+  const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+
+  const scrollToAndFocus = (field: keyof FormErrors) => {
+    const refMap = {
+      name: nameRef,
+      phone: phoneRef,
+      email: emailRef,
+    };
+
+    const targetRef = refMap[field];
+    if (targetRef?.current) {
+      targetRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      targetRef.current.focus();
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Vui lòng nhập họ và tên.";
+    if (!formData.phone.trim())
+      newErrors.phone = "Vui lòng nhập số điện thoại.";
+    if (!formData.email.trim()) newErrors.email = "Vui lòng nhập email.";
+
+    setErrors(newErrors);
+
+    const errorFields = Object.keys(newErrors) as (keyof FormErrors)[];
+    if (errorFields.length > 0) {
+      scrollToAndFocus(errorFields[0]);
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
+    setErrors({});
+
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+
+    const body = new FormData();
+    body.append("your-name", formData.name);
+    body.append("your-phone", formData.phone);
+    body.append("your-email", formData.email);
+    body.append("your-job", formData.job);
+    body.append("investor", formData.investor);
+    body.append("your-source", formData.source);
+    body.append("_wpcf7_unit_tag", `wpcf7-f${formId}-p${pageId}-o${formIndex}`);
+
+    try {
+      const response = await fetch(
+        `${env.NEXT_PUBLIC_WORDPRESS_API_URL}/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback`,
+        {
+          method: "POST",
+          body,
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("Lỗi hệ thống từ server. Vui lòng thử lại sau.");
+      }
+
+      const result = await response.json();
+
+      if (result.status === "mail_sent") {
+        alert(
+          "Gửi đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.",
+        );
+        setFormData(initialFormData);
+        setErrors({});
+        closeBtnRef.current?.click();
+      } else {
+        if (result.invalid_fields && result.invalid_fields.length > 0) {
+          const newErrors: FormErrors = {};
+          let firstErrorField: keyof FormErrors | null = null;
+
+          result.invalid_fields.forEach(
+            (item: { field: string; message: string }) => {
+              let localField: keyof FormErrors | null = null;
+              if (item.field === "your-name") localField = "name";
+              if (item.field === "your-phone") localField = "phone";
+              if (item.field === "your-email") localField = "email";
+
+              if (localField) {
+                newErrors[localField] = item.message;
+                if (!firstErrorField) firstErrorField = localField;
+              }
+            },
+          );
+
+          setErrors(newErrors);
+
+          if (firstErrorField) {
+            scrollToAndFocus(firstErrorField);
+          }
+        } else {
+          alert(
+            result.message || "Gửi đăng ký thất bại! Vui lòng thử lại sau.",
+          );
+        }
+      }
+    } catch (error) {
+      console.error("Error: ", error);
+      alert("Không thể kết nối đến máy chủ! Vui lòng thử lại sau.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,12 +177,14 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
 
       <DialogContent className="max-w-[calc(100%-2rem)] border-0 p-0 shadow-2xl sm:max-w-[80%] rounded-3xl bg-white md:max-h-[90vh] overflow-hidden [&>button]:hidden">
         <div className="relative max-h-[85vh] md:max-h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 transition-colors">
-          <DialogClose className="absolute right-4 top-4 z-50 flex size-8 items-center justify-center rounded-full bg-slate-100/80 text-slate-500 backdrop-blur-xs transition-all hover:bg-slate-200 hover:text-slate-800 active:scale-95 border border-slate-200 focus:outline-none lg:right-6 lg:top-6 cursor-pointer">
+          <DialogClose
+            ref={closeBtnRef}
+            className="absolute right-4 top-4 z-50 flex size-8 items-center justify-center rounded-full bg-slate-100/80 text-slate-500 backdrop-blur-xs transition-all hover:bg-slate-200 hover:text-slate-800 active:scale-95 border border-slate-200 focus:outline-none lg:right-6 lg:top-6 cursor-pointer"
+          >
             <X className="size-4" />
           </DialogClose>
 
           <div className="grid lg:grid-cols-2">
-            {/* LEFT */}
             <div className="bg-white p-5 sm:p-6 lg:p-8">
               <div className="inline-flex rounded-lg bg-lime-50 px-2 py-1.5 text-xs font-extrabold uppercase text-lime-700">
                 Đăng ký khóa học
@@ -187,7 +329,6 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
               </div>
             </div>
 
-            {/* RIGHT */}
             <div className="bg-white p-5 sm:p-6 lg:border-l lg:border-gray-100 lg:p-8">
               <DialogHeader className="space-y-0 text-left lg:pr-10">
                 <DialogTitle className="text-2xl sm:text-3xl lg:text-2xl font-black text-slate-900 text-center lg:text-left">
@@ -197,6 +338,7 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
 
               <form
                 onSubmit={handleSubmit}
+                noValidate
                 className="mt-6 flex flex-col gap-5"
               >
                 <div className="flex flex-col gap-1.5 shrink-0">
@@ -204,9 +346,25 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
                     Họ và tên <span className="text-red-500">*</span>
                   </label>
                   <Input
+                    ref={nameRef}
                     placeholder="Nhập họ và tên của bạn"
-                    className="h-11 rounded-xl border-gray-200 bg-white shadow-none focus-visible:ring-lime-500 text-sm"
+                    className={`h-11 rounded-xl border-gray-200 bg-white shadow-none focus-visible:ring-lime-500 text-sm ${
+                      errors.name
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : ""
+                    }`}
+                    value={formData.name}
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      if (errors.name)
+                        setErrors({ ...errors, name: undefined });
+                    }}
                   />
+                  {errors.name && (
+                    <span className="text-xs font-semibold text-red-500 mt-0.5">
+                      {errors.name}
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5 shrink-0">
@@ -214,9 +372,25 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
                     Số điện thoại <span className="text-red-500">*</span>
                   </label>
                   <Input
+                    ref={phoneRef}
                     placeholder="Nhập số điện thoại"
-                    className="h-11 rounded-xl border-gray-200 bg-white shadow-none focus-visible:ring-lime-500 text-sm"
+                    className={`h-11 rounded-xl border-gray-200 bg-white shadow-none focus-visible:ring-lime-500 text-sm ${
+                      errors.phone
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : ""
+                    }`}
+                    value={formData.phone}
+                    onChange={(e) => {
+                      setFormData({ ...formData, phone: e.target.value });
+                      if (errors.phone)
+                        setErrors({ ...errors, phone: undefined });
+                    }}
                   />
+                  {errors.phone && (
+                    <span className="text-xs font-semibold text-red-500 mt-0.5">
+                      {errors.phone}
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5 shrink-0">
@@ -224,16 +398,39 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
                     Email <span className="text-red-500">*</span>
                   </label>
                   <Input
+                    ref={emailRef}
+                    type="email"
                     placeholder="Nhập email của bạn"
-                    className="h-11 rounded-xl border-gray-200 bg-white shadow-none focus-visible:ring-lime-500 text-sm"
+                    className={`h-11 rounded-xl border-gray-200 bg-white shadow-none focus-visible:ring-lime-500 text-sm ${
+                      errors.email
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : ""
+                    }`}
+                    value={formData.email}
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      if (errors.email)
+                        setErrors({ ...errors, email: undefined });
+                    }}
                   />
+                  {errors.email && (
+                    <span className="text-xs font-semibold text-red-500 mt-0.5">
+                      {errors.email}
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-1.5 shrink-0">
                   <label className="text-base font-bold text-slate-800">
                     Nghề nghiệp
                   </label>
-                  <select className="h-11 w-full rounded-xl border border-gray-200 bg-white px-3 text-sm font-medium text-gray-700 outline-none transition focus:border-lime-500">
+                  <select
+                    value={formData.job}
+                    onChange={(e) =>
+                      setFormData({ ...formData, job: e.target.value })
+                    }
+                    className="h-11 w-full rounded-xl border border-gray-200 bg-white px-3 text-sm font-medium text-gray-700 outline-none transition focus:border-lime-500"
+                  >
                     <option value="">Chọn nghề nghiệp</option>
                     {[
                       "Sinh viên",
@@ -264,7 +461,14 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
                             type="radio"
                             name="investor"
                             className="size-4 accent-lime-600"
-                            defaultChecked={index === 0}
+                            checked={formData.investor === item}
+                            value={item}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                investor: e.target.value,
+                              })
+                            }
                           />
                           <span className="text-xs sm:text-sm font-medium text-gray-700">
                             {item}
@@ -279,7 +483,13 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
                   <label className="text-base font-bold text-slate-800">
                     Bạn biết đến Stock MasterTrack từ đâu?
                   </label>
-                  <select className="h-11 w-full rounded-xl border border-gray-200 bg-white px-3 text-sm font-medium text-gray-700 outline-none transition focus:border-lime-500">
+                  <select
+                    value={formData.source}
+                    onChange={(e) =>
+                      setFormData({ ...formData, source: e.target.value })
+                    }
+                    className="h-11 w-full rounded-xl border border-gray-200 bg-white px-3 text-sm font-medium text-gray-700 outline-none transition focus:border-lime-500"
+                  >
                     <option value="">Chọn nguồn</option>
                     {[
                       "Facebook",
@@ -312,9 +522,10 @@ export function CourseRegisterDialog({ children }: CourseRegisterDialogProps) {
 
                 <Button
                   type="submit"
-                  className="h-12 w-full rounded-xl bg-lime-600 text-sm sm:text-base font-black text-white shadow-md shadow-lime-100 transition-all hover:bg-lime-700 shrink-0"
+                  disabled={isLoading}
+                  className="h-12 w-full rounded-xl bg-lime-600 text-sm sm:text-base font-black text-white shadow-md shadow-lime-100 transition-all hover:bg-lime-700 shrink-0 disabled:cursor-not-allowed"
                 >
-                  ĐĂNG KÝ NGAY
+                  {isLoading ? <>ĐANG GỬI ĐĂNG KÝ...</> : "ĐĂNG KÝ NGAY"}
                 </Button>
 
                 <div className="mx-auto flex items-center gap-2 text-xs font-medium text-gray-500">
