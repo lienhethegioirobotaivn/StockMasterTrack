@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui";
 import {
   MapPin,
@@ -10,6 +12,15 @@ import {
 import Link from "next/link";
 import { FaFacebook, FaYoutube, FaTelegramPlane } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
+import { useRef, useState } from "react";
+import { env } from "@/lib/env";
+import { toast } from "sonner";
+
+interface ContactFormProps {
+  formId?: string | number;
+  pageId?: string | number;
+  formIndex?: string | number;
+}
 
 const contactDetails = [
   {
@@ -46,7 +57,155 @@ const socialLinks = [
   { icon: FaTelegramPlane, href: "#", color: "text-sky-500 bg-sky-50" },
 ];
 
-export function ContactForm() {
+const initialFormData = {
+  name: "",
+  email: "",
+  phone: "",
+  topic: "",
+  message: "",
+};
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  topic?: string;
+  message?: string;
+}
+
+export function ContactForm({
+  formId = 60,
+  pageId = 1,
+  formIndex = 1,
+}: ContactFormProps) {
+  const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+  const topicRef = useRef<HTMLSelectElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  const scrollToAndFocus = (field: keyof FormErrors) => {
+    const refMap = {
+      name: nameRef,
+      phone: phoneRef,
+      email: emailRef,
+      topic: topicRef,
+      message: messageRef,
+    };
+
+    const targetRef = refMap[field];
+    if (targetRef?.current) {
+      targetRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      setTimeout(() => {
+        targetRef.current?.focus();
+      }, 300);
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Vui lòng nhập họ và tên.";
+    if (!formData.email.trim()) newErrors.email = "Vui lòng nhập email.";
+    if (!formData.phone.trim())
+      newErrors.phone = "Vui lòng nhập số điện thoại.";
+    if (!formData.topic) newErrors.topic = "Vui lòng chọn chủ đề.";
+    if (!formData.message.trim())
+      newErrors.message = "Vui lòng nhập nội dung tin nhắn.";
+
+    setErrors(newErrors);
+
+    const errorFields = Object.keys(newErrors) as (keyof FormErrors)[];
+    if (errorFields.length > 0) {
+      scrollToAndFocus(errorFields[0]);
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    setErrors({});
+
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+
+    const body = new FormData();
+    body.append("your-name", formData.name);
+    body.append("your-email", formData.email);
+    body.append("your-phone", formData.phone);
+    body.append("topic", formData.topic);
+    body.append("your-message", formData.message);
+    body.append("_wpcf7_unit_tag", `wpcf7-f${formId}-p${pageId}-o${formIndex}`);
+
+    try {
+      const response = await fetch(
+        `${env.NEXT_PUBLIC_WORDPRESS_API_URL}/wp-json/contact-form-7/v1/contact-forms/${formId}/feedback`,
+        {
+          method: "POST",
+          body,
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("Lỗi hệ thống từ server. Vui lòng thử lại sau.");
+      }
+
+      const result = await response.json();
+
+      if (result.status === "mail_sent") {
+        toast.success(
+          "Gửi tin nhắn thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất có thể.",
+        );
+        setFormData(initialFormData);
+        setErrors({});
+      } else {
+        if (result.invalid_fields && result.invalid_fields.length > 0) {
+          const newErrors: FormErrors = {};
+          let firstErrorField: keyof FormErrors | null = null;
+
+          result.invalid_fields.forEach(
+            (item: { field: string; message: string }) => {
+              let localField: keyof FormErrors | null = null;
+              if (item.field === "your-name") localField = "name";
+              if (item.field === "your-email") localField = "email";
+              if (item.field === "your-phone") localField = "phone";
+              if (item.field === "topic") localField = "topic";
+              if (item.field === "your-message") localField = "message";
+
+              if (localField) {
+                newErrors[localField] = item.message;
+                if (!firstErrorField) firstErrorField = localField;
+              }
+            },
+          );
+          setErrors(newErrors);
+
+          if (firstErrorField) {
+            scrollToAndFocus(firstErrorField);
+          }
+        } else {
+          toast.error(
+            result.message || "Gửi tin nhắn thất bại! Vui lòng thử lại sau.",
+          );
+        }
+      }
+    } catch (error) {
+      console.error("Error: ", error);
+      toast.error("Không thể kết nối đến máy chủ! Vui lòng thử lại sau.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="w-full bg-slate-50/50 py-12 lg:py-16">
       <div className="mx-auto w-full px-6 lg:px-12 max-w-7xl">
@@ -56,27 +215,59 @@ export function ContactForm() {
               GỬI THÔNG TIN CHO CHÚNG TÔI
             </h2>
 
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit} noValidate>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1">
                   <label className="text-base font-semibold text-gray-700">
                     Họ và tên <span className="text-red-500">*</span>
                   </label>
                   <input
+                    ref={nameRef}
                     type="text"
                     placeholder="Nhập họ và tên của bạn"
-                    className="w-full h-11 px-3 rounded-lg border-[1.5px] border-gray-200 bg-white text-[14px] text-gray-900 placeholder-gray-400 focus:border-lime-600 focus:outline-hidden transition-colors"
+                    value={formData.name}
+                    onChange={(e) => {
+                      setFormData({ ...formData, name: e.target.value });
+                      if (errors.name)
+                        setErrors({ ...errors, name: undefined });
+                    }}
+                    className={`w-full h-11 px-3 rounded-lg border-[1.5px] bg-white text-[14px] text-gray-900 placeholder-gray-400 focus:outline-hidden transition-colors ${
+                      errors.name
+                        ? "border-red-500 focus:border-red-500"
+                        : "border-gray-200 focus:border-lime-600"
+                    }`}
                   />
+                  {errors.name && (
+                    <span className="text-xs font-semibold text-red-500 mt-0.5">
+                      {errors.name}
+                    </span>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1">
                   <label className="text-base font-semibold text-gray-700">
                     Email <span className="text-red-500">*</span>
                   </label>
                   <input
+                    ref={emailRef}
                     type="email"
                     placeholder="Nhập email của bạn"
-                    className="w-full h-11 px-3 rounded-lg border-[1.5px] border-gray-200 bg-white text-[14px] text-gray-900 placeholder-gray-400 focus:border-lime-600 focus:outline-hidden transition-colors"
+                    value={formData.email}
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      if (errors.email)
+                        setErrors({ ...errors, email: undefined });
+                    }}
+                    className={`w-full h-11 px-3 rounded-lg border-[1.5px] bg-white text-[14px] text-gray-900 placeholder-gray-400 focus:outline-hidden transition-colors ${
+                      errors.email
+                        ? "border-red-500 focus:border-red-500"
+                        : "border-gray-200 focus:border-lime-600"
+                    }`}
                   />
+                  {errors.email && (
+                    <span className="text-xs font-semibold text-red-500 mt-0.5">
+                      {errors.email}
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -86,10 +277,26 @@ export function ContactForm() {
                     Số điện thoại <span className="text-red-500">*</span>
                   </label>
                   <input
+                    ref={phoneRef}
                     type="tel"
                     placeholder="Nhập số điện thoại"
-                    className="w-full h-11 px-3 rounded-lg border-[1.5px] border-gray-200 bg-white text-[14px] text-gray-900 placeholder-gray-400 focus:border-lime-600 focus:outline-hidden transition-colors"
+                    value={formData.phone}
+                    onChange={(e) => {
+                      setFormData({ ...formData, phone: e.target.value });
+                      if (errors.phone)
+                        setErrors({ ...errors, phone: undefined });
+                    }}
+                    className={`w-full h-11 px-3 rounded-lg border-[1.5px] bg-white text-[14px] text-gray-900 placeholder-gray-400 focus:outline-hidden transition-colors ${
+                      errors.phone
+                        ? "border-red-500 focus:border-red-500"
+                        : "border-gray-200 focus:border-lime-600"
+                    }`}
                   />
+                  {errors.phone && (
+                    <span className="text-xs font-semibold text-red-500 mt-0.5">
+                      {errors.phone}
+                    </span>
+                  )}
                 </div>
                 <div className="flex flex-col gap-1">
                   <label className="text-base font-semibold text-gray-700">
@@ -97,15 +304,32 @@ export function ContactForm() {
                   </label>
                   <div className="relative w-full">
                     <select
-                      defaultValue=""
-                      className="w-full h-11 pl-3 pr-10 rounded-lg border-[1.5px] border-gray-200 bg-white text-[14px] text-gray-900 appearance-none focus:border-lime-600 focus:outline-hidden transition-colors"
+                      ref={topicRef}
+                      value={formData.topic}
+                      onChange={(e) => {
+                        setFormData({ ...formData, topic: e.target.value });
+                        if (errors.topic)
+                          setErrors({ ...errors, topic: undefined });
+                      }}
+                      className={`w-full h-11 pl-3 pr-10 rounded-lg border-[1.5px] bg-white text-[14px] text-gray-900 appearance-none focus:outline-hidden transition-colors ${
+                        errors.topic
+                          ? "border-red-500 focus:border-red-500"
+                          : "border-gray-200 focus:border-lime-600"
+                      }`}
                     >
                       <option value="" disabled hidden>
                         Chọn chủ đề
                       </option>
-                      <option value="course">Tư vấn khóa học</option>
-                      <option value="investment">Lộ trình đầu tư</option>
-                      <option value="cooperate">Hợp tác kinh doanh</option>
+                      {[
+                        "Tư vấn khóa học",
+                        "Lộ trình đầu tư",
+                        "Hợp tác kinh doanh",
+                        "Khác",
+                      ].map((item, index) => (
+                        <option key={index} value={item}>
+                          {item}
+                        </option>
+                      ))}
                     </select>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
                       <svg
@@ -116,6 +340,11 @@ export function ContactForm() {
                       </svg>
                     </div>
                   </div>
+                  {errors.topic && (
+                    <span className="text-xs font-semibold text-red-500 mt-0.5">
+                      {errors.topic}
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -124,9 +353,25 @@ export function ContactForm() {
                   Nội dung tin nhắn <span className="text-red-500">*</span>
                 </label>
                 <textarea
+                  ref={messageRef}
                   placeholder="Nhập nội dung tin nhắn của bạn..."
-                  className="w-full min-h-30 p-3 rounded-lg border-[1.5px] border-gray-200 bg-white text-[14px] text-gray-900 placeholder-gray-400 focus:border-lime-600 focus:outline-hidden transition-colors resize-none"
+                  value={formData.message}
+                  onChange={(e) => {
+                    setFormData({ ...formData, message: e.target.value });
+                    if (errors.message)
+                      setErrors({ ...errors, message: undefined });
+                  }}
+                  className={`w-full min-h-30 p-3 rounded-lg border-[1.5px] bg-white text-[14px] text-gray-900 placeholder-gray-400 focus:outline-hidden transition-colors resize-none ${
+                    errors.message
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-200 focus:border-lime-600"
+                  }`}
                 />
+                {errors.message && (
+                  <span className="text-xs font-semibold text-red-500 mt-0.5">
+                    {errors.message}
+                  </span>
+                )}
               </div>
 
               <div className="flex items-start gap-3 bg-emerald-50/60 border border-emerald-100 rounded-xl p-4">
@@ -143,15 +388,16 @@ export function ContactForm() {
 
               <Button
                 type="submit"
-                className="w-full h-12 bg-lime-600 text-white font-bold flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-102 text-[15px]"
+                disabled={isLoading}
+                className="w-full h-12 bg-lime-600 text-white font-bold flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-102 text-[15px] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <SendHorizontal className="size-4" />
-                GỬI TIN NHẮN
+                {isLoading ? "ĐANG GỬI TIN NHẮN..." : "GỬI TIN NHẮN"}
               </Button>
             </form>
           </div>
 
-          <div className="lg:col-span-4 bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-xs flex flex-col justify-between">
+          <div className="lg:col-span-4 bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-xs flex flex-col justify-between self-stretch">
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-[24px] font-bold text-gray-900 mb-6 text-center lg:text-left">
                 THÔNG TIN LIÊN HỆ
@@ -167,9 +413,7 @@ export function ContactForm() {
                       <span className="text-[16px] font-semibold text-gray-900 leading-tight">
                         {item.title}
                       </span>
-                      <span
-                        className={`text-[15px] font-semibold text-gray-500 mt-1 wrap-break-word whitespace-pre-wrap`}
-                      >
+                      <span className="text-[15px] font-semibold text-gray-500 mt-1 wrap-break-word whitespace-pre-wrap">
                         {item.content}
                       </span>
                     </div>
@@ -186,7 +430,6 @@ export function ContactForm() {
                 {socialLinks.map((social, index) => (
                   <Link
                     key={index}
-                    // href={social.href}
                     href={"https://zalo.me/0394783239"}
                     target="_blank"
                     rel="noopener noreferrer"
