@@ -4541,6 +4541,1594 @@ interface HierarchicalTermNode {
   uri: String
 }
 
+"""
+The &quot;HomePage&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePage implements HomePage_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  courses: HomePageCourses
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  features: HomePageFeatures
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  hero: HomePageHero
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  teachers: HomePageTeachers
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  testimonials: HomePageTestimonials
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePage&quot; Field Group
+"""
+interface HomePage_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  courses: HomePageCourses
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  features: HomePageFeatures
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  hero: HomePageHero
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  teachers: HomePageTeachers
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  testimonials: HomePageTestimonials
+}
+
+"""
+The &quot;HomePageCourses&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCourses implements HomePageCourses_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  content: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  modules: HomePageCoursesModules
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  title: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  tuition: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCourses&quot; Field Group
+"""
+interface HomePageCourses_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  content: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  modules: HomePageCoursesModules
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  title: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCourses&quot; Field Group
+  """
+  tuition: String
+}
+
+"""
+The &quot;HomePageCoursesModules&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModules implements HomePageCoursesModules_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module1: HomePageCoursesModulesModule1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module2: HomePageCoursesModulesModule2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module3: HomePageCoursesModulesModule3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module4: HomePageCoursesModulesModule4
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module5: HomePageCoursesModulesModule5
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module6: HomePageCoursesModulesModule6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module7: HomePageCoursesModulesModule7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module8: HomePageCoursesModulesModule8
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModules&quot; Field Group
+"""
+interface HomePageCoursesModules_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module1: HomePageCoursesModulesModule1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module2: HomePageCoursesModulesModule2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module3: HomePageCoursesModulesModule3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module4: HomePageCoursesModulesModule4
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module5: HomePageCoursesModulesModule5
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module6: HomePageCoursesModulesModule6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module7: HomePageCoursesModulesModule7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModules&quot; Field Group
+  """
+  module8: HomePageCoursesModulesModule8
+}
+
+"""
+The &quot;HomePageCoursesModulesModule1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModulesModule1 implements HomePageCoursesModulesModule1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModulesModule1&quot; Field Group
+"""
+interface HomePageCoursesModulesModule1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageCoursesModulesModule2&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModulesModule2 implements HomePageCoursesModulesModule2_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule2&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule2&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule2&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModulesModule2&quot; Field Group
+"""
+interface HomePageCoursesModulesModule2_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule2&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule2&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule2&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageCoursesModulesModule3&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModulesModule3 implements HomePageCoursesModulesModule3_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule3&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule3&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule3&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModulesModule3&quot; Field Group
+"""
+interface HomePageCoursesModulesModule3_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule3&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule3&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule3&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageCoursesModulesModule4&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModulesModule4 implements HomePageCoursesModulesModule4_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule4&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule4&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule4&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModulesModule4&quot; Field Group
+"""
+interface HomePageCoursesModulesModule4_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule4&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule4&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule4&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageCoursesModulesModule5&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModulesModule5 implements HomePageCoursesModulesModule5_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule5&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule5&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule5&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModulesModule5&quot; Field Group
+"""
+interface HomePageCoursesModulesModule5_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule5&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule5&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule5&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageCoursesModulesModule6&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModulesModule6 implements HomePageCoursesModulesModule6_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule6&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule6&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule6&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModulesModule6&quot; Field Group
+"""
+interface HomePageCoursesModulesModule6_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule6&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule6&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule6&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageCoursesModulesModule7&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModulesModule7 implements HomePageCoursesModulesModule7_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule7&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule7&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule7&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModulesModule7&quot; Field Group
+"""
+interface HomePageCoursesModulesModule7_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule7&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule7&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule7&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageCoursesModulesModule8&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCoursesModulesModule8 implements HomePageCoursesModulesModule8_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule8&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule8&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule8&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCoursesModulesModule8&quot; Field Group
+"""
+interface HomePageCoursesModulesModule8_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule8&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule8&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCoursesModulesModule8&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageFeatures&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageFeatures implements HomePageFeatures_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageFeatures&quot; Field Group
+  """
+  features: HomePageFeaturesFeatures
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageFeatures&quot; Field Group
+  """
+  title: HomePageFeaturesTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageFeatures&quot; Field Group
+"""
+interface HomePageFeatures_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageFeatures&quot; Field Group
+  """
+  features: HomePageFeaturesFeatures
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageFeatures&quot; Field Group
+  """
+  title: HomePageFeaturesTitle
+}
+
+"""
+The &quot;HomePageFeaturesFeatures&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageFeaturesFeatures implements HomePageFeaturesFeatures_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageFeaturesFeatures&quot; Field Group
+  """
+  feature1: HomePageFeaturesFeaturesFeature1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageFeaturesFeatures&quot; Field Group
+"""
+interface HomePageFeaturesFeatures_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageFeaturesFeatures&quot; Field Group
+  """
+  feature1: HomePageFeaturesFeaturesFeature1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+The &quot;HomePageFeaturesFeaturesFeature1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageFeaturesFeaturesFeature1 implements HomePageFeaturesFeaturesFeature1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageFeaturesFeaturesFeature1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageFeaturesFeaturesFeature1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageFeaturesFeaturesFeature1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageFeaturesFeaturesFeature1&quot; Field Group
+"""
+interface HomePageFeaturesFeaturesFeature1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageFeaturesFeaturesFeature1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageFeaturesFeaturesFeature1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageFeaturesFeaturesFeature1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageFeaturesTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageFeaturesTitle implements HomePageFeaturesTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageFeaturesTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageFeaturesTitle&quot; Field Group
+"""
+interface HomePageFeaturesTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageFeaturesTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;HomePageHero&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageHero implements HomePageHero_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  backgroundImage: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  buttons: HomePageHeroButtons
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  highlights: HomePageHeroHighlights
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  stats: HomePageHeroStats
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  title: HomePageHeroTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageHero&quot; Field Group
+"""
+interface HomePageHero_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  backgroundImage: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  buttons: HomePageHeroButtons
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  highlights: HomePageHeroHighlights
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  stats: HomePageHeroStats
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHero&quot; Field Group
+  """
+  title: HomePageHeroTitle
+}
+
+"""
+The &quot;HomePageHeroButtons&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageHeroButtons implements HomePageHeroButtons_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHeroButtons&quot; Field Group
+  """
+  button1: HomePageHeroButtonsButton1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageHeroButtons&quot; Field Group
+"""
+interface HomePageHeroButtons_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHeroButtons&quot; Field Group
+  """
+  button1: HomePageHeroButtonsButton1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+The &quot;HomePageHeroButtonsButton1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageHeroButtonsButton1 implements HomePageHeroButtonsButton1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroButtonsButton1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroButtonsButton1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageHeroButtonsButton1&quot; Field Group
+"""
+interface HomePageHeroButtonsButton1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroButtonsButton1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroButtonsButton1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+The &quot;HomePageHeroHighlights&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageHeroHighlights implements HomePageHeroHighlights_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroHighlights&quot; Field Group
+  """
+  highlight1: HomePageHeroHighlightsHighlight1
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageHeroHighlights&quot; Field Group
+"""
+interface HomePageHeroHighlights_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroHighlights&quot; Field Group
+  """
+  highlight1: HomePageHeroHighlightsHighlight1
+}
+
+"""
+The &quot;HomePageHeroHighlightsHighlight1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageHeroHighlightsHighlight1 implements HomePageHeroHighlightsHighlight1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroHighlightsHighlight1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroHighlightsHighlight1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroHighlightsHighlight1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageHeroHighlightsHighlight1&quot; Field Group
+"""
+interface HomePageHeroHighlightsHighlight1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroHighlightsHighlight1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroHighlightsHighlight1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroHighlightsHighlight1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageHeroStats&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageHeroStats implements HomePageHeroStats_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHeroStats&quot; Field Group
+  """
+  stats1: HomePageHeroStatsStats1
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageHeroStats&quot; Field Group
+"""
+interface HomePageHeroStats_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageHeroStats&quot; Field Group
+  """
+  stats1: HomePageHeroStatsStats1
+}
+
+"""
+The &quot;HomePageHeroStatsStats1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageHeroStatsStats1 implements HomePageHeroStatsStats1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroStatsStats1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroStatsStats1&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageHeroStatsStats1&quot; Field Group
+"""
+interface HomePageHeroStatsStats1_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroStatsStats1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageHeroStatsStats1&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;HomePageHeroTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageHeroTitle implements HomePageHeroTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;HomePageHeroTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageHeroTitle&quot; Field Group
+"""
+interface HomePageHeroTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;HomePageHeroTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;HomePageTeachers&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTeachers implements HomePageTeachers_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageTeachers&quot; Field Group
+  """
+  teachers: HomePageTeachersTeachers
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageTeachers&quot; Field Group
+  """
+  title: HomePageTeachersTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTeachers&quot; Field Group
+"""
+interface HomePageTeachers_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageTeachers&quot; Field Group
+  """
+  teachers: HomePageTeachersTeachers
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageTeachers&quot; Field Group
+  """
+  title: HomePageTeachersTitle
+}
+
+"""
+The &quot;HomePageTeachersTeachers&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTeachersTeachers implements HomePageTeachersTeachers_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachers&quot; Field Group
+  """
+  teacher1: HomePageTeachersTeachersTeacher1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachers&quot; Field Group
+  """
+  teacher2: HomePageTeachersTeachersTeacher2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachers&quot; Field Group
+  """
+  teacher3: HomePageTeachersTeachersTeacher3
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTeachersTeachers&quot; Field Group
+"""
+interface HomePageTeachersTeachers_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachers&quot; Field Group
+  """
+  teacher1: HomePageTeachersTeachersTeacher1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachers&quot; Field Group
+  """
+  teacher2: HomePageTeachersTeachersTeacher2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachers&quot; Field Group
+  """
+  teacher3: HomePageTeachersTeachersTeacher3
+}
+
+"""
+The &quot;HomePageTeachersTeachersTeacher1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTeachersTeachersTeacher1 implements HomePageTeachersTeachersTeacher1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+  """
+  experiences: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+"""
+interface HomePageTeachersTeachersTeacher1_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+  """
+  experiences: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher1&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;HomePageTeachersTeachersTeacher2&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTeachersTeachersTeacher2 implements HomePageTeachersTeachersTeacher2_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+  """
+  experiences: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+"""
+interface HomePageTeachersTeachersTeacher2_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+  """
+  experiences: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher2&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;HomePageTeachersTeachersTeacher3&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTeachersTeachersTeacher3 implements HomePageTeachersTeachersTeacher3_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+  """
+  experiences: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+"""
+interface HomePageTeachersTeachersTeacher3_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+  """
+  experiences: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTeachersTeachersTeacher3&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;HomePageTeachersTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTeachersTitle implements HomePageTeachersTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageTeachersTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTeachersTitle&quot; Field Group
+"""
+interface HomePageTeachersTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageTeachersTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;HomePageTestimonials&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTestimonials implements HomePageTestimonials_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageTestimonials&quot; Field Group
+  """
+  students: HomePageTestimonialsStudents
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageTestimonials&quot; Field Group
+  """
+  title: HomePageTestimonialsTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTestimonials&quot; Field Group
+"""
+interface HomePageTestimonials_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageTestimonials&quot; Field Group
+  """
+  students: HomePageTestimonialsStudents
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageTestimonials&quot; Field Group
+  """
+  title: HomePageTestimonialsTitle
+}
+
+"""
+The &quot;HomePageTestimonialsStudents&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTestimonialsStudents implements HomePageTestimonialsStudents_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsStudents&quot; Field Group
+  """
+  student1: HomePageTestimonialsStudentsStudent1
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTestimonialsStudents&quot; Field Group
+"""
+interface HomePageTestimonialsStudents_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsStudents&quot; Field Group
+  """
+  student1: HomePageTestimonialsStudentsStudent1
+}
+
+"""
+The &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTestimonialsStudentsStudent1 implements HomePageTestimonialsStudentsStudent1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+"""
+interface HomePageTestimonialsStudentsStudent1_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;HomePageTestimonialsTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageTestimonialsTitle implements HomePageTestimonialsTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageTestimonialsTitle&quot; Field Group
+"""
+interface HomePageTestimonialsTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageTestimonialsTitle&quot; Field Group
+  """
+  text1: String
+}
+
 """The knowledgeArticle type"""
 type KnowledgeArticle implements Node & ContentNode & UniformResourceIdentifiable & DatabaseIdentifier & NodeWithTemplate & Previewable & NodeWithTitle & NodeWithContentEditor & NodeWithFeaturedImage & NodeWithExcerpt & NodeWithRevisions & MenuItemLinkable & WithAcfKnowledgeArticleFields {
   """The ancestors of the content node."""
@@ -7820,7 +9408,7 @@ enum OrderEnum {
 A standalone content entry generally used for static, non-chronological content
 such as &quot;About Us&quot; or &quot;Contact&quot; pages.
 """
-type Page implements Node & ContentNode & UniformResourceIdentifiable & DatabaseIdentifier & NodeWithTemplate & Previewable & NodeWithTitle & NodeWithAuthor & NodeWithFeaturedImage & NodeWithComments & NodeWithRevisions & NodeWithPageAttributes & HierarchicalContentNode & HierarchicalNode & MenuItemLinkable {
+type Page implements Node & ContentNode & UniformResourceIdentifiable & DatabaseIdentifier & NodeWithTemplate & Previewable & NodeWithTitle & NodeWithAuthor & NodeWithFeaturedImage & NodeWithComments & NodeWithRevisions & NodeWithPageAttributes & HierarchicalContentNode & HierarchicalNode & MenuItemLinkable & WithAcfHomePage {
   """
   Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
   """
@@ -7999,6 +9587,9 @@ type Page implements Node & ContentNode & UniformResourceIdentifiable & Database
 
   """Whether the page object is password protected."""
   hasPassword: Boolean
+
+  """Fields of the HomePage ACF Field Group"""
+  homePage: HomePage
 
   """The globally unique identifier of the page object."""
   id: ID!
@@ -17366,6 +18957,14 @@ Provides access to fields of the &quot;AuthorFields&quot; ACF Field Group via th
 interface WithAcfAuthorFields {
   """Fields of the AuthorFields ACF Field Group"""
   authorFields: AuthorFields
+}
+
+"""
+Provides access to fields of the &quot;HomePage&quot; ACF Field Group via the &quot;homePage&quot; field
+"""
+interface WithAcfHomePage {
+  """Fields of the HomePage ACF Field Group"""
+  homePage: HomePage
 }
 
 """

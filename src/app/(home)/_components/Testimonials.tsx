@@ -3,39 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Quote } from "lucide-react";
+import { HomeData } from "@/services/home.service";
 
-const testimonials = [
-  {
-    content:
-      "Học được cách đầu tư không theo cảm xúc và fomo, biết được các phong cách đầu tư: phân tích cơ bản và phân tích kỹ thuật, tránh được các khoản đầu tư sai lầm",
-    avatar: "/home/DoanThanhSon.jpg",
-    name: "Anh Đoàn Thanh Sơn",
-    role: "Founder DNS Solutions ",
-  },
-  {
-    content:
-      "Chị cảm thấy lớp học rất thực chiến, thiết thực. Ban đầu chị chưa có nhiều nền tảng, chưa biết nhiều về thị trường chứng khoán, nhưng bây giờ chị rất thích và học đến khóa thứ 5 luôn rồi.",
-    avatar: "/home/Tran.jpg",
-    name: "Phạm Thị Bảo Trân",
-    role: "Giám đốc Trazenic Global",
-  },
-  {
-    content:
-      "Vui vẻ, giá trị kiến thức thực tế, thông tin bài bản, nhanh nhạy, 70% có thể áp dụng",
-    avatar: "/home/avatar.png",
-    name: "Tăng Thị Thuỳ Dung",
-    role: "Phó phòng kinh doanh",
-  },
-  {
-    content:
-      "Anh cảm thấy khoá Stock MasterTrack phải nói là quá OK, đáng học, nên học với anh thì xứng đáng với những gì anh bỏ ra. Tham gia khoá học có thể nói như được rút ngắn thời gian về kiến thức so vs mình tự học.",
-    avatar: "/home/avatar.png",
-    name: "Trần Bỉnh Tường",
-    role: "",
-  },
-] as const;
+type TestimonialsProps = Pick<HomeData, "testimonials">;
 
-export function Testimonials() {
+export function Testimonials({ testimonials }: TestimonialsProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMd, setIsMd] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -44,7 +16,11 @@ export function Testimonials() {
   const startX = useRef(0);
   const scrollLeftState = useRef(0);
 
-  const totalDots = Math.ceil(testimonials.length / 4);
+  const validStudents = testimonials.students.filter(
+    (student) => student.name && student.name.trim() !== "",
+  );
+
+  const totalDots = Math.ceil(validStudents.length / 4);
 
   useEffect(() => {
     const checkBreakpoint = () => {
@@ -70,7 +46,7 @@ export function Testimonials() {
         }
       } else {
         const itemIndex = Math.round(scrollLeft / containerWidth);
-        if (itemIndex >= 0 && itemIndex < testimonials.length) {
+        if (itemIndex >= 0 && itemIndex < validStudents.length) {
           setActiveIndex(itemIndex);
         }
       }
@@ -78,7 +54,7 @@ export function Testimonials() {
 
     container.addEventListener("scroll", handleScroll, { passive: true });
     return () => container.removeEventListener("scroll", handleScroll);
-  }, [totalDots]);
+  }, [totalDots, validStudents]);
 
   const scrollToPage = (index: number) => {
     const container = scrollContainerRef.current;
@@ -144,9 +120,9 @@ export function Testimonials() {
     <section className="w-full bg-[#fcfdfd] py-12 md:py-16 select-none overflow-hidden">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl font-black text-gray-900 uppercase pointer-events-none">
-          HỌC VIÊN NÓI GÌ VỀ <span className="text-lime-600">STOCK </span>
-          <span className="text-lime-600">MASTER</span>
-          <span className="text-fuchsia-700">TRACK?</span>
+          {testimonials.title.text_1}{" "}
+          <span className="text-lime-600">{testimonials.title.text_2}</span>
+          <span className="text-fuchsia-700">{testimonials.title.text_3}</span>
         </h2>
 
         <div className="relative mt-8 lg:mt-4">
@@ -159,7 +135,7 @@ export function Testimonials() {
             className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 md:flex-nowrap md:overflow-x-auto md:snap-x md:snap-mandatory cursor-grab active:cursor-grabbing"
             style={{ WebkitUserSelect: "none", userSelect: "none" }}
           >
-            {testimonials.map((item, index) => (
+            {validStudents.map((item, index) => (
               <div
                 key={index}
                 className="w-full shrink-0 snap-center flex flex-col justify-between rounded-xl bg-[#f8faf9]/60 p-5 border border-gray-100/50 md:w-[calc(25%-12px)] pointer-events-none"
@@ -214,7 +190,7 @@ export function Testimonials() {
                   aria-label={`Go to page ${index + 1}`}
                 />
               ))
-            : testimonials.map((_, index) => (
+            : validStudents.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => scrollToPage(index)}
