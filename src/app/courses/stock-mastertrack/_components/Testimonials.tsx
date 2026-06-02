@@ -146,7 +146,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                 >
                   <div>
                     <Quote className="size-5 rotate-180 text-lime-600/40 mb-3" />
-                    <p className="text-[15px] font-medium leading-relaxed text-gray-600">
+                    <p className="text-[15px] font-medium leading-relaxed text-gray-600 whitespace-pre-wrap">
                       {item.content}
                     </p>
                   </div>

@@ -3,39 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Quote } from "lucide-react";
+import { CommunityData } from "@/services/community.service";
 
-const testimonials = [
-  {
-    name: "Anh Đoàn Thanh Sơn",
-    role: "Founder DNS Solutions",
-    avatar: "/home/DoanThanhSon.jpg",
-    content:
-      "Học được cách đầu tư không theo cảm xúc và fomo, biết được các phong cách đầu tư: phân tích cơ bản và phân tích kỹ thuật, tránh được các khoản đầu tư sai lầm",
-  },
-  {
-    name: "Phạm Thị Bảo Trân",
-    role: "Giám đốc Trazenic Global",
-    avatar: "/home/Tran.jpg",
-    content:
-      "Chị cảm thấy lớp học rất thực chiến, thiết thực. Ban đầu chị chưa có nhiều nền tảng, chưa biết nhiều về thị trường chứng khoán, nhưng bây giờ chị rất thích và học đến khóa thứ 5 luôn rồi.",
-  },
-  {
-    name: "Tăng Thị Thuỳ Dung",
-    role: "Phó phòng kinh doanh",
-    avatar: "/courses/stock-mastertrack/avatar-2.jpg",
-    content:
-      "Vui vẻ, giá trị kiến thức thực tế, thông tin bài bản, nhanh nhạy, 70% có thể áp dụng",
-  },
-  {
-    name: "Trần Bỉnh Tường",
-    role: "",
-    avatar: "/courses/stock-mastertrack/avatar-3.jpg",
-    content:
-      "Anh cảm thấy khoá Stock MasterTrack phải nói là quá OK, đáng học, nên học với anh thì xứng đáng với những gì anh bỏ ra. Tham gia khoá học có thể nói như được rút ngắn thời gian về kiến thức so vs mình tự học.",
-  },
-];
+type TestimonialsProps = Pick<CommunityData, "testimonials">;
 
-export function Testimonials() {
+export function Testimonials({ testimonials }: TestimonialsProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [screenType, setScreenType] = useState<"mobile" | "tablet" | "desktop">(
     "mobile",
@@ -46,8 +18,12 @@ export function Testimonials() {
   const startX = useRef(0);
   const scrollLeftState = useRef(0);
 
-  const totalDotsDesktop = Math.ceil(testimonials.length / 3);
-  const totalDotsTablet = Math.ceil(testimonials.length / 2);
+  const validMembers = testimonials.members.filter(
+    (student) => student.name && student.name.trim() !== "",
+  );
+
+  const totalDotsDesktop = Math.ceil(validMembers.length / 3);
+  const totalDotsTablet = Math.ceil(validMembers.length / 2);
 
   useEffect(() => {
     const checkBreakpoint = () => {
@@ -85,7 +61,7 @@ export function Testimonials() {
         }
       } else {
         const itemIndex = Math.round(scrollLeft / containerWidth);
-        if (itemIndex >= 0 && itemIndex < testimonials.length) {
+        if (itemIndex >= 0 && itemIndex < validMembers.length) {
           setActiveIndex(itemIndex);
         }
       }
@@ -93,7 +69,7 @@ export function Testimonials() {
 
     container.addEventListener("scroll", handleScroll, { passive: true });
     return () => container.removeEventListener("scroll", handleScroll);
-  }, [totalDotsDesktop, totalDotsTablet]);
+  }, [totalDotsDesktop, totalDotsTablet, validMembers]);
 
   const scrollToPage = (index: number) => {
     const container = scrollContainerRef.current;
@@ -159,7 +135,7 @@ export function Testimonials() {
     <section className="w-full bg-slate-50/50 px-6 py-12 lg:px-12 lg:py-20 border-t border-gray-100 overflow-hidden select-none">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 uppercase tracking-wide text-center pointer-events-none">
-          THÀNH VIÊN NÓI GÌ VỀ CỘNG ĐỒNG?
+          {testimonials.title}
         </h2>
 
         <div className="relative mt-10">
@@ -172,27 +148,29 @@ export function Testimonials() {
             className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 sm:flex-nowrap sm:overflow-x-auto sm:snap-x sm:snap-mandatory cursor-grab active:cursor-grabbing"
             style={{ WebkitUserSelect: "none", userSelect: "none" }}
           >
-            {testimonials.map((item, index) => (
+            {validMembers.map((item, index) => (
               <div
                 key={index}
                 className="w-full shrink-0 snap-center rounded-2xl border border-gray-100 bg-white p-6 shadow-sm flex flex-col justify-between sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] pointer-events-none"
               >
                 <div className="flex flex-col">
                   <Quote className="size-6 text-emerald-600/20 rotate-180 fill-current mb-3" />
-                  <p className="text-sm lg:text-[15px] font-medium text-gray-600 leading-relaxed">
+                  <p className="text-sm lg:text-[15px] font-medium text-gray-600 leading-relaxed whitespace-pre-wrap">
                     {item.content}
                   </p>
                 </div>
 
                 <div className="mt-2 lg:mt-4 flex items-center gap-3 border-t border-gray-100">
                   <div className="relative size-10 shrink-0 overflow-hidden rounded-full bg-slate-100 border border-gray-100">
-                    <Image
-                      src={item.avatar}
-                      alt={item.name}
-                      fill
-                      draggable={false}
-                      className="object-cover"
-                    />
+                    {item.avatar && (
+                      <Image
+                        src={item.avatar}
+                        alt={item.name}
+                        fill
+                        draggable={false}
+                        className="object-cover"
+                      />
+                    )}
                   </div>
                   <div className="flex flex-col min-w-0">
                     <span className="text-sm font-bold text-gray-900 truncate">
@@ -238,7 +216,7 @@ export function Testimonials() {
             ))}
 
           {screenType === "mobile" &&
-            testimonials.map((_, index) => (
+            validMembers.map((_, index) => (
               <button
                 key={index}
                 onClick={() => scrollToPage(index)}
