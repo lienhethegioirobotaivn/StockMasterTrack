@@ -3,46 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Quote } from "lucide-react";
+import { StockMasterTrackCourseData } from "@/services/courses/stockmastertrack.service";
 
-type Testimonial = {
-  name: string;
-  role: string;
-  avatar: string;
-  content: string;
-};
+type TestimonialsProps = Pick<StockMasterTrackCourseData, "testimonials">;
 
-const testimonials: Testimonial[] = [
-  {
-    name: "Anh Đoàn Thanh Sơn",
-    role: "Founder DNS Solutions",
-    avatar: "/home/DoanThanhSon.jpg",
-    content:
-      "Học được cách đầu tư không theo cảm xúc và fomo, biết được các phong cách đầu tư: phân tích cơ bản và phân tích kỹ thuật, tránh được các khoản đầu tư sai lầm",
-  },
-  {
-    name: "Phạm Thị Bảo Trân",
-    role: "Giám đốc Trazenic Global",
-    avatar: "/home/Tran.jpg",
-    content:
-      "Chị cảm thấy lớp học rất thực chiến, thiết thực. Ban đầu chị chưa có nhiều nền tảng, chưa biết nhiều về thị trường chứng khoán, nhưng bây giờ chị rất thích và học đến khóa thứ 5 luôn rồi.",
-  },
-  {
-    name: "Tăng Thị Thuỳ Dung",
-    role: "Phó phòng kinh doanh",
-    avatar: "/courses/stock-mastertrack/avatar-2.jpg",
-    content:
-      "Vui vẻ, giá trị kiến thức thực tế, thông tin bài bản, nhanh nhạy, 70% có thể áp dụng",
-  },
-  {
-    name: "Trần Bỉnh Tường",
-    role: "",
-    avatar: "/courses/stock-mastertrack/avatar-3.jpg",
-    content:
-      "Anh cảm thấy khoá Stock MasterTrack phải nói là quá OK, đáng học, nên học với anh thì xứng đáng với những gì anh bỏ ra. Tham gia khoá học có thể nói như được rút ngắn thời gian về kiến thức so vs mình tự học.",
-  },
-];
-
-export function Testimonials() {
+export function Testimonials({ testimonials }: TestimonialsProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMd, setIsMd] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -51,7 +16,11 @@ export function Testimonials() {
   const startX = useRef(0);
   const scrollLeftState = useRef(0);
 
-  const totalDots = Math.ceil(testimonials.length / 3);
+  const validStudents = testimonials.students.filter(
+    (student) => student.name && student.name.trim() !== "",
+  );
+
+  const totalDots = Math.ceil(validStudents.length / 3);
 
   useEffect(() => {
     const checkBreakpoint = () => {
@@ -77,7 +46,7 @@ export function Testimonials() {
         }
       } else {
         const itemIndex = Math.round(scrollLeft / containerWidth);
-        if (itemIndex >= 0 && itemIndex < testimonials.length) {
+        if (itemIndex >= 0 && itemIndex < validStudents.length) {
           setActiveIndex(itemIndex);
         }
       }
@@ -85,7 +54,7 @@ export function Testimonials() {
 
     container.addEventListener("scroll", handleScroll, { passive: true });
     return () => container.removeEventListener("scroll", handleScroll);
-  }, [totalDots]);
+  }, [totalDots, validStudents]);
 
   const scrollToPage = (index: number) => {
     const container = scrollContainerRef.current;
@@ -151,10 +120,12 @@ export function Testimonials() {
     <section className="bg-white py-12 px-6 lg:px-12 font-sans overflow-hidden select-none">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-[26px] sm:text-3xl lg:text-[34px] font-extrabold text-gray-900 uppercase leading-tight pointer-events-none">
-          HỌC VIÊN NÓI GÌ VỀ
+          {testimonials.title.text_1}
           <br />
-          <span className="text-lime-600">STOCK</span>{" "}
-          <span className="text-fuchsia-700">MASTERTRACK</span>
+          <span className="text-lime-600">
+            {testimonials.title.text_2}
+          </span>{" "}
+          <span className="text-fuchsia-700">{testimonials.title.text_3}</span>
         </h2>
 
         <div className="relative mt-6">
@@ -167,40 +138,43 @@ export function Testimonials() {
             className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 md:flex-nowrap md:overflow-x-auto md:snap-x md:snap-mandatory cursor-grab active:cursor-grabbing"
             style={{ WebkitUserSelect: "none", userSelect: "none" }}
           >
-            {testimonials.map((item, index) => (
-              <div
-                key={index}
-                className="w-full shrink-0 snap-center rounded-2xl border border-gray-100 bg-white p-6 shadow-xs flex flex-col justify-between md:w-[calc(33.333%-11px)] pointer-events-none"
-              >
-                <div>
-                  <Quote className="size-5 rotate-180 text-lime-600/40 mb-3" />
-                  <p className="text-[15px] font-medium leading-relaxed text-gray-600">
-                    {item.content}
-                  </p>
-                </div>
-
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="relative size-10 shrink-0 overflow-hidden rounded-full border border-gray-100">
-                    <Image
-                      src={item.avatar}
-                      alt={item.name}
-                      fill
-                      draggable={false}
-                      className="object-cover"
-                    />
-                  </div>
-
+            {validStudents &&
+              validStudents.map((item, index) => (
+                <div
+                  key={index}
+                  className="w-full shrink-0 snap-center rounded-2xl border border-gray-100 bg-white p-6 shadow-xs flex flex-col justify-between md:w-[calc(33.333%-11px)] pointer-events-none"
+                >
                   <div>
-                    <h3 className="text-base font-bold text-gray-900">
-                      {item.name}
-                    </h3>
-                    <p className="text-sm font-medium text-gray-400 mt-0.5">
-                      {item.role}
+                    <Quote className="size-5 rotate-180 text-lime-600/40 mb-3" />
+                    <p className="text-[15px] font-medium leading-relaxed text-gray-600">
+                      {item.content}
                     </p>
                   </div>
+
+                  <div className="mt-6 flex items-center gap-3">
+                    <div className="relative size-10 shrink-0 overflow-hidden rounded-full border border-gray-100">
+                      {item.avatar && (
+                        <Image
+                          src={item.avatar}
+                          alt={item.name}
+                          fill
+                          draggable={false}
+                          className="object-cover"
+                        />
+                      )}
+                    </div>
+
+                    <div>
+                      <h3 className="text-base font-bold text-gray-900">
+                        {item.name}
+                      </h3>
+                      <p className="text-sm font-medium text-gray-400 mt-0.5">
+                        {item.role}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
 
@@ -218,7 +192,7 @@ export function Testimonials() {
                   aria-label={`Go to page ${index + 1}`}
                 />
               ))
-            : testimonials.map((_, index) => (
+            : validStudents.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => scrollToPage(index)}

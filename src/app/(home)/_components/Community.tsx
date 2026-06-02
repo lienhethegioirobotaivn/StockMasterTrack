@@ -25,16 +25,16 @@ export function Community({ community }: CommunityProps) {
             </p>
 
             <div className="mt-6 flex">
-              <Link
-                href={community.button.endpoint}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full lg:w-fit h-11 lg:h-9 rounded-lg bg-lime-600 px-4 text-base lg:text-sm font-bold text-white hover:bg-lime-700 gap-2">
+              <Button asChild className="w-full lg:w-fit h-11 lg:h-9 rounded-lg bg-lime-600 px-4 text-base lg:text-sm font-bold text-white hover:bg-lime-700 gap-2">
+                <Link
+                  href={community.button.endpoint}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <MessageSquare className="size-3.5 fill-current" />
                   {community.button.text}
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
 

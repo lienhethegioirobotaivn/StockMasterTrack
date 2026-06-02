@@ -36,23 +36,24 @@ export function Hero({ hero }: HeroProps) {
             </p>
 
             <div className="mt-5 flex flex-wrap gap-4">
-              <Link href={hero.buttons[0].endpoint}>
-                <Button className="w-full lg:w-fit inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-fuchsia-700 px-6 text-sm font-bold text-white transition-all hover:bg-fuchsia-800">
+              <Button asChild className="w-full lg:w-fit inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-fuchsia-700 px-6 text-sm font-bold text-white transition-all hover:bg-fuchsia-800">
+                <Link href={hero.buttons[0].endpoint} className="w-full lg:w-fit">
                   {hero.buttons[0].text}
                   <ArrowRight className="size-4" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
 
-              <Link
-                href={hero.buttons[1].endpoint}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full lg:w-fit inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 text-sm font-bold text-gray-700 transition-all hover:bg-gray-50">
+              <Button asChild className="w-full lg:w-fit inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-6 text-sm font-bold text-gray-700 transition-all hover:bg-gray-50">
+                <Link
+                  href={hero.buttons[1].endpoint}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full lg:w-fit"
+                >
                   {hero.buttons[1].text}
                   <Users className="size-4 text-lime-600" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
 
             <div className="mt-8 flex flex-col lg:flex-row gap-6 border border-gray-300 rounded-xl p-6 lg:p-0 lg:border-none">
