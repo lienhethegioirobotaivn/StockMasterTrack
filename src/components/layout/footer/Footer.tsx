@@ -1,36 +1,28 @@
 import Image from "next/image";
-import { Mail, Phone, MapPin, ArrowRight, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
+import { FooterService } from "@/services/footer.service";
+import { SiZalo } from "react-icons/si";
 
-const exploreLinks = {
-  items: [
-    { text: "Trang chủ", endpoint: "/" },
-    { text: "Khóa học", endpoint: "/courses" },
-    { text: "Cộng đồng", endpoint: "/community" },
-    { text: "Sự kiện", endpoint: "/events" },
-    { text: "Kiến thức", endpoint: "/knowledge" },
-  ],
-};
+export async function Footer() {
+  const pageData = await FooterService.getData();
+  if (!pageData) return null;
+  const footer = pageData;
 
-const supportLinks = {
-  items: [
-    { text: "Câu hỏi thường gặp", endpoint: "/" },
-    { text: "Chính sách bảo mật", endpoint: "/" },
-    { text: "Điều khoản sử dụng", endpoint: "/" },
-    { text: "Hướng dẫn thanh toán", endpoint: "/" },
-  ],
-};
+  const socialIcons = [
+    { icon: FaFacebook, link: footer.column_1.facebook },
+    { icon: FaYoutube, link: footer.column_1.youtube },
+    { icon: SiZalo, link: footer.column_1.zalo },
+    { icon: FaTiktok, link: footer.column_1.tiktok },
+  ];
 
-const contactItems = [
-  { icon: Mail, text: "lienhe@thegioirobot.ai.vn" },
-  { icon: Phone, text: "0394 783 239" },
-  { icon: MapPin, text: "184/1A Lê Văn Sỹ, Phú Nhuận, TPHCM" },
-];
+  const contactItems = [
+    { icon: Mail, text: footer.column_4.email },
+    { icon: Phone, text: footer.column_4.phone },
+    { icon: MapPin, text: footer.column_4.address },
+  ];
 
-const socialIcons = [FaFacebook, FaYoutube, MessageSquare, FaTiktok];
-
-export function Footer() {
   return (
     <footer className="w-full bg-[#0a1625] text-white">
       <div className="mx-auto px-8 pt-10 pb-6">
@@ -39,7 +31,7 @@ export function Footer() {
             <Link href={"/"} className="flex items-center gap-2">
               <div className="relative h-15 w-45 shrink-0">
                 <Image
-                  src="/home/Logo3.png"
+                  src={footer.column_1.image}
                   alt="STOCK MASTERTRACK LOGO"
                   fill
                   sizes="(max-width: 768px) 100px, 200px"
@@ -49,20 +41,19 @@ export function Footer() {
             </Link>
 
             <p className="text-[15px] lg:text-[12px] font-medium text-gray-400 lg:w-60">
-              Hệ sinh thái đào tạo và cộng đồng đầu tư thực chiến hàng đầu tại
-              Việt Nam.
+              {footer.column_1.text}
             </p>
 
             <div className="flex items-center gap-3 pt-2">
-              {socialIcons.map((Icon, idx) => (
+              {socialIcons.map((item, idx) => (
                 <Link
                   key={idx}
-                  href={"https://zalo.me/g/tmf9comkbyxqsqiv2ler"}
+                  href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex size-8 items-center justify-center rounded-full border border-gray-700 bg-gray-900/40 text-gray-400 transition-colors hover:border-gray-500 hover:text-white"
                 >
-                  <Icon className="size-4 fill-current stroke-1" />
+                  <item.icon className="size-4 fill-current stroke-1" />
                 </Link>
               ))}
             </div>
@@ -70,16 +61,16 @@ export function Footer() {
 
           <div className="lg:col-span-1 lg:mx-auto">
             <h3 className="text-lg lg:text-[15px] font-bold text-gray-200 uppercase">
-              KHÁM PHÁ
+              {footer.column_2.title}
             </h3>
             <ul className="mt-3 space-y-2">
-              {exploreLinks.items.map((explore) => (
-                <li key={explore.text}>
+              {footer.column_2.links.map((item, index) => (
+                <li key={index}>
                   <Link
-                    href={explore.endpoint}
+                    href={item.endpoint}
                     className="text-base lg:text-[12px] font-medium text-gray-400 transition-colors hover:text-white"
                   >
-                    {explore.text}
+                    {item.text}
                   </Link>
                 </li>
               ))}
@@ -88,16 +79,16 @@ export function Footer() {
 
           <div className="lg:col-span-1 lg:mx-auto">
             <h3 className="text-lg lg:text-[15px] font-bold text-gray-200 uppercase">
-              HỖ TRỢ
+              {footer.column_3.title}
             </h3>
             <ul className="mt-3 space-y-2">
-              {supportLinks.items.map((support) => (
-                <li key={support.text}>
+              {footer.column_3.links.map((item, index) => (
+                <li key={index}>
                   <Link
-                    href={support.endpoint}
+                    href={item.endpoint}
                     className="text-base lg:text-[12px] font-medium text-gray-400 transition-colors hover:text-white"
                   >
-                    {support.text}
+                    {item.text}
                   </Link>
                 </li>
               ))}
@@ -106,7 +97,7 @@ export function Footer() {
 
           <div className="lg:col-span-1 lg:mx-auto">
             <h3 className="text-lg lg:text-[15px] font-bold text-gray-200 uppercase">
-              LIÊN HỆ
+              {footer.column_4.title}
             </h3>
             <ul className="mt-3 space-y-2.5">
               {contactItems.map((item, idx) => (
@@ -123,11 +114,11 @@ export function Footer() {
 
           <div className="space-y-3 sm:col-span-2 md:col-span-3 lg:col-span-1">
             <h3 className="text-lg lg:text-[15px] font-bold text-gray-200 uppercase">
-              ĐĂNG KÝ NHẬN BẢN TIN
+              {footer.column_5.title}
             </h3>
 
             <p className="text-[15px] lg:text-[12px] font-medium text-gray-400">
-              Nhận bản tin thị trường và kiến thức đầu tư miễn phí mỗi tuần!
+              {footer.column_5.text}
             </p>
 
             <div className="flex w-full items-center rounded-md border border-gray-800 bg-[#0e1e32]">
