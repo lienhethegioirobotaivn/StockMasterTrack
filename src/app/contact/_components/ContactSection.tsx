@@ -15,47 +15,13 @@ import { SiZalo } from "react-icons/si";
 import { useRef, useState } from "react";
 import { env } from "@/lib/env";
 import { toast } from "sonner";
+import { ContactData } from "@/services/contact.service";
 
-interface ContactFormProps {
+interface ContactFormProps extends Pick<ContactData, "contact_section"> {
   formId?: string | number;
   pageId?: string | number;
   formIndex?: string | number;
 }
-
-const contactDetails = [
-  {
-    icon: MapPin,
-    title: "Địa chỉ",
-    content: "184/1A Lê Văn Sỹ, Phú Nhuận, TPHCM",
-  },
-  {
-    icon: Phone,
-    title: "Hotline",
-    content: "0394 783 239\n(Thứ 2 - Thứ 6: 8h30 - 17h30)",
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    content: "lienhe@thegioirobot.ai.vn",
-  },
-  {
-    icon: FaFacebook,
-    title: "Fanpage",
-    content: "fb.com/stockmastertrack",
-  },
-  {
-    icon: Clock,
-    title: "Giờ làm việc",
-    content: "Thứ 2 - Thứ 6: 8h30 - 17h30\nThứ 7: 8h30 - 12h00",
-  },
-];
-
-const socialLinks = [
-  { icon: FaFacebook, href: "#", color: "text-blue-600 bg-blue-50" },
-  { icon: FaYoutube, href: "#", color: "text-red-600 bg-red-50" },
-  { icon: SiZalo, href: "#", color: "text-blue-500 bg-blue-50" },
-  { icon: FaTelegramPlane, href: "#", color: "text-sky-500 bg-sky-50" },
-];
 
 const initialFormData = {
   name: "",
@@ -73,7 +39,8 @@ interface FormErrors {
   message?: string;
 }
 
-export function ContactForm({
+export function ContactSection({
+  contact_section,
   formId = 60,
   pageId = 1,
   formIndex = 1,
@@ -205,6 +172,57 @@ export function ContactForm({
       setIsLoading(false);
     }
   };
+
+  const contactDetails = [
+    {
+      icon: MapPin,
+      title: "Địa chỉ",
+      content: contact_section.right_section.address,
+    },
+    {
+      icon: Phone,
+      title: "Hotline",
+      content: contact_section.right_section.hotline,
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      content: contact_section.right_section.email,
+    },
+    {
+      icon: FaFacebook,
+      title: "Fanpage",
+      content: contact_section.right_section.fanpage,
+    },
+    {
+      icon: Clock,
+      title: "Giờ làm việc",
+      content: contact_section.right_section.working_hours,
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: FaFacebook,
+      link: contact_section.right_section.contact.facebook,
+      color: "text-blue-600 bg-blue-50",
+    },
+    {
+      icon: FaYoutube,
+      link: contact_section.right_section.contact.youtube,
+      color: "text-red-600 bg-red-50",
+    },
+    {
+      icon: SiZalo,
+      link: contact_section.right_section.contact.zalo,
+      color: "text-blue-500 bg-blue-50",
+    },
+    {
+      icon: FaTelegramPlane,
+      link: contact_section.right_section.contact.telegram,
+      color: "text-sky-500 bg-sky-50",
+    },
+  ];
 
   return (
     <section className="w-full bg-slate-50/50 py-12 lg:py-16">
@@ -400,7 +418,7 @@ export function ContactForm({
           <div className="lg:col-span-4 bg-white rounded-2xl border border-gray-100 p-6 lg:p-8 shadow-xs flex flex-col justify-between self-stretch">
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-[24px] font-bold text-gray-900 mb-6 text-center lg:text-left">
-                THÔNG TIN LIÊN HỆ
+                {contact_section.right_section.title}
               </h2>
 
               <div className="space-y-6">
@@ -430,7 +448,7 @@ export function ContactForm({
                 {socialLinks.map((social, index) => (
                   <Link
                     key={index}
-                    href={"https://zalo.me/0394783239"}
+                    href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`size-10 rounded-full flex items-center justify-center transition-transform hover:scale-105 border border-gray-100 ${social.color}`}
