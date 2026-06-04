@@ -16146,6 +16146,7 @@ type RootQuery {
     """Arguments for filtering the connection"""
     where: RootQueryToPluginConnectionWhereArgs
   ): RootQueryToPluginConnection
+  popularKnowledgeArticles: [Int!]!
 
   """An object of the post Type. """
   post(

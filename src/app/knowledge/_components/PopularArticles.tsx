@@ -1,59 +1,21 @@
 import Image from "next/image";
 import { Eye } from "lucide-react";
+import { KnowledgeArticle } from "@/features/knowledge/types";
+import Link from "next/link";
 
-type PopularArticle = {
-  title: string;
-  category: string;
-  image: string;
-  date: string;
-  views: string;
-  catColor: string;
-};
+interface PopularArticlesProps {
+  articles: KnowledgeArticle[];
+}
 
-const articles: PopularArticle[] = [
-  {
-    title: "Danh mục đầu tư là gì? Cách xây dựng danh mục hiệu quả",
-    category: "KIẾN THỨC NỀN TẢNG",
-    image: "/knowledge/popular-1.jpg",
-    date: "10/05/2024",
-    views: "1.5K",
-    catColor: "text-slate-500",
-  },
-  {
-    title: "Phân tích ngành ngân hàng: Triển vọng và cơ hội đầu tư 2024",
-    category: "PHÂN TÍCH CƠ BẢN",
-    image: "/knowledge/popular-2.jpg",
-    date: "08/05/2024",
-    views: "1.1K",
-    catColor: "text-lime-600",
-  },
-  {
-    title: "Breakout là gì? Cách giao dịch breakout hiệu quả",
-    category: "PHÂN TÍCH KỸ THUẬT",
-    image: "/knowledge/popular-3.jpg",
-    date: "06/05/2024",
-    views: "986",
-    catColor: "text-fuchsia-700",
-  },
-  {
-    title: "Dòng tiền thông minh là gì? Cách nhận biết trên thị trường",
-    category: "PHÂN TÍCH THỊ TRƯỜNG",
-    image: "/knowledge/popular-4.jpg",
-    date: "04/05/2024",
-    views: "1.3K",
-    catColor: "text-slate-600",
-  },
-  {
-    title: "Đầu tư giá trị là gì? Triết lý của Warren Buffett",
-    category: "KIẾN THỨC NỀN TẢNG",
-    image: "/knowledge/popular-5.jpg",
-    date: "02/05/2024",
-    views: "1.7K",
-    catColor: "text-slate-500",
-  },
+const CATEGORY_COLORS = [
+  "text-slate-500",
+  "text-lime-600",
+  "text-fuchsia-700",
+  "text-slate-600",
+  "text-blue-600",
 ];
 
-export function PopularArticles() {
+export function PopularArticles({ articles }: PopularArticlesProps) {
   return (
     <section className="w-full lg:py-5">
       <h2 className="mb-6 text-2xl font-bold uppercase text-slate-900">
@@ -61,52 +23,60 @@ export function PopularArticles() {
       </h2>
 
       <div className="relative flex flex-col">
-        <div className="absolute left-2.5 sm:left-3.5 top-7 lg:top-8 bottom-7 lg:bottom-8 w-px sm:bg-gray-200" />
+        <div className="absolute top-7 bottom-7 left-2.5 w-px sm:left-3.5 sm:bg-gray-200 lg:top-8 lg:bottom-8" />
 
         {articles.map((article, index) => (
-          <div
-            key={article.title}
+          <Link
+            key={article.slug}
+            href={`/knowledge/${article.slug}`}
             className="relative flex items-center gap-3 py-3.5 md:gap-4"
           >
-            <div className="z-10 hidden sm:flex size-5 sm:size-7 shrink-0 items-center justify-center rounded-full bg-lime-600 text-xs font-bold text-white ring-4 ring-white">
+            <div className="z-10 hidden size-5 shrink-0 items-center justify-center rounded-full bg-lime-600 text-xs font-bold text-white ring-4 ring-white sm:flex sm:size-7">
               {index + 1}
             </div>
 
             <div className="relative aspect-16/10 w-20 shrink-0 overflow-hidden rounded-lg md:w-28">
               <Image
-                src={article.image}
-                alt={article.title}
+                src={article.image?.url ?? ""}
+                alt={article.image?.alt ?? ""}
                 fill
                 className="object-cover"
               />
             </div>
 
-            <div className="flex flex-1 items-start justify-between gap-4 min-w-0">
+            <div className="flex min-w-0 flex-1 items-start justify-between gap-4">
               <div className="min-w-0">
-                <h3 className="line-clamp-2 text-[13px] sm:text-base lg:text-base font-bold leading-snug text-slate-900">
+                <h3 className="line-clamp-2 text-[13px] font-bold leading-snug text-slate-900 sm:text-base lg:text-base">
                   {article.title}
                 </h3>
 
                 <div className="mt-2 flex flex-wrap items-center gap-2 text-[10px] md:text-[11px]">
-                  <span className={`font-bold ${article.catColor}`}>
-                    {article.category}
+                  <span
+                    className={`font-bold ${
+                      CATEGORY_COLORS[index % CATEGORY_COLORS.length]
+                    }`}
+                  >
+                    {article.category?.name}
                   </span>
+
                   <span className="text-gray-300">|</span>
+
                   <span className="text-gray-400">{article.date}</span>
                 </div>
 
-                <div className="mt-1 flex sm:hidden items-center gap-1 shrink-0 text-xs text-gray-400">
+                <div className="mt-1 flex items-center gap-1 text-xs text-gray-400 sm:hidden">
                   <Eye className="size-3" />
-                  {article.views} <span>lượt xem</span>
+                  {article.viewsFormatted}
+                  <span>lượt xem</span>
                 </div>
               </div>
 
-              <div className="hidden sm:flex items-center gap-1 shrink-0 text-[11px] text-gray-400 md:text-xs">
+              <div className="hidden shrink-0 items-center gap-1 text-[11px] text-gray-400 sm:flex md:text-xs">
                 <Eye className="size-3.5" />
-                {article.views}
+                {article.viewsFormatted}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

@@ -1,0 +1,51 @@
+query GetKnowledgeArticlesByIds($ids: [ID]) {
+  knowledgeArticles(where: { in: $ids }) {
+    nodes {
+      id
+      databaseId
+      title
+      date
+      slug
+      excerpt
+
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+
+      knowledgeArticleFields {
+        readingTime
+
+        author {
+          nodes {
+            ... on Author {
+              title
+
+              authorFields {
+                role
+
+                avatar {
+                  node {
+                    sourceUrl
+                    altText
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      knowledgeCategories {
+        nodes {
+          name
+          slug
+        }
+      }
+
+      views
+    }
+  }
+}
