@@ -1,5 +1,6 @@
 export type KnowledgeArticle = {
   id: string;
+  databaseId: number;
   title: string;
   date: string;
   slug: string;
@@ -27,4 +28,7 @@ export type KnowledgeArticle = {
       alt: string;
     } | null;
   } | null;
+
+  views: number;
+  viewsFormatted: string;
 };

@@ -1849,6 +1849,1242 @@ input CommentToParentCommentConnectionWhereArgs {
 }
 
 """
+The &quot;CommunityPage&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPage implements CommunityPage_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPage&quot; Field Group
+  """
+  backupChannels: CommunityPageBackupChannels
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPage&quot; Field Group
+  """
+  communityContent: CommunityPageCommunityContent
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPage&quot; Field Group
+  """
+  hero: CommunityPageHero
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPage&quot; Field Group
+  """
+  testimonials: CommunityPageTestimonials
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPage&quot; Field Group
+"""
+interface CommunityPage_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPage&quot; Field Group
+  """
+  backupChannels: CommunityPageBackupChannels
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPage&quot; Field Group
+  """
+  communityContent: CommunityPageCommunityContent
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPage&quot; Field Group
+  """
+  hero: CommunityPageHero
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPage&quot; Field Group
+  """
+  testimonials: CommunityPageTestimonials
+}
+
+"""
+The &quot;CommunityPageBackupChannels&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageBackupChannels implements CommunityPageBackupChannels_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannels&quot; Field Group
+  """
+  channels: CommunityPageBackupChannelsChannels
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannels&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannels&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageBackupChannels&quot; Field Group
+"""
+interface CommunityPageBackupChannels_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannels&quot; Field Group
+  """
+  channels: CommunityPageBackupChannelsChannels
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannels&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannels&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;CommunityPageBackupChannelsChannels&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageBackupChannelsChannels implements CommunityPageBackupChannelsChannels_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannels&quot; Field Group
+  """
+  channel1: CommunityPageBackupChannelsChannelsChannel1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageBackupChannelsChannels&quot; Field Group
+"""
+interface CommunityPageBackupChannelsChannels_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannels&quot; Field Group
+  """
+  channel1: CommunityPageBackupChannelsChannelsChannel1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+The &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageBackupChannelsChannelsChannel1 implements CommunityPageBackupChannelsChannelsChannel1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+  """
+  button: CommunityPageBackupChannelsChannelsChannel1Button
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+"""
+interface CommunityPageBackupChannelsChannelsChannel1_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+  """
+  button: CommunityPageBackupChannelsChannelsChannel1Button
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;CommunityPageBackupChannelsChannelsChannel1Button&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageBackupChannelsChannelsChannel1Button implements CommunityPageBackupChannelsChannelsChannel1Button_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1Button&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1Button&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageBackupChannelsChannelsChannel1Button&quot; Field Group
+"""
+interface CommunityPageBackupChannelsChannelsChannel1Button_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1Button&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageBackupChannelsChannelsChannel1Button&quot; Field Group
+  """
+  text: String
+}
+
+"""
+The &quot;CommunityPageCommunityContent&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageCommunityContent implements CommunityPageCommunityContent_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContent&quot; Field Group
+  """
+  stats: CommunityPageCommunityContentStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContent&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageCommunityContent&quot; Field Group
+"""
+interface CommunityPageCommunityContent_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContent&quot; Field Group
+  """
+  stats: CommunityPageCommunityContentStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContent&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;CommunityPageCommunityContentStats&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageCommunityContentStats implements CommunityPageCommunityContentStats_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStats&quot; Field Group
+  """
+  stat1: CommunityPageCommunityContentStatsStat1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStats&quot; Field Group
+  """
+  stat2: CommunityPageCommunityContentStatsStat2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStats&quot; Field Group
+  """
+  stat3: CommunityPageCommunityContentStatsStat3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStats&quot; Field Group
+  """
+  stat4: CommunityPageCommunityContentStatsStat4
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageCommunityContentStats&quot; Field Group
+"""
+interface CommunityPageCommunityContentStats_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStats&quot; Field Group
+  """
+  stat1: CommunityPageCommunityContentStatsStat1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStats&quot; Field Group
+  """
+  stat2: CommunityPageCommunityContentStatsStat2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStats&quot; Field Group
+  """
+  stat3: CommunityPageCommunityContentStatsStat3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStats&quot; Field Group
+  """
+  stat4: CommunityPageCommunityContentStatsStat4
+}
+
+"""
+The &quot;CommunityPageCommunityContentStatsStat1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageCommunityContentStatsStat1 implements CommunityPageCommunityContentStatsStat1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageCommunityContentStatsStat1&quot; Field Group
+"""
+interface CommunityPageCommunityContentStatsStat1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;CommunityPageCommunityContentStatsStat2&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageCommunityContentStatsStat2 implements CommunityPageCommunityContentStatsStat2_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat2&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat2&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat2&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageCommunityContentStatsStat2&quot; Field Group
+"""
+interface CommunityPageCommunityContentStatsStat2_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat2&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat2&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat2&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;CommunityPageCommunityContentStatsStat3&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageCommunityContentStatsStat3 implements CommunityPageCommunityContentStatsStat3_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat3&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat3&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat3&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageCommunityContentStatsStat3&quot; Field Group
+"""
+interface CommunityPageCommunityContentStatsStat3_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat3&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat3&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat3&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;CommunityPageCommunityContentStatsStat4&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageCommunityContentStatsStat4 implements CommunityPageCommunityContentStatsStat4_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat4&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat4&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat4&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageCommunityContentStatsStat4&quot; Field Group
+"""
+interface CommunityPageCommunityContentStatsStat4_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat4&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat4&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageCommunityContentStatsStat4&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;CommunityPageHero&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageHero implements CommunityPageHero_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  backgroundImage: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  content: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  stats: CommunityPageHeroStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  title: CommunityPageHeroTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageHero&quot; Field Group
+"""
+interface CommunityPageHero_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  backgroundImage: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  content: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  stats: CommunityPageHeroStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;CommunityPageHero&quot; Field Group
+  """
+  title: CommunityPageHeroTitle
+}
+
+"""
+The &quot;CommunityPageHeroStats&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageHeroStats implements CommunityPageHeroStats_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageHeroStats&quot; Field Group
+  """
+  stat1: CommunityPageHeroStatsStat1
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageHeroStats&quot; Field Group
+"""
+interface CommunityPageHeroStats_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageHeroStats&quot; Field Group
+  """
+  stat1: CommunityPageHeroStatsStat1
+}
+
+"""
+The &quot;CommunityPageHeroStatsStat1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageHeroStatsStat1 implements CommunityPageHeroStatsStat1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageHeroStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageHeroStatsStat1&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageHeroStatsStat1&quot; Field Group
+"""
+interface CommunityPageHeroStatsStat1_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageHeroStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageHeroStatsStat1&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;CommunityPageHeroTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageHeroTitle implements CommunityPageHeroTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;CommunityPageHeroTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageHeroTitle&quot; Field Group
+"""
+interface CommunityPageHeroTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;CommunityPageHeroTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;CommunityPageTestimonials&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageTestimonials implements CommunityPageTestimonials_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonials&quot; Field Group
+  """
+  members: CommunityPageTestimonialsMembers
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonials&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageTestimonials&quot; Field Group
+"""
+interface CommunityPageTestimonials_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonials&quot; Field Group
+  """
+  members: CommunityPageTestimonialsMembers
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonials&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;CommunityPageTestimonialsMembers&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageTestimonialsMembers implements CommunityPageTestimonialsMembers_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member1: CommunityPageTestimonialsMembersMember1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member10: CommunityPageTestimonialsMembersMember10
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member6: CommunityPageTestimonialsMembersMember6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member7: CommunityPageTestimonialsMembersMember7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member8: CommunityPageTestimonialsMembersMember8
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member9: CommunityPageTestimonialsMembersMember9
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageTestimonialsMembers&quot; Field Group
+"""
+interface CommunityPageTestimonialsMembers_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member1: CommunityPageTestimonialsMembersMember1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member10: CommunityPageTestimonialsMembersMember10
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member6: CommunityPageTestimonialsMembersMember6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member7: CommunityPageTestimonialsMembersMember7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member8: CommunityPageTestimonialsMembersMember8
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembers&quot; Field Group
+  """
+  member9: CommunityPageTestimonialsMembersMember9
+}
+
+"""
+The &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageTestimonialsMembersMember1 implements CommunityPageTestimonialsMembersMember1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+"""
+interface CommunityPageTestimonialsMembersMember1_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember1&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageTestimonialsMembersMember10 implements CommunityPageTestimonialsMembersMember10_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+"""
+interface CommunityPageTestimonialsMembersMember10_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember10&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageTestimonialsMembersMember6 implements CommunityPageTestimonialsMembersMember6_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+"""
+interface CommunityPageTestimonialsMembersMember6_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember6&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageTestimonialsMembersMember7 implements CommunityPageTestimonialsMembersMember7_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+"""
+interface CommunityPageTestimonialsMembersMember7_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember7&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageTestimonialsMembersMember8 implements CommunityPageTestimonialsMembersMember8_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+"""
+interface CommunityPageTestimonialsMembersMember8_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember8&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type CommunityPageTestimonialsMembersMember9 implements CommunityPageTestimonialsMembersMember9_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+"""
+interface CommunityPageTestimonialsMembersMember9_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;CommunityPageTestimonialsMembersMember9&quot; Field Group
+  """
+  role: String
+}
+
+"""
 A paginated relationship between objects. Supports cursor-based pagination with
 edges containing relationship metadata and nodes containing the related objects.
 """
@@ -1861,6 +3097,1071 @@ interface Connection {
 
   """Information about pagination in a connection."""
   pageInfo: PageInfo!
+}
+
+"""
+The &quot;ContactPage&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPage implements ContactPage_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  contactSection: ContactPageContactSection
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  faq: ContactPageFaq
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  hero: ContactPageHero
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  map: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  whyChoose: ContactPageWhyChoose
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPage&quot; Field Group
+"""
+interface ContactPage_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  contactSection: ContactPageContactSection
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  faq: ContactPageFaq
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  hero: ContactPageHero
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  map: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPage&quot; Field Group
+  """
+  whyChoose: ContactPageWhyChoose
+}
+
+"""
+The &quot;ContactPageContactSection&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageContactSection implements ContactPageContactSection_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSection&quot; Field Group
+  """
+  rightSection: ContactPageContactSectionRightSection
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageContactSection&quot; Field Group
+"""
+interface ContactPageContactSection_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSection&quot; Field Group
+  """
+  rightSection: ContactPageContactSectionRightSection
+}
+
+"""
+The &quot;ContactPageContactSectionRightSection&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageContactSectionRightSection implements ContactPageContactSectionRightSection_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  address: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  contact: ContactPageContactSectionRightSectionContact
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  email: String
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  fanpage: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  hotline: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  title: String
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  workingHours: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageContactSectionRightSection&quot; Field Group
+"""
+interface ContactPageContactSectionRightSection_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  address: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  contact: ContactPageContactSectionRightSectionContact
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  email: String
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  fanpage: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  hotline: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  title: String
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageContactSectionRightSection&quot; Field Group
+  """
+  workingHours: String
+}
+
+"""
+The &quot;ContactPageContactSectionRightSectionContact&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageContactSectionRightSectionContact implements ContactPageContactSectionRightSectionContact_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+  """
+  facebook: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+  """
+  telegram: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+  """
+  youtube: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+  """
+  zalo: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+"""
+interface ContactPageContactSectionRightSectionContact_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+  """
+  facebook: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+  """
+  telegram: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+  """
+  youtube: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageContactSectionRightSectionContact&quot; Field Group
+  """
+  zalo: String
+}
+
+"""
+The &quot;ContactPageFaq&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageFaq implements ContactPageFaq_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaq&quot; Field Group
+  """
+  qna: ContactPageFaqQna
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaq&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageFaq&quot; Field Group
+"""
+interface ContactPageFaq_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaq&quot; Field Group
+  """
+  qna: ContactPageFaqQna
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaq&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;ContactPageFaqQna&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageFaqQna implements ContactPageFaqQna_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna1: ContactPageFaqQnaQna1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna10: ContactPageFaqQnaQna10
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna6: ContactPageFaqQnaQna6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna7: ContactPageFaqQnaQna7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna8: ContactPageFaqQnaQna8
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna9: ContactPageFaqQnaQna9
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageFaqQna&quot; Field Group
+"""
+interface ContactPageFaqQna_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna1: ContactPageFaqQnaQna1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna10: ContactPageFaqQnaQna10
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna6: ContactPageFaqQnaQna6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna7: ContactPageFaqQnaQna7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna8: ContactPageFaqQnaQna8
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQna&quot; Field Group
+  """
+  qna9: ContactPageFaqQnaQna9
+}
+
+"""
+The &quot;ContactPageFaqQnaQna1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageFaqQnaQna1 implements ContactPageFaqQnaQna1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna1&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna1&quot; Field Group
+  """
+  question: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageFaqQnaQna1&quot; Field Group
+"""
+interface ContactPageFaqQnaQna1_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna1&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna1&quot; Field Group
+  """
+  question: String
+}
+
+"""
+The &quot;ContactPageFaqQnaQna10&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageFaqQnaQna10 implements ContactPageFaqQnaQna10_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna10&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna10&quot; Field Group
+  """
+  question: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageFaqQnaQna10&quot; Field Group
+"""
+interface ContactPageFaqQnaQna10_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna10&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna10&quot; Field Group
+  """
+  question: String
+}
+
+"""
+The &quot;ContactPageFaqQnaQna6&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageFaqQnaQna6 implements ContactPageFaqQnaQna6_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna6&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna6&quot; Field Group
+  """
+  question: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageFaqQnaQna6&quot; Field Group
+"""
+interface ContactPageFaqQnaQna6_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna6&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna6&quot; Field Group
+  """
+  question: String
+}
+
+"""
+The &quot;ContactPageFaqQnaQna7&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageFaqQnaQna7 implements ContactPageFaqQnaQna7_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna7&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna7&quot; Field Group
+  """
+  question: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageFaqQnaQna7&quot; Field Group
+"""
+interface ContactPageFaqQnaQna7_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna7&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna7&quot; Field Group
+  """
+  question: String
+}
+
+"""
+The &quot;ContactPageFaqQnaQna8&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageFaqQnaQna8 implements ContactPageFaqQnaQna8_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna8&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna8&quot; Field Group
+  """
+  question: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageFaqQnaQna8&quot; Field Group
+"""
+interface ContactPageFaqQnaQna8_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna8&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna8&quot; Field Group
+  """
+  question: String
+}
+
+"""
+The &quot;ContactPageFaqQnaQna9&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageFaqQnaQna9 implements ContactPageFaqQnaQna9_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna9&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna9&quot; Field Group
+  """
+  question: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageFaqQnaQna9&quot; Field Group
+"""
+interface ContactPageFaqQnaQna9_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;ContactPageFaqQnaQna9&quot; Field Group
+  """
+  answer: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageFaqQnaQna9&quot; Field Group
+  """
+  question: String
+}
+
+"""
+The &quot;ContactPageHero&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageHero implements ContactPageHero_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  backgroundImage: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  stats: ContactPageHeroStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  title: ContactPageHeroTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageHero&quot; Field Group
+"""
+interface ContactPageHero_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  backgroundImage: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  stats: ContactPageHeroStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageHero&quot; Field Group
+  """
+  title: ContactPageHeroTitle
+}
+
+"""
+The &quot;ContactPageHeroStats&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageHeroStats implements ContactPageHeroStats_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageHeroStats&quot; Field Group
+  """
+  stat1: ContactPageHeroStatsStat1
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageHeroStats&quot; Field Group
+"""
+interface ContactPageHeroStats_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageHeroStats&quot; Field Group
+  """
+  stat1: ContactPageHeroStatsStat1
+}
+
+"""
+The &quot;ContactPageHeroStatsStat1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageHeroStatsStat1 implements ContactPageHeroStatsStat1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageHeroStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageHeroStatsStat1&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageHeroStatsStat1&quot; Field Group
+"""
+interface ContactPageHeroStatsStat1_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageHeroStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageHeroStatsStat1&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;ContactPageHeroTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageHeroTitle implements ContactPageHeroTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageHeroTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageHeroTitle&quot; Field Group
+"""
+interface ContactPageHeroTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageHeroTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;ContactPageWhyChoose&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageWhyChoose implements ContactPageWhyChoose_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageWhyChoose&quot; Field Group
+  """
+  reasons: ContactPageWhyChooseReasons
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageWhyChoose&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageWhyChoose&quot; Field Group
+"""
+interface ContactPageWhyChoose_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ContactPageWhyChoose&quot; Field Group
+  """
+  reasons: ContactPageWhyChooseReasons
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ContactPageWhyChoose&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;ContactPageWhyChooseReasons&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageWhyChooseReasons implements ContactPageWhyChooseReasons_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasons&quot; Field Group
+  """
+  reason1: ContactPageWhyChooseReasonsReason1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasons&quot; Field Group
+  """
+  reason2: ContactPageWhyChooseReasonsReason2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasons&quot; Field Group
+  """
+  reason3: ContactPageWhyChooseReasonsReason3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasons&quot; Field Group
+  """
+  reason4: ContactPageWhyChooseReasonsReason4
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageWhyChooseReasons&quot; Field Group
+"""
+interface ContactPageWhyChooseReasons_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasons&quot; Field Group
+  """
+  reason1: ContactPageWhyChooseReasonsReason1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasons&quot; Field Group
+  """
+  reason2: ContactPageWhyChooseReasonsReason2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasons&quot; Field Group
+  """
+  reason3: ContactPageWhyChooseReasonsReason3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasons&quot; Field Group
+  """
+  reason4: ContactPageWhyChooseReasonsReason4
+}
+
+"""
+The &quot;ContactPageWhyChooseReasonsReason1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageWhyChooseReasonsReason1 implements ContactPageWhyChooseReasonsReason1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageWhyChooseReasonsReason1&quot; Field Group
+"""
+interface ContactPageWhyChooseReasonsReason1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;ContactPageWhyChooseReasonsReason2&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageWhyChooseReasonsReason2 implements ContactPageWhyChooseReasonsReason2_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason2&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason2&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason2&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageWhyChooseReasonsReason2&quot; Field Group
+"""
+interface ContactPageWhyChooseReasonsReason2_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason2&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason2&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason2&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;ContactPageWhyChooseReasonsReason3&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageWhyChooseReasonsReason3 implements ContactPageWhyChooseReasonsReason3_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason3&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason3&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason3&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageWhyChooseReasonsReason3&quot; Field Group
+"""
+interface ContactPageWhyChooseReasonsReason3_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason3&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason3&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason3&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;ContactPageWhyChooseReasonsReason4&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type ContactPageWhyChooseReasonsReason4 implements ContactPageWhyChooseReasonsReason4_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason4&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason4&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason4&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;ContactPageWhyChooseReasonsReason4&quot; Field Group
+"""
+interface ContactPageWhyChooseReasonsReason4_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason4&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason4&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;ContactPageWhyChooseReasonsReason4&quot; Field Group
+  """
+  title: String
 }
 
 """
@@ -3940,6 +6241,448 @@ interface EnqueuedStylesheetConnectionPageInfo {
   startCursor: String
 }
 
+"""
+The &quot;FooterFields&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFields implements FooterFields_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column1: FooterFieldsColumn1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column2: FooterFieldsColumn2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column3: FooterFieldsColumn3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column4: FooterFieldsColumn4
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column5: FooterFieldsColumn5
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFields&quot; Field Group
+"""
+interface FooterFields_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column1: FooterFieldsColumn1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column2: FooterFieldsColumn2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column3: FooterFieldsColumn3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column4: FooterFieldsColumn4
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFields&quot; Field Group
+  """
+  column5: FooterFieldsColumn5
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+The &quot;FooterFieldsColumn1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn1 implements FooterFieldsColumn1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  facebook: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  image: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  text: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  tiktok: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  youtube: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  zalo: String
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn1&quot; Field Group
+"""
+interface FooterFieldsColumn1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  facebook: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  image: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  text: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  tiktok: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  youtube: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn1&quot; Field Group
+  """
+  zalo: String
+}
+
+"""
+The &quot;FooterFieldsColumn2&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn2 implements FooterFieldsColumn2_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn2&quot; Field Group
+  """
+  links: FooterFieldsColumn2Links
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn2&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn2&quot; Field Group
+"""
+interface FooterFieldsColumn2_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn2&quot; Field Group
+  """
+  links: FooterFieldsColumn2Links
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn2&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;FooterFieldsColumn2Links&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn2Links implements FooterFieldsColumn2Links_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn2Links&quot; Field Group
+  """
+  link1: FooterFieldsColumn2LinksLink1
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn2Links&quot; Field Group
+"""
+interface FooterFieldsColumn2Links_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn2Links&quot; Field Group
+  """
+  link1: FooterFieldsColumn2LinksLink1
+}
+
+"""
+The &quot;FooterFieldsColumn2LinksLink1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn2LinksLink1 implements FooterFieldsColumn2LinksLink1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn2LinksLink1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn2LinksLink1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn2LinksLink1&quot; Field Group
+"""
+interface FooterFieldsColumn2LinksLink1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn2LinksLink1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn2LinksLink1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+The &quot;FooterFieldsColumn3&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn3 implements FooterFieldsColumn3_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn3&quot; Field Group
+  """
+  links: FooterFieldsColumn3Links
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn3&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn3&quot; Field Group
+"""
+interface FooterFieldsColumn3_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn3&quot; Field Group
+  """
+  links: FooterFieldsColumn3Links
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn3&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;FooterFieldsColumn3Links&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn3Links implements FooterFieldsColumn3Links_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn3Links&quot; Field Group
+  """
+  link1: FooterFieldsColumn3LinksLink1
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn3Links&quot; Field Group
+"""
+interface FooterFieldsColumn3Links_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn3Links&quot; Field Group
+  """
+  link1: FooterFieldsColumn3LinksLink1
+}
+
+"""
+The &quot;FooterFieldsColumn3LinksLink1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn3LinksLink1 implements FooterFieldsColumn3LinksLink1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn3LinksLink1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn3LinksLink1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn3LinksLink1&quot; Field Group
+"""
+interface FooterFieldsColumn3LinksLink1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn3LinksLink1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;FooterFieldsColumn3LinksLink1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+The &quot;FooterFieldsColumn4&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn4 implements FooterFieldsColumn4_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn4&quot; Field Group
+  """
+  address: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn4&quot; Field Group
+  """
+  email: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn4&quot; Field Group
+  """
+  phone: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn4&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn4&quot; Field Group
+"""
+interface FooterFieldsColumn4_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn4&quot; Field Group
+  """
+  address: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn4&quot; Field Group
+  """
+  email: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn4&quot; Field Group
+  """
+  phone: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn4&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;FooterFieldsColumn5&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type FooterFieldsColumn5 implements FooterFieldsColumn5_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn5&quot; Field Group
+  """
+  text: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn5&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;FooterFieldsColumn5&quot; Field Group
+"""
+interface FooterFieldsColumn5_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn5&quot; Field Group
+  """
+  text: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;FooterFieldsColumn5&quot; Field Group
+  """
+  title: String
+}
+
 """The general setting type"""
 type GeneralSettings {
   """A date format for all date strings."""
@@ -4548,6 +7291,11 @@ type HomePage implements HomePage_Fields & AcfFieldGroup & AcfFieldGroupFields {
   """
   Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
   """
+  community: HomePageCommunity
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
   courses: HomePageCourses
 
   """
@@ -4562,6 +7310,11 @@ type HomePage implements HomePage_Fields & AcfFieldGroup & AcfFieldGroupFields {
   Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
   """
   hero: HomePageHero
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
+  knowledge: HomePageKnowledge
 
   """
   Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
@@ -4581,6 +7334,11 @@ interface HomePage_Fields {
   """
   Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
   """
+  community: HomePageCommunity
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
   courses: HomePageCourses
 
   """
@@ -4599,12 +7357,123 @@ interface HomePage_Fields {
   """
   Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
   """
+  knowledge: HomePageKnowledge
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
+  """
   teachers: HomePageTeachers
 
   """
   Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePage&quot; Field Group
   """
   testimonials: HomePageTestimonials
+}
+
+"""
+The &quot;HomePageCommunity&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCommunity implements HomePageCommunity_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  button: HomePageCommunityButton
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  image1: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCommunity&quot; Field Group
+"""
+interface HomePageCommunity_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  button: HomePageCommunityButton
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  image1: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;HomePageCommunity&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;HomePageCommunityButton&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageCommunityButton implements HomePageCommunityButton_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCommunityButton&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCommunityButton&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageCommunityButton&quot; Field Group
+"""
+interface HomePageCommunityButton_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCommunityButton&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;HomePageCommunityButton&quot; Field Group
+  """
+  text: String
 }
 
 """
@@ -5668,6 +8537,32 @@ interface HomePageHeroTitle_Fields {
 }
 
 """
+The &quot;HomePageKnowledge&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type HomePageKnowledge implements HomePageKnowledge_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageKnowledge&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;HomePageKnowledge&quot; Field Group
+"""
+interface HomePageKnowledge_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;HomePageKnowledge&quot; Field Group
+  """
+  title: String
+}
+
+"""
 The &quot;HomePageTeachers&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
 """
 type HomePageTeachers implements HomePageTeachers_Fields & AcfFieldGroup & AcfFieldGroupFields {
@@ -6420,6 +9315,9 @@ type KnowledgeArticle implements Node & ContentNode & UniformResourceIdentifiabl
 
   """The unique resource identifier path"""
   uri: String
+
+  """Tổng số lượt xem của bài viết từ Post Views Counter"""
+  views: Int
 }
 
 """
@@ -9408,7 +12306,7 @@ enum OrderEnum {
 A standalone content entry generally used for static, non-chronological content
 such as &quot;About Us&quot; or &quot;Contact&quot; pages.
 """
-type Page implements Node & ContentNode & UniformResourceIdentifiable & DatabaseIdentifier & NodeWithTemplate & Previewable & NodeWithTitle & NodeWithAuthor & NodeWithFeaturedImage & NodeWithComments & NodeWithRevisions & NodeWithPageAttributes & HierarchicalContentNode & HierarchicalNode & MenuItemLinkable & WithAcfHomePage {
+type Page implements Node & ContentNode & UniformResourceIdentifiable & DatabaseIdentifier & NodeWithTemplate & Previewable & NodeWithTitle & NodeWithAuthor & NodeWithFeaturedImage & NodeWithComments & NodeWithRevisions & NodeWithPageAttributes & HierarchicalContentNode & HierarchicalNode & MenuItemLinkable & WithAcfCommunityPage & WithAcfContactPage & WithAcfFooterFields & WithAcfHomePage & WithAcfStockMastertrackPage {
   """
   Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
   """
@@ -9497,6 +12395,12 @@ type Page implements Node & ContentNode & UniformResourceIdentifiable & Database
     where: PageToCommentConnectionWhereArgs
   ): PageToCommentConnection
 
+  """Fields of the CommunityPage ACF Field Group"""
+  communityPage: CommunityPage
+
+  """Fields of the ContactPage ACF Field Group"""
+  contactPage: ContactPage
+
   """Connection between the ContentNode type and the ContentType type"""
   contentType: ContentNodeToContentTypeConnectionEdge
 
@@ -9577,6 +12481,9 @@ type Page implements Node & ContentNode & UniformResourceIdentifiable & Database
 
   """Globally unique ID of the featured image assigned to the node"""
   featuredImageId: ID
+
+  """Fields of the FooterFields ACF Field Group"""
+  footerFields: FooterFields
 
   """
   The global unique identifier for this post. This currently matches the value
@@ -9706,6 +12613,9 @@ type Page implements Node & ContentNode & UniformResourceIdentifiable & Database
 
   """The current status of the object"""
   status: String
+
+  """Fields of the StockMastertrackPage ACF Field Group"""
+  stockMastertrackPage: StockMastertrackPage
 
   """The template assigned to a node of content"""
   template: ContentTemplate
@@ -15761,6 +18671,2285 @@ type Settings {
 }
 
 """
+The &quot;StockMastertrackPage&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPage implements StockMastertrackPage_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  bottomcta: StockMastertrackPageBottomcta
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  curriculum: StockMastertrackPageCurriculum
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  hero: StockMastertrackPageHero
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  mentor: StockMastertrackPageMentor
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  testimonials: StockMastertrackPageTestimonials
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPage&quot; Field Group
+"""
+interface StockMastertrackPage_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  bottomcta: StockMastertrackPageBottomcta
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  curriculum: StockMastertrackPageCurriculum
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  hero: StockMastertrackPageHero
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  mentor: StockMastertrackPageMentor
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;StockMastertrackPage&quot; Field Group
+  """
+  testimonials: StockMastertrackPageTestimonials
+}
+
+"""
+The &quot;StockMastertrackPageBottomcta&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageBottomcta implements StockMastertrackPageBottomcta_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomcta&quot; Field Group
+  """
+  buttons: StockMastertrackPageBottomctaButtons
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomcta&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageBottomcta&quot; Field Group
+"""
+interface StockMastertrackPageBottomcta_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomcta&quot; Field Group
+  """
+  buttons: StockMastertrackPageBottomctaButtons
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomcta&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;StockMastertrackPageBottomctaButtons&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageBottomctaButtons implements StockMastertrackPageBottomctaButtons_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomctaButtons&quot; Field Group
+  """
+  button1: StockMastertrackPageBottomctaButtonsButton1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageBottomctaButtons&quot; Field Group
+"""
+interface StockMastertrackPageBottomctaButtons_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomctaButtons&quot; Field Group
+  """
+  button1: StockMastertrackPageBottomctaButtonsButton1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+The &quot;StockMastertrackPageBottomctaButtonsButton1&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageBottomctaButtonsButton1 implements StockMastertrackPageBottomctaButtonsButton1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomctaButtonsButton1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomctaButtonsButton1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageBottomctaButtonsButton1&quot; Field Group
+"""
+interface StockMastertrackPageBottomctaButtonsButton1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomctaButtonsButton1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageBottomctaButtonsButton1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+The &quot;StockMastertrackPageCurriculum&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculum implements StockMastertrackPageCurriculum_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculum&quot; Field Group
+  """
+  bonus: StockMastertrackPageCurriculumBonus
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculum&quot; Field Group
+  """
+  content: StockMastertrackPageCurriculumContent
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculum&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculum&quot; Field Group
+  """
+  title: StockMastertrackPageCurriculumTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculum&quot; Field Group
+"""
+interface StockMastertrackPageCurriculum_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculum&quot; Field Group
+  """
+  bonus: StockMastertrackPageCurriculumBonus
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculum&quot; Field Group
+  """
+  content: StockMastertrackPageCurriculumContent
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculum&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculum&quot; Field Group
+  """
+  title: StockMastertrackPageCurriculumTitle
+}
+
+"""
+The &quot;StockMastertrackPageCurriculumBonus&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculumBonus implements StockMastertrackPageCurriculumBonus_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageCurriculumBonus&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumBonus&quot; Field Group
+  """
+  image: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumBonus&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculumBonus&quot; Field Group
+"""
+interface StockMastertrackPageCurriculumBonus_Fields {
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageCurriculumBonus&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumBonus&quot; Field Group
+  """
+  image: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumBonus&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;StockMastertrackPageCurriculumContent&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculumContent implements StockMastertrackPageCurriculumContent_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content1: StockMastertrackPageCurriculumContentContent1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content5: StockMastertrackPageCurriculumContentContent5
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content6: StockMastertrackPageCurriculumContentContent6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content7: StockMastertrackPageCurriculumContentContent7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content8: StockMastertrackPageCurriculumContentContent8
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+"""
+interface StockMastertrackPageCurriculumContent_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content1: StockMastertrackPageCurriculumContentContent1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content5: StockMastertrackPageCurriculumContentContent5
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content6: StockMastertrackPageCurriculumContentContent6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content7: StockMastertrackPageCurriculumContentContent7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContent&quot; Field Group
+  """
+  content8: StockMastertrackPageCurriculumContentContent8
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+The &quot;StockMastertrackPageCurriculumContentContent1&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculumContentContent1 implements StockMastertrackPageCurriculumContentContent1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculumContentContent1&quot; Field Group
+"""
+interface StockMastertrackPageCurriculumContentContent1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;StockMastertrackPageCurriculumContentContent5&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculumContentContent5 implements StockMastertrackPageCurriculumContentContent5_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent5&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent5&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent5&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculumContentContent5&quot; Field Group
+"""
+interface StockMastertrackPageCurriculumContentContent5_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent5&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent5&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent5&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;StockMastertrackPageCurriculumContentContent6&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculumContentContent6 implements StockMastertrackPageCurriculumContentContent6_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent6&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent6&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent6&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculumContentContent6&quot; Field Group
+"""
+interface StockMastertrackPageCurriculumContentContent6_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent6&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent6&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent6&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;StockMastertrackPageCurriculumContentContent7&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculumContentContent7 implements StockMastertrackPageCurriculumContentContent7_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent7&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent7&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent7&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculumContentContent7&quot; Field Group
+"""
+interface StockMastertrackPageCurriculumContentContent7_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent7&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent7&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent7&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;StockMastertrackPageCurriculumContentContent8&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculumContentContent8 implements StockMastertrackPageCurriculumContentContent8_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent8&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent8&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent8&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculumContentContent8&quot; Field Group
+"""
+interface StockMastertrackPageCurriculumContentContent8_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent8&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent8&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumContentContent8&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;StockMastertrackPageCurriculumTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageCurriculumTitle implements StockMastertrackPageCurriculumTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageCurriculumTitle&quot; Field Group
+"""
+interface StockMastertrackPageCurriculumTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageCurriculumTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;StockMastertrackPageHero&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageHero implements StockMastertrackPageHero_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  backgroundImage: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  buttons: StockMastertrackPageHeroButtons
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  content: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  stats: StockMastertrackPageHeroStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  subTitle: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  title: StockMastertrackPageHeroTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageHero&quot; Field Group
+"""
+interface StockMastertrackPageHero_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  backgroundImage: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  buttons: StockMastertrackPageHeroButtons
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  content: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  stats: StockMastertrackPageHeroStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  subTitle: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  tag: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHero&quot; Field Group
+  """
+  title: StockMastertrackPageHeroTitle
+}
+
+"""
+The &quot;StockMastertrackPageHeroButtons&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageHeroButtons implements StockMastertrackPageHeroButtons_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtons&quot; Field Group
+  """
+  button1: StockMastertrackPageHeroButtonsButton1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtons&quot; Field Group
+  """
+  button2: StockMastertrackPageHeroButtonsButton2
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageHeroButtons&quot; Field Group
+"""
+interface StockMastertrackPageHeroButtons_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtons&quot; Field Group
+  """
+  button1: StockMastertrackPageHeroButtonsButton1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtons&quot; Field Group
+  """
+  button2: StockMastertrackPageHeroButtonsButton2
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+The &quot;StockMastertrackPageHeroButtonsButton1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageHeroButtonsButton1 implements StockMastertrackPageHeroButtonsButton1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtonsButton1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtonsButton1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageHeroButtonsButton1&quot; Field Group
+"""
+interface StockMastertrackPageHeroButtonsButton1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtonsButton1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtonsButton1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+The &quot;StockMastertrackPageHeroButtonsButton2&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageHeroButtonsButton2 implements StockMastertrackPageHeroButtonsButton2_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtonsButton2&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtonsButton2&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageHeroButtonsButton2&quot; Field Group
+"""
+interface StockMastertrackPageHeroButtonsButton2_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtonsButton2&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroButtonsButton2&quot; Field Group
+  """
+  text: String
+}
+
+"""
+The &quot;StockMastertrackPageHeroStats&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageHeroStats implements StockMastertrackPageHeroStats_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroStats&quot; Field Group
+  """
+  stat1: StockMastertrackPageHeroStatsStat1
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageHeroStats&quot; Field Group
+"""
+interface StockMastertrackPageHeroStats_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroStats&quot; Field Group
+  """
+  stat1: StockMastertrackPageHeroStatsStat1
+}
+
+"""
+The &quot;StockMastertrackPageHeroStatsStat1&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageHeroStatsStat1 implements StockMastertrackPageHeroStatsStat1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroStatsStat1&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageHeroStatsStat1&quot; Field Group
+"""
+interface StockMastertrackPageHeroStatsStat1_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroStatsStat1&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;StockMastertrackPageHeroTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageHeroTitle implements StockMastertrackPageHeroTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageHeroTitle&quot; Field Group
+"""
+interface StockMastertrackPageHeroTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageHeroTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;StockMastertrackPageMentor&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentor implements StockMastertrackPageMentor_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentor&quot; Field Group
+  """
+  information: StockMastertrackPageMentorInformation
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentor&quot; Field Group
+  """
+  teacher: StockMastertrackPageMentorTeacher
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentor&quot; Field Group
+  """
+  title: StockMastertrackPageMentorTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentor&quot; Field Group
+"""
+interface StockMastertrackPageMentor_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentor&quot; Field Group
+  """
+  information: StockMastertrackPageMentorInformation
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentor&quot; Field Group
+  """
+  teacher: StockMastertrackPageMentorTeacher
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentor&quot; Field Group
+  """
+  title: StockMastertrackPageMentorTitle
+}
+
+"""
+The &quot;StockMastertrackPageMentorInformation&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentorInformation implements StockMastertrackPageMentorInformation_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformation&quot; Field Group
+  """
+  buttons: StockMastertrackPageMentorInformationButtons
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformation&quot; Field Group
+  """
+  stats: StockMastertrackPageMentorInformationStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformation&quot; Field Group
+  """
+  title: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformation&quot; Field Group
+  """
+  tuition: StockMastertrackPageMentorInformationTuition
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentorInformation&quot; Field Group
+"""
+interface StockMastertrackPageMentorInformation_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformation&quot; Field Group
+  """
+  buttons: StockMastertrackPageMentorInformationButtons
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformation&quot; Field Group
+  """
+  stats: StockMastertrackPageMentorInformationStats
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformation&quot; Field Group
+  """
+  title: String
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformation&quot; Field Group
+  """
+  tuition: StockMastertrackPageMentorInformationTuition
+}
+
+"""
+The &quot;StockMastertrackPageMentorInformationButtons&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentorInformationButtons implements StockMastertrackPageMentorInformationButtons_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationButtons&quot; Field Group
+  """
+  button1: StockMastertrackPageMentorInformationButtonsButton1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentorInformationButtons&quot; Field Group
+"""
+interface StockMastertrackPageMentorInformationButtons_Fields {
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationButtons&quot; Field Group
+  """
+  button1: StockMastertrackPageMentorInformationButtonsButton1
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+}
+
+"""
+The &quot;StockMastertrackPageMentorInformationButtonsButton1&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentorInformationButtonsButton1 implements StockMastertrackPageMentorInformationButtonsButton1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationButtonsButton1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationButtonsButton1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentorInformationButtonsButton1&quot; Field Group
+"""
+interface StockMastertrackPageMentorInformationButtonsButton1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationButtonsButton1&quot; Field Group
+  """
+  endpoint: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationButtonsButton1&quot; Field Group
+  """
+  text: String
+}
+
+"""
+The &quot;StockMastertrackPageMentorInformationStats&quot; Field Group. Added to
+the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentorInformationStats implements StockMastertrackPageMentorInformationStats_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationStats&quot; Field Group
+  """
+  stat1: StockMastertrackPageMentorInformationStatsStat1
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentorInformationStats&quot; Field Group
+"""
+interface StockMastertrackPageMentorInformationStats_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationStats&quot; Field Group
+  """
+  stat1: StockMastertrackPageMentorInformationStatsStat1
+}
+
+"""
+The &quot;StockMastertrackPageMentorInformationStatsStat1&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentorInformationStatsStat1 implements StockMastertrackPageMentorInformationStatsStat1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationStatsStat1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationStatsStat1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentorInformationStatsStat1&quot; Field Group
+"""
+interface StockMastertrackPageMentorInformationStatsStat1_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationStatsStat1&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationStatsStat1&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationStatsStat1&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group. Added
+to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentorInformationTuition implements StockMastertrackPageMentorInformationTuition_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+  """
+  content: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+  """
+  title: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+"""
+interface StockMastertrackPageMentorInformationTuition_Fields {
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+  """
+  content: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+  """
+  description: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+  """
+  icon: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorInformationTuition&quot; Field Group
+  """
+  title: String
+}
+
+"""
+The &quot;StockMastertrackPageMentorTeacher&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentorTeacher implements StockMastertrackPageMentorTeacher_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  experience: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  quote: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+"""
+interface StockMastertrackPageMentorTeacher_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  experience: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  quote: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTeacher&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageMentorTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageMentorTitle implements StockMastertrackPageMentorTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageMentorTitle&quot; Field Group
+"""
+interface StockMastertrackPageMentorTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageMentorTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonials&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonials implements StockMastertrackPageTestimonials_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonials&quot; Field Group
+  """
+  students: StockMastertrackPageTestimonialsStudents
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonials&quot; Field Group
+  """
+  title: StockMastertrackPageTestimonialsTitle
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonials&quot; Field Group
+"""
+interface StockMastertrackPageTestimonials_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonials&quot; Field Group
+  """
+  students: StockMastertrackPageTestimonialsStudents
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonials&quot; Field Group
+  """
+  title: StockMastertrackPageTestimonialsTitle
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudents implements StockMastertrackPageTestimonialsStudents_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student1: StockMastertrackPageTestimonialsStudentsStudent1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student10: StockMastertrackPageTestimonialsStudentsStudent10
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student2: StockMastertrackPageTestimonialsStudentsStudent2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student3: StockMastertrackPageTestimonialsStudentsStudent3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student4: StockMastertrackPageTestimonialsStudentsStudent4
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student5: StockMastertrackPageTestimonialsStudentsStudent5
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student6: StockMastertrackPageTestimonialsStudentsStudent6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student7: StockMastertrackPageTestimonialsStudentsStudent7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student8: StockMastertrackPageTestimonialsStudentsStudent8
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student9: StockMastertrackPageTestimonialsStudentsStudent9
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudents_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student1: StockMastertrackPageTestimonialsStudentsStudent1
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student10: StockMastertrackPageTestimonialsStudentsStudent10
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student2: StockMastertrackPageTestimonialsStudentsStudent2
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student3: StockMastertrackPageTestimonialsStudentsStudent3
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student4: StockMastertrackPageTestimonialsStudentsStudent4
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student5: StockMastertrackPageTestimonialsStudentsStudent5
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student6: StockMastertrackPageTestimonialsStudentsStudent6
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student7: StockMastertrackPageTestimonialsStudentsStudent7
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student8: StockMastertrackPageTestimonialsStudentsStudent8
+
+  """
+  Field of the &quot;group&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudents&quot; Field Group
+  """
+  student9: StockMastertrackPageTestimonialsStudentsStudent9
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent1 implements StockMastertrackPageTestimonialsStudentsStudent1_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent1_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent1&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent10 implements StockMastertrackPageTestimonialsStudentsStudent10_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent10_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent10&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent2 implements StockMastertrackPageTestimonialsStudentsStudent2_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent2_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent2&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent3 implements StockMastertrackPageTestimonialsStudentsStudent3_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent3_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent3&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent4 implements StockMastertrackPageTestimonialsStudentsStudent4_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent4_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent4&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent5 implements StockMastertrackPageTestimonialsStudentsStudent5_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent5_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent5&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent6 implements StockMastertrackPageTestimonialsStudentsStudent6_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent6_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent6&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent7 implements StockMastertrackPageTestimonialsStudentsStudent7_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent7_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent7&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent8 implements StockMastertrackPageTestimonialsStudentsStudent8_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent8_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent8&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group.
+Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsStudentsStudent9 implements StockMastertrackPageTestimonialsStudentsStudent9_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+  """
+  role: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsStudentsStudent9_Fields {
+  """
+  Field of the &quot;image&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+  """
+  avatar: AcfMediaItemConnectionEdge
+
+  """
+  Field of the &quot;textarea&quot; Field Type added to the schema as part of
+  the &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+  """
+  content: String
+
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+  """
+  name: String
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsStudentsStudent9&quot; Field Group
+  """
+  role: String
+}
+
+"""
+The &quot;StockMastertrackPageTestimonialsTitle&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type StockMastertrackPageTestimonialsTitle implements StockMastertrackPageTestimonialsTitle_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
+Interface representing fields of the ACF &quot;StockMastertrackPageTestimonialsTitle&quot; Field Group
+"""
+interface StockMastertrackPageTestimonialsTitle_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;StockMastertrackPageTestimonialsTitle&quot; Field Group
+  """
+  text1: String
+}
+
+"""
 A taxonomy term used to organize and classify content. Tags do not have a
 hierarchy and are generally used for more specific classifications.
 """
@@ -18960,6 +24149,30 @@ interface WithAcfAuthorFields {
 }
 
 """
+Provides access to fields of the &quot;CommunityPage&quot; ACF Field Group via the &quot;communityPage&quot; field
+"""
+interface WithAcfCommunityPage {
+  """Fields of the CommunityPage ACF Field Group"""
+  communityPage: CommunityPage
+}
+
+"""
+Provides access to fields of the &quot;ContactPage&quot; ACF Field Group via the &quot;contactPage&quot; field
+"""
+interface WithAcfContactPage {
+  """Fields of the ContactPage ACF Field Group"""
+  contactPage: ContactPage
+}
+
+"""
+Provides access to fields of the &quot;FooterFields&quot; ACF Field Group via the &quot;footerFields&quot; field
+"""
+interface WithAcfFooterFields {
+  """Fields of the FooterFields ACF Field Group"""
+  footerFields: FooterFields
+}
+
+"""
 Provides access to fields of the &quot;HomePage&quot; ACF Field Group via the &quot;homePage&quot; field
 """
 interface WithAcfHomePage {
@@ -18974,6 +24187,15 @@ Group via the &quot;knowledgeArticleFields&quot; field
 interface WithAcfKnowledgeArticleFields {
   """Fields of the KnowledgeArticleFields ACF Field Group"""
   knowledgeArticleFields: KnowledgeArticleFields
+}
+
+"""
+Provides access to fields of the &quot;StockMastertrackPage&quot; ACF Field
+Group via the &quot;stockMastertrackPage&quot; field
+"""
+interface WithAcfStockMastertrackPage {
+  """Fields of the StockMastertrackPage ACF Field Group"""
+  stockMastertrackPage: StockMastertrackPage
 }
 
 """

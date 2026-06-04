@@ -1,6 +1,7 @@
 query GetKnowledgeArticle($slug: ID!) {
   knowledgeArticle(id: $slug, idType: SLUG) {
     id
+    databaseId
     title
     date
     slug
@@ -43,5 +44,7 @@ query GetKnowledgeArticle($slug: ID!) {
         slug
       }
     }
+
+    views
   }
 }

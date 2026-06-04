@@ -68,10 +68,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
               <span>•</span>
               <span>{article.readingTime} đọc</span>
               <span>•</span>
-              <span>
-                {/* View number */}
-                {/* {postData.views} */}10.000 lượt xem
-              </span>
+              <span>{article.viewsFormatted} lượt xem</span>
             </div>
           </div>
         </div>

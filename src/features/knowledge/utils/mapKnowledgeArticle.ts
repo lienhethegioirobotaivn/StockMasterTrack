@@ -29,12 +29,18 @@ function formatDate(dateString: string | null | undefined): string {
   }
 }
 
+function formatViews(viewsCount: number): string {
+  return new Intl.NumberFormat("vi-VN").format(viewsCount);
+}
+
 function mapSharedFields(article: RawArticleList | RawArticleDetail) {
   const author = article.knowledgeArticleFields?.author?.nodes?.[0];
   const category = article.knowledgeCategories?.nodes?.[0];
+  const rawViews = 10000 + (article.views ?? 0);
 
   return {
     id: article.id,
+    databaseId: article.databaseId,
     title: article.title ?? "",
     date: formatDate(article.date),
     slug: article.slug ?? "",
@@ -64,6 +70,8 @@ function mapSharedFields(article: RawArticleList | RawArticleDetail) {
             : null,
         }
       : null,
+    views: rawViews,
+    viewsFormatted: formatViews(rawViews),
   };
 }
 
