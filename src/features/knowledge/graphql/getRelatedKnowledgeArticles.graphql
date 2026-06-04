@@ -1,0 +1,56 @@
+query GetRelatedKnowledgeArticles(
+  $categorySlugs: [String!]
+  $excludeIds: [ID!]
+  $first: Int = 5
+) {
+  knowledgeCategories(where: { slug: $categorySlugs }) {
+    nodes {
+      knowledgeArticles(first: $first, where: { notIn: $excludeIds }) {
+        nodes {
+          id
+          databaseId
+          title
+          date
+          slug
+          excerpt
+
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+            }
+          }
+
+          knowledgeArticleFields {
+            readingTime
+            author {
+              nodes {
+                ... on Author {
+                  title
+                  authorFields {
+                    role
+                    avatar {
+                      node {
+                        sourceUrl
+                        altText
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          knowledgeCategories {
+            nodes {
+              name
+              slug
+            }
+          }
+
+          views
+        }
+      }
+    }
+  }
+}
