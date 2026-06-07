@@ -38,10 +38,13 @@ export function LatestArticles({ articles }: LatestArticlesProps) {
         <h2 className="text-[26px] sm:text-2xl lg:text-[26px] font-bold uppercase text-slate-900">
           Bài viết mới nhất
         </h2>
-        <Button className="flex items-center gap-1.5 text-sm font-semibold text-slate-700 transition hover:text-gray-900">
+        <Link
+          href={"/knowledge/articles"}
+          className="flex items-center gap-1.5 text-sm font-semibold text-slate-700 transition hover:text-gray-900"
+        >
           Xem tất cả bài viết
           <ArrowRight className="size-3.5 md:size-4" />
-        </Button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
