@@ -15631,6 +15631,8 @@ type RootMutation {
 
 """The root entry point into the Graph"""
 type RootQuery {
+  allPostTypes: [String]
+
   """Entry point to get all settings for the site"""
   allSettings: Settings
 
@@ -15896,6 +15898,9 @@ type RootQuery {
     """Arguments for filtering the connection"""
     where: RootQueryToKnowledgeArticleConnectionWhereArgs
   ): RootQueryToKnowledgeArticleConnection
+
+  """Total published knowledge articles"""
+  knowledgeArticlesCount: Int
 
   """Connection between the RootQuery type and the knowledgeCategory type"""
   knowledgeCategories(

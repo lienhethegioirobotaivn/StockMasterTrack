@@ -19,14 +19,17 @@ export function SidebarTrending({ articles }: SidebarTrendingProps) {
             <div className="hidden sm:flex size-5 shrink-0 items-center justify-center rounded-full bg-lime-600 text-[11px] font-bold text-white">
               {index + 1}
             </div>
-            <div className="relative w-20 sm:w-38 lg:w-20 aspect-21/14 shrink-0 overflow-hidden rounded-md bg-gray-50">
+            <Link
+              href={`/knowledge/${article.slug}`}
+              className="relative w-20 sm:w-38 lg:w-20 aspect-21/14 shrink-0 overflow-hidden rounded-md bg-gray-50"
+            >
               <Image
                 src={article.image?.url ?? ""}
                 alt={article.image?.alt ?? ""}
                 fill
                 className="object-cover"
               />
-            </div>
+            </Link>
             <div className="flex flex-col justify-center">
               <Link
                 href={`/knowledge/${article.slug}`}

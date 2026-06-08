@@ -1,0 +1,1 @@
+export const KNOWLEDGE_ARTICLES_PER_PAGE = 6;
