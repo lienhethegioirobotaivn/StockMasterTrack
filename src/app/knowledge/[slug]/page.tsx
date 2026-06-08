@@ -17,9 +17,57 @@ import {
   mapKnowledgeArticleList,
 } from "@/features/knowledge/utils/mapKnowledgeArticle";
 import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
+import { Metadata } from "next";
 
 interface KnowledgeDetailPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: KnowledgeDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const data = await getKnowledgeArticle(slug);
+  const article = data.knowledgeArticle;
+
+  if (!article) {
+    return {
+      title: "Không tìm thấy bài viết",
+    };
+  }
+
+  const image = article.featuredImage?.node?.sourceUrl || "";
+
+  const description = article.excerpt || article.title;
+
+  return {
+    title: article.title,
+    description,
+
+    openGraph: {
+      title: article.title ?? "",
+      description: article.excerpt ?? "",
+      url: `/knowledge/${slug}`,
+      type: "article",
+      images: image
+        ? [
+            {
+              url: image,
+              width: 1200,
+              height: 630,
+            },
+          ]
+        : [],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: article.title ?? "",
+      description,
+      images: image ? [image] : [],
+    },
+  };
 }
 
 export default async function KnowledgeDetailPage({

@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Link2, ThumbsDown, ThumbsUp } from "lucide-react";
-import { FaFacebook } from "react-icons/fa";
+import { ThumbsDown, ThumbsUp } from "lucide-react";
 import { Button } from "@/components/ui";
-import { SiZalo } from "react-icons/si";
 import { KnowledgeArticle } from "@/features/knowledge/types";
+import { ShareButtons } from "./ShareButtons";
 
 interface ArticleContentProps {
   article: KnowledgeArticle;
@@ -75,15 +74,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
 
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-800">Chia sẻ:</span>
-          <Button className="flex size-7 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-slate-200">
-            <FaFacebook className="size-3.5 fill-current" />
-          </Button>
-          <Button className="flex size-7 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-slate-200">
-            <SiZalo className="size-4 fill-current" />
-          </Button>
-          <Button className="flex size-7 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-slate-200">
-            <Link2 className="size-3.5" />
-          </Button>
+          <ShareButtons />
         </div>
       </div>
 
@@ -98,92 +89,6 @@ export function ArticleContent({ article }: ArticleContentProps) {
           className="h-auto w-full object-cover"
         />
       </div>
-
-      {/* <blockquote className="mt-6 border-l-4 border-lime-600 bg-lime-50/30 p-4 text-[13px] md:text-sm font-medium leading-relaxed text-slate-800">
-        {postData.summary}
-      </blockquote> */}
-
-      {/* <div className="mt-6 rounded-xl bg-slate-50 p-4 md:p-6">
-        <h2 className="text-[13px] sm:text-sm font-bold uppercase text-slate-900">
-          Nội dung bài viết
-        </h2>
-        <ol className="mt-3 space-y-2 text-[13px] sm:text-sm text-slate-600">
-          {postData.toc.map((item, idx) => (
-            <li key={idx} className="flex gap-1">
-              <span>{idx + 1}.</span>
-              <button
-                onClick={() => handleScroll(item)}
-                className="text-left cursor-pointer hover:text-lime-600 hover:underline"
-              >
-                {item}
-              </button>
-            </li>
-          ))}
-        </ol>
-      </div> */}
-
-      {/* <div className="mt-8 space-y-8 border-b border-gray-100 pb-8 text-[13px] sm:text-sm leading-relaxed text-slate-800">
-        <div id={convertToId("Tổng quan thị trường tuần qua")}>
-          <h3 className="text-[15px] sm:text-base font-bold text-slate-900">
-            1. Tổng quan thị trường tuần qua
-          </h3>
-          <p className="mt-2 text-slate-600">
-            VN-Index kết thúc tuần ở mức 1.275,14 điểm, tăng 0,8% so với tuần
-            trước. Thanh khoản giảm nhẹ với giá trị khớp lệnh bình quân đạt
-            18.500 tỷ đồng/phiên. Dòng tiền có dấu hiệu phân hóa giữa các nhóm
-            ngành.
-          </p>
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div className="rounded-lg bg-slate-50 p-3 text-center">
-              <div className="text-sm font-bold text-lime-600 md:text-base">
-                1.275,14
-              </div>
-              <div className="mt-0.5 text-[10px] text-gray-400">
-                VN-Index (+0,8%)
-              </div>
-            </div>
-            <div className="rounded-lg bg-slate-50 p-3 text-center">
-              <div className="text-sm font-bold text-lime-600 md:text-base">
-                18.500 tỷ
-              </div>
-              <div className="mt-0.5 text-[10px] text-gray-400">
-                GTGD TB/phiên (-4,2%)
-              </div>
-            </div>
-            <div className="rounded-lg bg-slate-50 p-3 text-center">
-              <div className="text-sm font-bold text-lime-600 md:text-base">
-                245 mã
-              </div>
-              <div className="mt-0.5 text-[10px] text-gray-400">Tăng điểm</div>
-            </div>
-            <div className="rounded-lg bg-slate-50 p-3 text-center">
-              <div className="text-sm font-bold text-rose-600 md:text-base">
-                187 mã
-              </div>
-              <div className="mt-0.5 text-[10px] text-gray-400">Giảm điểm</div>
-            </div>
-          </div>
-        </div>
-
-        <div id={convertToId("Phân tích kỹ thuật")}>
-          <h3 className="text-[15px] sm:text-base font-bold text-slate-900">
-            2. Phân tích kỹ thuật
-          </h3>
-          <p className="mt-2 text-slate-600">
-            VN-Index đang vận động trong vùng tích lũy quanh MA20. Chỉ số cần
-            vượt qua vùng kháng cự 1.285 – 1.295 để xác nhận xu hướng tăng tiếp
-            diễn.
-          </p>
-          <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-lg">
-            <Image
-              src={postData.chartImage}
-              alt="Biểu đồ phân tích kỹ thuật"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </div> */}
 
       <div
         className="mt-8 border-b border-gray-100 pb-8 
@@ -221,15 +126,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
 
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-900">Chia sẻ bài viết:</span>
-          <Button className="flex size-7 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-slate-200">
-            <FaFacebook className="size-3.5 fill-current" />
-          </Button>
-          <Button className="flex size-7 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-slate-200">
-            <SiZalo className="size-4 fill-current" />
-          </Button>
-          <Button className="flex size-7 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition hover:bg-slate-200">
-            <Link2 className="size-3.5" />
-          </Button>
+          <ShareButtons />
         </div>
       </div>
     </article>
