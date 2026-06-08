@@ -2,6 +2,7 @@ import { LucideIcon } from "@/components/lucide-icon";
 import { Button } from "@/components/ui";
 import { KnowledgeCategory } from "@/features/knowledge/types";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const colorPalette = [
   { iconColor: "text-lime-600", bgColor: "bg-lime-50" },
@@ -41,9 +42,14 @@ export function FeaturedTopics({ categories, limit }: FeaturedTopicsProps) {
         </h2>
 
         {limit && (
-          <Button className="flex items-center gap-1.5 sm:gap-2 lg:gap-1.5 rounded-lg border border-lime-600/30 px-4 py-2 text-sm font-medium text-lime-700 transition hover:bg-lime-50">
-            Xem tất cả chủ đề
-            <ArrowRight className="size-3.5 md:size-4" />
+          <Button className="rounded-lg border border-lime-600/30 px-4 py-2 text-sm font-medium text-lime-700 transition hover:bg-lime-50">
+            <Link
+              href={"/knowledge/topic"}
+              className="flex items-center gap-1.5 sm:gap-2 lg:gap-1.5 "
+            >
+              Xem tất cả chủ đề
+              <ArrowRight className="size-3.5 md:size-4" />
+            </Link>
           </Button>
         )}
       </div>

@@ -39,4 +39,5 @@ export interface KnowledgeCategory {
   icon: string;
   count: number;
   countFormatted: string;
+  views?: number;
 }

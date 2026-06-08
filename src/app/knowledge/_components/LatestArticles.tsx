@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Eye, MessageCircle, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui";
 import { KnowledgeArticle } from "@/features/knowledge/types";
 import Link from "next/link";
 
