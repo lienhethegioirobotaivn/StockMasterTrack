@@ -1,7 +1,6 @@
 import { LucideIcon } from "@/components/lucide-icon";
 import { Button } from "@/components/ui";
-import { getKnowledgeCategories } from "@/features/knowledge/api";
-import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
+import { KnowledgeCategory } from "@/features/knowledge/types";
 import { ArrowRight } from "lucide-react";
 
 const colorPalette = [
@@ -16,16 +15,12 @@ const colorPalette = [
 ];
 
 interface FeaturedTopicsProps {
+  categories: KnowledgeCategory[];
   limit?: number;
 }
 
-export async function FeaturedTopics({ limit }: FeaturedTopicsProps) {
-  const res = await getKnowledgeCategories(100);
-  const wpCategories = res?.knowledgeCategories?.nodes || [];
-
-  const topics = wpCategories
-    .filter((cat) => cat.slug !== "uncategorized")
-    .map(mapKnowledgeCategory)
+export function FeaturedTopics({ categories, limit }: FeaturedTopicsProps) {
+  const topics = [...categories]
     .sort((a, b) => b.count - a.count)
     .map((category, index) => {
       const color = colorPalette[index % colorPalette.length];

@@ -9,12 +9,14 @@ import {
 import {
   getKnowledgeArticle,
   getRelatedKnowledgeArticles,
+  getKnowledgeCategories,
 } from "@/features/knowledge/api";
 import { KnowledgeArticle } from "@/features/knowledge/types";
 import {
   mapKnowledgeArticleDetail,
   mapKnowledgeArticleList,
 } from "@/features/knowledge/utils/mapKnowledgeArticle";
+import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
 
 interface KnowledgeDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -42,14 +44,15 @@ export default async function KnowledgeDetailPage({
       ?.map((cat) => cat.slug)
       .filter(Boolean) as string[]) || [];
 
+  const [relatedData, categoriesData] = await Promise.all([
+    categorySlugs.length > 0
+      ? getRelatedKnowledgeArticles(categorySlugs, article.databaseId)
+      : Promise.resolve(null),
+    getKnowledgeCategories(100),
+  ]);
+
   let relatedArticles: KnowledgeArticle[] = [];
-
-  if (categorySlugs.length > 0) {
-    const relatedData = await getRelatedKnowledgeArticles(
-      categorySlugs,
-      article.databaseId,
-    );
-
+  if (relatedData) {
     const allArticles =
       relatedData.knowledgeCategories?.nodes?.flatMap(
         (cat) => cat.knowledgeArticles?.nodes ?? [],
@@ -62,6 +65,10 @@ export default async function KnowledgeDetailPage({
     relatedArticles = uniqueArticles.slice(0, 5).map(mapKnowledgeArticleList);
   }
 
+  const categories = (categoriesData?.knowledgeCategories?.nodes ?? [])
+    .filter((cat) => cat.slug !== "uncategorized")
+    .map(mapKnowledgeCategory);
+
   return (
     <>
       <ViewTracker postId={article.databaseId} />
@@ -72,7 +79,7 @@ export default async function KnowledgeDetailPage({
           <ArticleContent article={article} />
           <aside className="flex flex-col gap-6 lg:max-w-sm xl:max-w-md">
             <RelatedArticles articles={relatedArticles} />
-            <SidebarTopics limit={6} />
+            <SidebarTopics categories={categories} limit={6} />
             <SidebarCTA />
           </aside>
         </div>

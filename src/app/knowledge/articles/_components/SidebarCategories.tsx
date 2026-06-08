@@ -1,26 +1,19 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getKnowledgeCategories } from "@/features/knowledge/api";
-import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
 import { LucideIcon } from "@/components/lucide-icon";
+import { KnowledgeCategory } from "@/features/knowledge/types";
 
 interface SidebarCategoriesProps {
+  categories: KnowledgeCategory[];
   limit?: number;
 }
 
-export async function SidebarCategories({ limit }: SidebarCategoriesProps) {
-  const res = await getKnowledgeCategories(100);
-  const wpCategories = res?.knowledgeCategories?.nodes || [];
-
-  const topics = wpCategories
-    .filter((cat) => cat.slug !== "uncategorized")
-    .map(mapKnowledgeCategory)
+export function SidebarCategories({
+  categories,
+  limit,
+}: SidebarCategoriesProps) {
+  const topics = [...categories]
     .sort((a, b) => b.count - a.count)
-    .map((category) => {
-      return {
-        ...category,
-      };
-    })
     .slice(0, limit);
 
   return (
@@ -32,7 +25,7 @@ export async function SidebarCategories({ limit }: SidebarCategoriesProps) {
         {topics.map((cat) => {
           return (
             <Link
-              key={cat.name}
+              key={cat.slug}
               href="#"
               className="flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50/50 transition-colors group"
             >

@@ -12,11 +12,12 @@ import {
   getKnowledgeArticlesByIds,
   getKnowledgeArticlesPaginated,
   getPopularKnowledgeArticleIds,
+  getKnowledgeCategories,
 } from "@/features/knowledge/api";
 
 import { KNOWLEDGE_ARTICLES_PER_PAGE } from "@/features/knowledge/constants";
-
 import { mapKnowledgeArticleList } from "@/features/knowledge/utils/mapKnowledgeArticle";
+import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
 
 interface KnowledgePageProps {
   searchParams: Promise<{
@@ -28,16 +29,15 @@ export default async function KnowledgePage({
   searchParams,
 }: KnowledgePageProps) {
   const params = await searchParams;
-
   const currentPage = Number(params.page ?? "1");
 
   const popularIdsData = await getPopularKnowledgeArticleIds();
-
   const popularIds = popularIdsData.popularKnowledgeArticles ?? [];
 
-  const [articlesData, popularData] = await Promise.all([
+  const [articlesData, popularData, categoriesData] = await Promise.all([
     getKnowledgeArticlesPaginated(100),
     getKnowledgeArticlesByIds(popularIds),
+    getKnowledgeCategories(100),
   ]);
 
   const allArticles = (articlesData.knowledgeArticles?.nodes ?? []).map(
@@ -53,13 +53,16 @@ export default async function KnowledgePage({
   );
 
   const safePage = Math.min(Math.max(currentPage, 1), Math.max(totalPages, 1));
-
   const start = (safePage - 1) * KNOWLEDGE_ARTICLES_PER_PAGE;
 
   const articles = allArticles.slice(
     start,
     start + KNOWLEDGE_ARTICLES_PER_PAGE,
   );
+
+  const categories = (categoriesData?.knowledgeCategories?.nodes ?? [])
+    .filter((cat) => cat.slug !== "uncategorized")
+    .map(mapKnowledgeCategory);
 
   return (
     <main>
@@ -74,7 +77,7 @@ export default async function KnowledgePage({
             <Pagination currentPage={safePage} totalPages={totalPages} />
           </div>
           <aside className="space-y-6">
-            <SidebarCategories limit={6} />
+            <SidebarCategories categories={categories} limit={6} />
             <SidebarTrending articles={popularArticles} />
             <SidebarNewsletter />
           </aside>

@@ -1,24 +1,14 @@
-import { getKnowledgeCategories } from "@/features/knowledge/api";
-import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
+import { KnowledgeCategory } from "@/features/knowledge/types";
 import { ArrowRight } from "lucide-react";
 
 interface SidebarTopicsProps {
+  categories: KnowledgeCategory[];
   limit?: number;
 }
 
-export async function SidebarTopics({ limit }: SidebarTopicsProps) {
-  const res = await getKnowledgeCategories(100);
-  const wpCategories = res?.knowledgeCategories?.nodes || [];
-
-  const topics = wpCategories
-    .filter((cat) => cat.slug !== "uncategorized")
-    .map(mapKnowledgeCategory)
+export function SidebarTopics({ categories, limit }: SidebarTopicsProps) {
+  const topics = [...categories]
     .sort((a, b) => b.count - a.count)
-    .map((category) => {
-      return {
-        ...category,
-      };
-    })
     .slice(0, limit);
 
   return (
