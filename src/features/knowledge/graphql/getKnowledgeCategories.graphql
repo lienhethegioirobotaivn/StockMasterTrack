@@ -1,0 +1,12 @@
+query GetKnowledgeCategories($first: Int = 20) {
+  knowledgeCategories(first: $first, where: { hideEmpty: false }) {
+    nodes {
+      name
+      slug
+      knowledgeCategoryFields {
+        icon
+      }
+      count
+    }
+  }
+}

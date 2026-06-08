@@ -9945,7 +9945,7 @@ input KnowledgeArticleToTermNodeConnectionWhereArgs {
 }
 
 """The knowledgeCategory type"""
-type KnowledgeCategory implements Node & TermNode & UniformResourceIdentifiable & DatabaseIdentifier & HierarchicalTermNode & HierarchicalNode & MenuItemLinkable {
+type KnowledgeCategory implements Node & TermNode & UniformResourceIdentifiable & DatabaseIdentifier & HierarchicalTermNode & HierarchicalNode & MenuItemLinkable & WithAcfKnowledgeCategoryFields {
   """
   The ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root).
   """
@@ -10105,6 +10105,9 @@ type KnowledgeCategory implements Node & TermNode & UniformResourceIdentifiable 
     where: KnowledgeCategoryToKnowledgeArticleConnectionWhereArgs
   ): KnowledgeCategoryToKnowledgeArticleConnection
 
+  """Fields of the KnowledgeCategoryFields ACF Field Group"""
+  knowledgeCategoryFields: KnowledgeCategoryFields
+
   """The id field matches the WP_Post-&gt;ID field."""
   knowledgeCategoryId: Int @deprecated(reason: "Deprecated in favor of databaseId")
 
@@ -10192,6 +10195,34 @@ interface KnowledgeCategoryConnectionPageInfo {
 
   """When paginating backwards, the cursor to continue."""
   startCursor: String
+}
+
+"""
+The &quot;KnowledgeCategoryFields&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;.
+"""
+type KnowledgeCategoryFields implements KnowledgeCategoryFields_Fields & AcfFieldGroup & AcfFieldGroupFields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;KnowledgeCategoryFields&quot; Field Group
+  """
+  icon: String
+}
+
+"""
+Interface representing fields of the ACF &quot;KnowledgeCategoryFields&quot; Field Group
+"""
+interface KnowledgeCategoryFields_Fields {
+  """The name of the field group"""
+  fieldGroupName: String @deprecated(reason: "Use __typename instead")
+
+  """
+  Field of the &quot;text&quot; Field Type added to the schema as part of the
+  &quot;KnowledgeCategoryFields&quot; Field Group
+  """
+  icon: String
 }
 
 """
@@ -24193,6 +24224,15 @@ Group via the &quot;knowledgeArticleFields&quot; field
 interface WithAcfKnowledgeArticleFields {
   """Fields of the KnowledgeArticleFields ACF Field Group"""
   knowledgeArticleFields: KnowledgeArticleFields
+}
+
+"""
+Provides access to fields of the &quot;KnowledgeCategoryFields&quot; ACF Field
+Group via the &quot;knowledgeCategoryFields&quot; field
+"""
+interface WithAcfKnowledgeCategoryFields {
+  """Fields of the KnowledgeCategoryFields ACF Field Group"""
+  knowledgeCategoryFields: KnowledgeCategoryFields
 }
 
 """

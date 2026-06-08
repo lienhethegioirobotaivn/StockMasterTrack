@@ -8,3 +8,5 @@ export * from "./getRelatedKnowledgeArticles";
 
 export * from "./getKnowledgeArticlesCount";
 export * from "./getKnowledgeArticlesPaginated";
+
+export * from "./getKnowledgeCategories";

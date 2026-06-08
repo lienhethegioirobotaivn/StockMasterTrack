@@ -72,7 +72,7 @@ export default async function KnowledgeDetailPage({
           <ArticleContent article={article} />
           <aside className="flex flex-col gap-6 lg:max-w-sm xl:max-w-md">
             <RelatedArticles articles={relatedArticles} />
-            <SidebarTopics />
+            <SidebarTopics limit={6} />
             <SidebarCTA />
           </aside>
         </div>

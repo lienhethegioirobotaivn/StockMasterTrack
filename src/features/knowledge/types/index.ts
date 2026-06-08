@@ -32,3 +32,11 @@ export type KnowledgeArticle = {
   views: number;
   viewsFormatted: string;
 };
+
+export interface KnowledgeCategory {
+  name: string;
+  slug: string;
+  icon: string;
+  count: number;
+  countFormatted: string;
+}

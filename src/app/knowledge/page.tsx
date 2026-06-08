@@ -35,7 +35,7 @@ export default async function KnowledgePage() {
     <main>
       <Hero />
       <div className="mx-auto flex w-full flex-col gap-12">
-        <FeaturedTopics />
+        <FeaturedTopics limit={6} />
         <LatestArticles articles={articles} />
         <div className="mx-auto grid w-full grid-cols-1 gap-8 px-6 py-6 lg:grid-cols-[1.5fr_1fr] lg:px-12 lg:py-4">
           <PopularArticles articles={popularArticles} />

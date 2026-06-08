@@ -74,7 +74,7 @@ export default async function KnowledgePage({
             <Pagination currentPage={safePage} totalPages={totalPages} />
           </div>
           <aside className="space-y-6">
-            <SidebarCategories />
+            <SidebarCategories limit={6} />
             <SidebarTrending articles={popularArticles} />
             <SidebarNewsletter />
           </aside>

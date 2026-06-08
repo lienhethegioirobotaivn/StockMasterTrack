@@ -1,27 +1,27 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  BarChart3,
-  BookOpen,
-  GraduationCap,
-  ShieldCheck,
-  HeartPulse,
-  ShieldAlert,
-  LayoutGrid,
-  FileText,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { getKnowledgeCategories } from "@/features/knowledge/api";
+import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
+import { LucideIcon } from "@/components/lucide-icon";
 
-export function SidebarCategories() {
-  const categories = [
-    { name: "Phân tích thị trường", count: 28, icon: BarChart3 },
-    { name: "Phân tích cơ bản", count: 24, icon: BookOpen },
-    { name: "Phân tích kỹ thuật", count: 36, icon: GraduationCap },
-    { name: "Quản trị rủi ro", count: 18, icon: ShieldCheck },
-    { name: "Tâm lý đầu tư", count: 16, icon: HeartPulse },
-    { name: "Kiến thức nền tảng", count: 22, icon: ShieldAlert },
-    { name: "Quản trị danh mục", count: 14, icon: LayoutGrid },
-    { name: "Câu chuyện đầu tư", count: 12, icon: FileText },
-  ];
+interface SidebarCategoriesProps {
+  limit?: number;
+}
+
+export async function SidebarCategories({ limit }: SidebarCategoriesProps) {
+  const res = await getKnowledgeCategories(100);
+  const wpCategories = res?.knowledgeCategories?.nodes || [];
+
+  const topics = wpCategories
+    .filter((cat) => cat.slug !== "uncategorized")
+    .map(mapKnowledgeCategory)
+    .sort((a, b) => b.count - a.count)
+    .map((category) => {
+      return {
+        ...category,
+      };
+    })
+    .slice(0, limit);
 
   return (
     <div className="rounded-2xl border border-gray-100 bg-white p-5">
@@ -29,20 +29,22 @@ export function SidebarCategories() {
         Danh mục bài viết
       </h3>
       <div className="mt-4 space-y-1.5">
-        {categories.map((cat) => {
-          const Icon = cat.icon;
+        {topics.map((cat) => {
           return (
             <Link
               key={cat.name}
               href="#"
-              className="flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 transition-colors group"
+              className="flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-600 hover:bg-emerald-50/50 transition-colors group"
             >
               <div className="flex items-center gap-2.5">
-                <Icon className="size-4 text-gray-400 group-hover:text-lime-600" />
-                <span className="group-hover:text-gray-950">{cat.name}</span>
+                <LucideIcon
+                  name={cat.icon}
+                  className="size-4 text-gray-400 group-hover:text-emerald-700"
+                />
+                <span className="group-hover:text-emerald-700">{cat.name}</span>
               </div>
-              <span className="text-xs font-medium text-gray-400 group-hover:text-gray-600 bg-gray-50 px-2 py-0.5 rounded-md">
-                {cat.count}
+              <span className="text-xs font-medium text-gray-400 group-hover:text-emerald-700 bg-gray-50 px-2 py-0.5 rounded-md">
+                {cat.countFormatted}
               </span>
             </Link>
           );
