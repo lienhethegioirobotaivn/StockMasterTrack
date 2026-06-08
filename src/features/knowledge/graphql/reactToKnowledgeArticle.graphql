@@ -1,0 +1,6 @@
+mutation ReactToKnowledgeArticle($postId: Int!, $type: String!) {
+  reactToArticle(input: { postId: $postId, type: $type }) {
+    likes
+    dislikes
+  }
+}

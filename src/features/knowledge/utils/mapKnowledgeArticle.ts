@@ -72,6 +72,9 @@ function mapSharedFields(article: RawArticleList | RawArticleDetail) {
       : null,
     views: rawViews,
     viewsFormatted: formatViews(rawViews),
+
+    likes: article.likes ?? 0,
+    dislikes: article.dislikes ?? 0,
   };
 }
 

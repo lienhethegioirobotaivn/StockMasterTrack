@@ -9068,6 +9068,7 @@ type KnowledgeArticle implements Node & ContentNode & UniformResourceIdentifiabl
 
   """The desired slug of the post"""
   desiredSlug: String
+  dislikes: Int
 
   """
   If a user has edited the node within the past 15 seconds, this will return the
@@ -9207,6 +9208,7 @@ type KnowledgeArticle implements Node & ContentNode & UniformResourceIdentifiabl
 
   """The user that most recently edited the node"""
   lastEditedBy: ContentNodeToEditLastConnectionEdge
+  likes: Int
 
   """The permalink of the post"""
   link: String
@@ -15259,6 +15261,29 @@ interface Previewable {
   previewRevisionId: ID
 }
 
+"""Input for the reactToArticle mutation."""
+input ReactToArticleInput {
+  """
+  This is an ID that can be passed to a mutation by the client to track the
+  progress of mutations and catch possible duplicate mutation submissions.
+  """
+  clientMutationId: String
+  postId: Int
+  type: String
+}
+
+"""The payload for the reactToArticle mutation."""
+type ReactToArticlePayload {
+  """
+  If a &#039;clientMutationId&#039; input is provided to the mutation, it will
+  be returned as output on the mutation. This ID can be used by the client to
+  track the progress of mutations and catch possible duplicate mutation submissions.
+  """
+  clientMutationId: String
+  dislikes: Int
+  likes: Int
+}
+
 """The reading setting type"""
 type ReadingSettings {
   """The ID of the page that should display the latest posts"""
@@ -15562,6 +15587,12 @@ type RootMutation {
     """The count to increase"""
     count: Int
   ): Int
+
+  """The reactToArticle mutation"""
+  reactToArticle(
+    """Input for the reactToArticle mutation"""
+    input: ReactToArticleInput!
+  ): ReactToArticlePayload
 
   """The registerUser mutation"""
   registerUser(

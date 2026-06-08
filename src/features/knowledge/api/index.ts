@@ -10,3 +10,5 @@ export * from "./getKnowledgeArticlesCount";
 export * from "./getKnowledgeArticlesPaginated";
 
 export * from "./getKnowledgeCategories";
+
+export * from "./reactToKnowledgeArticle";

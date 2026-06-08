@@ -46,6 +46,9 @@ query GetKnowledgeArticles($first: Int = 10) {
       }
 
       views
+
+      likes
+      dislikes
     }
   }
 }

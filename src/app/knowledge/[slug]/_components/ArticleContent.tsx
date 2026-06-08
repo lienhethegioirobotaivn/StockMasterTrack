@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { ThumbsDown, ThumbsUp } from "lucide-react";
-import { Button } from "@/components/ui";
 import { KnowledgeArticle } from "@/features/knowledge/types";
-import { ShareButtons } from "./ShareButtons";
-
+import {
+  ShareButtons,
+  ReactionButtons,
+} from "@/app/knowledge/[slug]/_components";
 interface ArticleContentProps {
   article: KnowledgeArticle;
 }
@@ -114,14 +114,11 @@ export function ArticleContent({ article }: ArticleContentProps) {
           <span className="text-sm font-semibold text-slate-700">
             Bài viết hữu ích?
           </span>
-          <Button className="flex items-center rounded-md gap-2 border border-gray-200 px-3 py-1 text-xs font-semibold text-lime-600 transition hover:bg-lime-50">
-            <ThumbsUp className="size-3.5" />
-            <span>23</span>
-          </Button>
-          <Button className="flex items-center rounded-md gap-2 border border-gray-200 px-3 py-1 text-xs font-semibold text-rose-600 transition hover:bg-rose-50">
-            <ThumbsDown className="size-3.5" />
-            <span>2</span>
-          </Button>
+          <ReactionButtons
+            postId={article.databaseId}
+            likes={article.likes}
+            dislikes={article.dislikes}
+          />
         </div>
 
         <div className="flex items-center gap-2">

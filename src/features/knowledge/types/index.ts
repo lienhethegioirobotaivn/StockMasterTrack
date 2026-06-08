@@ -31,6 +31,9 @@ export type KnowledgeArticle = {
 
   views: number;
   viewsFormatted: string;
+
+  likes: number;
+  dislikes: number;
 };
 
 export interface KnowledgeCategory {
