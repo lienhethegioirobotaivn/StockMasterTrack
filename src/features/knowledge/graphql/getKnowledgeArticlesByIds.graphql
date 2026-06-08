@@ -46,6 +46,9 @@ query GetKnowledgeArticlesByIds($ids: [ID]) {
       }
 
       views
+
+      likes
+      dislikes
     }
   }
 }

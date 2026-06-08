@@ -46,6 +46,9 @@ query GetKnowledgeArticlesPaginated($first: Int!, $after: String) {
       }
 
       views
+
+      likes
+      dislikes
     }
 
     pageInfo {
