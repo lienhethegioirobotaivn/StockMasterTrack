@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import { KnowledgeArticle } from "@/features/knowledge/types";
-import {
-  ShareButtons,
-  ReactionButtons,
-} from "@/app/knowledge/[slug]/_components";
+import { ShareButtons } from "./ShareButtons";
+import { ReactionButtons } from "./ReactionButtons";
+
 interface ArticleContentProps {
   article: KnowledgeArticle;
 }
