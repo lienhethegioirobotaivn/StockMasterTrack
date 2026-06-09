@@ -1,0 +1,133 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+const ELITE_DATA = {
+  title: "CỘNG ĐỒNG MT PRO ELITE",
+  subtitle: (
+    <>
+      Nơi quy tụ những nhà đầu tư nghiêm túc, kỷ luật và luôn hướng tới{" "}
+      <strong className="font-bold text-white">kết quả vượt trội.</strong>
+    </>
+  ),
+  cta: "THAM GIA CỘNG ĐỒNG",
+  images: [
+    {
+      src: "/courses/stock-mt-pro/elite-1.jpg",
+      alt: "MT Pro Elite Community 1",
+    },
+    {
+      src: "/courses/stock-mt-pro/elite-2.jpg",
+      alt: "MT Pro Elite Community 2",
+    },
+    {
+      src: "/courses/stock-mt-pro/elite-3.jpg",
+      alt: "MT Pro Elite Community 3",
+    },
+  ],
+};
+
+export function Elite() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? ELITE_DATA.images.length - 1 : prevIndex - 1,
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === ELITE_DATA.images.length - 1 ? 0 : prevIndex + 1,
+    );
+  };
+
+  return (
+    <section className="bg-[#060606] py-12 font-sans">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative rounded-2xl border border-white/5 bg-[#0e0e11] p-6 lg:p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div className="lg:col-span-4 flex flex-col justify-between h-full py-2">
+              <div>
+                <h2 className="text-xl sm:text-2xl font-bold text-white uppercase">
+                  {ELITE_DATA.title}
+                </h2>
+                <p className="mt-4 text-[13px] leading-relaxed text-neutral-400 font-medium max-w-sm">
+                  {ELITE_DATA.subtitle}
+                </p>
+              </div>
+
+              <div className="mt-8">
+                <Button className="h-11 rounded-lg bg-linear-to-br from-[#E1BB70] to-[#C3944E] px-6 text-xs font-bold text-black uppercase hover:opacity-90 transition-all">
+                  <Link
+                    href={"https://zalo.me/g/tmf9comkbyxqsqiv2ler"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {ELITE_DATA.cta}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="lg:col-span-8 relative px-4">
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{
+                    transform: `translateX(-${currentIndex * (100 / 3)}%)`,
+                  }}
+                >
+                  {[
+                    ...ELITE_DATA.images,
+                    ...ELITE_DATA.images,
+                    ...ELITE_DATA.images,
+                  ].map((image, index) => {
+                    const isVisibleOnMobile = index === currentIndex;
+                    return (
+                      <div
+                        key={index}
+                        className={`w-full shrink-0 px-2 md:w-1/3 transition-opacity duration-500 ${
+                          isVisibleOnMobile
+                            ? "opacity-100"
+                            : "opacity-0 md:opacity-100"
+                        }`}
+                      >
+                        <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl border border-white/5 bg-[#141419]">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <Button
+                onClick={handlePrev}
+                className="absolute left-0 top-1/2 -translate-y-1/2 flex size-8 items-center justify-center rounded-full border border-[#C3944E]/40 bg-[#0e0e11] text-[#C3944E] hover:bg-[#C3944E]/10 transition-all z-10"
+              >
+                <ChevronLeft className="size-4" />
+              </Button>
+
+              <Button
+                onClick={handleNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 flex size-8 items-center justify-center rounded-full border border-[#C3944E]/40 bg-[#0e0e11] text-[#C3944E] hover:bg-[#C3944E]/10 transition-all z-10"
+              >
+                <ChevronRight className="size-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,14 +1,21 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
-import { FooterService } from "@/services/footer.service";
 import { SiZalo } from "react-icons/si";
+import { FooterData, FooterService } from "@/services/footer.service";
+import { use } from "react";
 
-export async function Footer() {
-  const pageData = await FooterService.getData();
-  if (!pageData) return null;
-  const footer = pageData;
+interface FooterContentProps {
+  footer: FooterData;
+}
+
+function FooterContent({ footer }: FooterContentProps) {
+  const pathname = usePathname();
+  const isStockMTPro = pathname?.startsWith("/courses/stock-mt-pro");
 
   const socialIcons = [
     { icon: FaFacebook, link: footer.column_1.facebook },
@@ -24,14 +31,20 @@ export async function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#0a1625] text-white">
+    <footer
+      className={`w-full text-white transition-colors duration-300 ${isStockMTPro ? "bg-[#060606] border-t border-[#1a1a1a]" : "bg-[#0a1625]"}`}
+    >
       <div className="mx-auto px-8 pt-10 pb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-12">
           <div className="space-y-4 lg:col-span-1">
             <Link href={"/"} className="flex items-center gap-2">
               <div className="relative h-15 w-45 shrink-0">
                 <Image
-                  src={footer.column_1.image}
+                  src={
+                    isStockMTPro
+                      ? "/courses/stock-mt-pro/stock-mt-pro-logo2.jpg"
+                      : footer.column_1.image
+                  }
                   alt="STOCK MASTERTRACK LOGO"
                   fill
                   sizes="(max-width: 768px) 100px, 200px"
@@ -51,7 +64,7 @@ export async function Footer() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex size-8 items-center justify-center rounded-full border border-gray-700 bg-gray-900/40 text-gray-400 transition-colors hover:border-gray-500 hover:text-white"
+                  className={`flex size-8 items-center justify-center rounded-full border bg-gray-900/40 text-gray-400 transition-colors ${isStockMTPro ? "border-[#d4b26f]/30 hover:border-[#d4b26f] hover:text-[#d4b26f]" : "border-gray-700 hover:border-gray-500 hover:text-white"}`}
                 >
                   <item.icon className="size-4 fill-current stroke-1" />
                 </Link>
@@ -60,7 +73,9 @@ export async function Footer() {
           </div>
 
           <div className="lg:col-span-1 lg:mx-auto">
-            <h3 className="text-lg lg:text-[15px] font-bold text-gray-200 uppercase">
+            <h3
+              className={`text-lg lg:text-[15px] font-bold uppercase ${isStockMTPro ? "text-[#d4b26f]" : "text-gray-200"}`}
+            >
               {footer.column_2.title}
             </h3>
             <ul className="mt-3 space-y-2">
@@ -68,7 +83,7 @@ export async function Footer() {
                 <li key={index}>
                   <Link
                     href={item.endpoint}
-                    className="text-base lg:text-[12px] font-medium text-gray-400 transition-colors hover:text-white"
+                    className={`text-base lg:text-[12px] font-medium transition-colors ${isStockMTPro ? "text-gray-400 hover:text-[#d4b26f]" : "text-gray-400 hover:text-white"}`}
                   >
                     {item.text}
                   </Link>
@@ -78,7 +93,9 @@ export async function Footer() {
           </div>
 
           <div className="lg:col-span-1 lg:mx-auto">
-            <h3 className="text-lg lg:text-[15px] font-bold text-gray-200 uppercase">
+            <h3
+              className={`text-lg lg:text-[15px] font-bold uppercase ${isStockMTPro ? "text-[#d4b26f]" : "text-gray-200"}`}
+            >
               {footer.column_3.title}
             </h3>
             <ul className="mt-3 space-y-2">
@@ -86,7 +103,7 @@ export async function Footer() {
                 <li key={index}>
                   <Link
                     href={item.endpoint}
-                    className="text-base lg:text-[12px] font-medium text-gray-400 transition-colors hover:text-white"
+                    className={`text-base lg:text-[12px] font-medium transition-colors ${isStockMTPro ? "text-gray-400 hover:text-[#d4b26f]" : "text-gray-400 hover:text-white"}`}
                   >
                     {item.text}
                   </Link>
@@ -96,7 +113,9 @@ export async function Footer() {
           </div>
 
           <div className="lg:col-span-1 lg:mx-auto">
-            <h3 className="text-lg lg:text-[15px] font-bold text-gray-200 uppercase">
+            <h3
+              className={`text-lg lg:text-[15px] font-bold uppercase ${isStockMTPro ? "text-[#d4b26f]" : "text-gray-200"}`}
+            >
               {footer.column_4.title}
             </h3>
             <ul className="mt-3 space-y-2.5">
@@ -105,7 +124,9 @@ export async function Footer() {
                   key={idx}
                   className="flex items-center gap-2.5 text-base lg:text-[12px] font-medium text-gray-400"
                 >
-                  <item.icon className="size-3.5 shrink-0 text-gray-400" />
+                  <item.icon
+                    className={`size-3.5 shrink-0 ${isStockMTPro ? "text-[#d4b26f]" : "text-gray-400"}`}
+                  />
                   <span>{item.text}</span>
                 </li>
               ))}
@@ -113,7 +134,9 @@ export async function Footer() {
           </div>
 
           <div className="space-y-3 sm:col-span-2 md:col-span-3 lg:col-span-1">
-            <h3 className="text-lg lg:text-[15px] font-bold text-gray-200 uppercase">
+            <h3
+              className={`text-lg lg:text-[15px] font-bold uppercase ${isStockMTPro ? "text-[#d4b26f]" : "text-gray-200"}`}
+            >
               {footer.column_5.title}
             </h3>
 
@@ -121,23 +144,36 @@ export async function Footer() {
               {footer.column_5.text}
             </p>
 
-            <div className="flex w-full items-center rounded-md border border-gray-800 bg-[#0e1e32]">
+            <div
+              className={`flex w-full items-center rounded-md border ${isStockMTPro ? "border-[#d4b26f]/30 bg-[#141414]" : "border-gray-800 bg-[#0e1e32]"}`}
+            >
               <input
                 type="email"
                 placeholder="Nhập email của bạn"
                 className="w-full bg-transparent px-3 py-1.5 text-sm lg:text-[11px] font-medium text-white outline-none placeholder:text-gray-600"
               />
-              <button className="flex size-8 shrink-0 items-center justify-center rounded-md bg-lime-600 text-white transition-colors hover:bg-lime-700">
+              <button
+                className={`flex size-8 shrink-0 items-center justify-center rounded-md ${isStockMTPro ? "text-black" : "text-white"} transition-colors ${isStockMTPro ? "bg-[#d4b26f] hover:bg-[#b3966e]" : "bg-lime-600 hover:bg-lime-700"}`}
+              >
                 <ArrowRight className="size-3.5 stroke-[2.5]" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="mt-6 border-t border-gray-900 text-left text-xs font-medium text-gray-600">
+        <div className="mt-6 border-t border-gray-900 pt-4 text-left text-xs font-medium text-gray-600">
           © 2026 Stock MasterTrack. All rights reserved.
         </div>
       </div>
     </footer>
   );
+}
+
+const dataPromise = FooterService.getData() as Promise<FooterData | null>;
+
+export function Footer() {
+  const data = use(dataPromise);
+  if (!data) return null;
+
+  return <FooterContent footer={data} />;
 }
