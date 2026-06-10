@@ -39,7 +39,7 @@ export async function generateMetadata({
 
   const image = article.featuredImage?.node?.sourceUrl || "";
 
-  const description = article.excerpt || article.title;
+  const description = (article.excerpt || article.title) ?? "";
 
   return {
     title: article.title,
