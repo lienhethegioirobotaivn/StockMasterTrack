@@ -33,9 +33,9 @@ const WHY_CHOOSE_DATA = {
 export function WhyChoose() {
   return (
     <section className="bg-[#060606] py-16 font-sans border-t border-white/5">
-      <div className="mx-auto px-6 lg:px-12">
+      <div className="mx-auto px-6 sm:px-12">
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white uppercase">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase">
             {WHY_CHOOSE_DATA.title}
           </h2>
           <div className="mt-2.5 h-1 w-10 bg-[#C3944E]" />
@@ -54,10 +54,10 @@ export function WhyChoose() {
                 </div>
 
                 <div className="flex flex-col space-y-2.5 pt-1">
-                  <h3 className="text-sm lg:text-[15px] font-bold uppercase text-[#E1BB70]">
+                  <h3 className="text-sm sm:text-base lg:text-[15px] font-bold uppercase text-[#E1BB70]">
                     {item.title}
                   </h3>
-                  <p className="text-[12px] lg:text-[13px] leading-relaxed text-neutral-400 font-medium">
+                  <p className="text-[12px] sm:text-sm lg:text-[13px] leading-relaxed text-neutral-400 font-medium">
                     {item.description}
                   </p>
                 </div>

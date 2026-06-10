@@ -41,7 +41,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-linear-to-r from-[#060606] to-transparent w-[25%]" />
       </div>
 
-      <div className="relative z-10 w-full px-6 lg:px-16">
+      <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16">
         <div className="flex flex-wrap items-center gap-2 text-xs mb-8 lg:mb-10">
           {HERO_DATA.breadcrumb.map((item, index) => (
             <div key={index} className="flex items-center gap-2">
@@ -79,11 +79,11 @@ export function Hero() {
               {HERO_DATA.subTitle}
             </p>
 
-            <p className="mt-3 text-sm leading-relaxed lg:w-130 text-white/70">
+            <p className="mt-3 text-sm sm:text-base lg:text-sm leading-relaxed lg:w-130 text-white/70">
               {HERO_DATA.description}
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row items-center gap-3 lg:gap-2.5 lg:w-160 mx-auto sm:mx-0">
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 items-center gap-3 lg:gap-2.5 lg:w-160">
               {HERO_DATA.features.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
@@ -94,7 +94,7 @@ export function Hero() {
                     <div className="flex size-8 shrink-0 items-center justify-center rounded-md border bg-[rgba(212,175,55,0.1)] border-[rgba(212,175,55,0.2)]">
                       <IconComponent className="size-4 text-[#ffe082]" />
                     </div>
-                    <span className="text-sm sm:text-xs font-bold text-white/90">
+                    <span className="text-xs font-bold text-white/90">
                       {item.text}
                     </span>
                   </div>

@@ -34,7 +34,7 @@ const REQUIREMENTS_DATA = {
 export function Requirements() {
   return (
     <section className="bg-[#060606] py-12 font-sans">
-      <div className="mx-auto px-6 lg:px-8">
+      <div className="mx-auto px-6 sm:px-12 lg:px-8">
         <div className="flex flex-col items-center text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase relative pb-3">
             {REQUIREMENTS_DATA.title}
@@ -42,7 +42,7 @@ export function Requirements() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch mb-6 lg:mb-10">
           {REQUIREMENTS_DATA.items.map((item, index) => {
             const IconComponent = item.icon;
             return (
@@ -54,7 +54,7 @@ export function Requirements() {
                   <IconComponent className="size-8 text-[#C3944E] stroke-[1.5]" />
                 </div>
 
-                <p className="text-[13px] leading-relaxed text-neutral-400 font-medium">
+                <p className="text-sm sm:text-base lg:text-sm leading-relaxed text-neutral-400 font-medium">
                   {item.content}
                 </p>
               </div>
@@ -63,7 +63,7 @@ export function Requirements() {
         </div>
 
         <div className="text-center">
-          <Button className="inline-flex h-12 items-center justify-center rounded-lg border border-[#C3944E]/40 bg-transparent px-8 text-sm font-bold text-white uppercase transition-all hover:bg-[#C3944E]/10">
+          <Button className="inline-flex h-10 sm:h-12 items-center justify-center rounded-lg border border-[#C3944E]/40 bg-transparent px-8 text-sm sm:text-base lg:text-sm font-bold text-white uppercase transition-all hover:bg-[#C3944E]/10">
             Kiểm tra điều kiện & đăng ký
           </Button>
         </div>
