@@ -5,19 +5,21 @@ import {
   PastEvents,
   BottomCTA,
 } from "@/app/events/_components";
-import { getPastEvents } from "@/features/events/api";
-import { mapEvent } from "@/features/events/utils";
+import { getPastEvents, getUpcomingEvents } from "@/features/events/api";
 
 export default async function EventsPage() {
   //   const pageData = await EventsService.getData();
   //   if (!pageData) return null;
 
-  const [pastEvents] = await Promise.all([getPastEvents(4)]);
+  const [pastEvents, upcomingEvents] = await Promise.all([
+    getPastEvents(4),
+    getUpcomingEvents(3),
+  ]);
 
   return (
     <main className="overflow-hidden">
       <Hero />
-      <UpcomingEvents />
+      <UpcomingEvents upcomingEvents={upcomingEvents} />
       <EventTypes />
       <PastEvents pastEvents={pastEvents} />
       <BottomCTA />

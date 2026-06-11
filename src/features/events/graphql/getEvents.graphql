@@ -1,5 +1,5 @@
-query GetEvents($limit: Int = 10) {
-  events(first: $limit) {
+query GetEvents($first: Int = 10) {
+  events(first: $first) {
     nodes {
       id
       databaseId

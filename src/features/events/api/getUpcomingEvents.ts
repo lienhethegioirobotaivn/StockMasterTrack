@@ -2,7 +2,7 @@ import { graphqlFetch } from "@/lib/graphql-client";
 import { GetEventsDocument } from "@/graphql/__generated__/graphql";
 import { mapEvent } from "@/features/events/utils";
 
-export async function getPastEvents(first = 4) {
+export async function getUpcomingEvents(first = 3) {
   const data = await graphqlFetch(GetEventsDocument, {
     first,
   });
@@ -16,12 +16,12 @@ export async function getPastEvents(first = 4) {
 
         if (!date) return false;
 
-        return new Date(date) < now;
+        return new Date(date) >= now;
       })
       .sort(
         (a, b) =>
-          new Date(b?.eventsFields?.date ?? "").getTime() -
-          new Date(a?.eventsFields?.date ?? "").getTime(),
+          new Date(a?.eventsFields?.date ?? "").getTime() -
+          new Date(b?.eventsFields?.date ?? "").getTime(),
       )
       .slice(0, first)
       .map(mapEvent) ?? []
