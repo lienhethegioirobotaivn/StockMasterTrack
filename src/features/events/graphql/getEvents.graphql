@@ -1,0 +1,23 @@
+query GetEvents($limit: Int = 10) {
+  events(first: $limit) {
+    nodes {
+      id
+      databaseId
+      title
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+      eventsFields {
+        date
+        time
+        location
+        slots
+        price
+      }
+    }
+  }
+}

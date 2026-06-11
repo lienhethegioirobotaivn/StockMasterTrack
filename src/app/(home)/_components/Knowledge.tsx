@@ -31,16 +31,17 @@ export function Knowledge({ knowledge, articles }: KnowledgeProps) {
             <Link
               key={article.title}
               href={`/knowledge/${article.slug}`}
-              className="flex flex-col justify-between overflow-hidden rounded-xl bg-white border border-gray-100/60 shadow-sm"
+              className="group flex flex-col justify-between overflow-hidden rounded-xl bg-white border border-gray-100/60 transition-all shadow-sm"
             >
               <div>
-                <div className="relative aspect-16/10 w-full bg-gray-50">
+                <div className="w-full bg-gray-50 overflow-hidden">
                   <Image
                     src={article.image?.url ?? ""}
                     alt={article.image?.alt ?? ""}
-                    fill
-                    sizes="(max-w-768px) 100vw, 25vw"
-                    className="object-cover"
+                    width={600}
+                    height={375}
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
 

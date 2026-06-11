@@ -17,7 +17,6 @@ const upcomingEventsData = [
     description:
       "Hướng dẫn đọc – hiểu – phân tích báo cáo tài chính doanh nghiệp một cách hệ thống và dễ áp dụng.",
     price: "Miễn phí",
-    link: "/events/1",
   },
   {
     tag: "WEBINAR ONLINE",
@@ -31,7 +30,6 @@ const upcomingEventsData = [
     description:
       "Cập nhật bức tranh vĩ mô, phân tích các nhóm ngành triển vọng và chiến lược đầu tư cho Quý 3.",
     price: "Miễn phí",
-    link: "/events/2",
   },
   {
     tag: "OFFLINE MEETUP",
@@ -45,7 +43,6 @@ const upcomingEventsData = [
     description:
       "Giao lưu, chia sẻ kinh nghiệm đầu tư và kết nối cùng cộng đồng nhà đầu tư Stock MasterTrack.",
     price: "199.000đ",
-    link: "/events/3",
   },
 ];
 
