@@ -4,7 +4,7 @@ import { mapEvent } from "@/features/events/utils";
 
 export async function getPastEvents(first = 4) {
   const data = await graphqlFetch(GetEventsDocument, {
-    first,
+    first: 20,
   });
 
   const now = new Date();
