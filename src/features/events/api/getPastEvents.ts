@@ -3,7 +3,9 @@ import { GetEventsDocument } from "@/graphql/__generated__/graphql";
 import { mapEvent } from "@/features/events/utils";
 
 export async function getPastEvents(limit = 4) {
-  const data = await graphqlFetch(GetEventsDocument);
+  const data = await graphqlFetch(GetEventsDocument, {
+    limit,
+  });
 
   const now = new Date();
 
