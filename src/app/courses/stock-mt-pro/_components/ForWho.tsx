@@ -7,6 +7,7 @@ import {
   Lock,
 } from "lucide-react";
 import { Button } from "@/components/ui";
+import { StockMTProRegisterDialog } from "@/components/layout/dialog";
 
 const FOR_WHO_DATA = {
   title: "DÀNH CHO AI?",
@@ -119,14 +120,16 @@ export function ForWho() {
               </div>
 
               <div className="w-full text-center">
-                <Button className="w-full h-14 bg-linear-to-r from-[#E1BB70] via-[#F4E3C1] to-[#C3944E] text-black font-bold text-sm sm:text-base lg:text-smhover:opacity-95 flex flex-col justify-center leading-none shadow-md">
-                  <span className="font-extrabold">
-                    {FOR_WHO_DATA.pricing.cta}
-                  </span>
-                  <span className="text-xs text-black/70 font-semibold">
-                    {FOR_WHO_DATA.pricing.subCta}
-                  </span>
-                </Button>
+                <StockMTProRegisterDialog>
+                  <Button className="w-full h-14 bg-linear-to-r from-[#E1BB70] via-[#F4E3C1] to-[#C3944E] text-black font-bold text-sm sm:text-base lg:text-smhover:opacity-95 flex flex-col justify-center leading-none shadow-md">
+                    <span className="font-extrabold">
+                      {FOR_WHO_DATA.pricing.cta}
+                    </span>
+                    <span className="text-xs text-black/70 font-semibold">
+                      {FOR_WHO_DATA.pricing.subCta}
+                    </span>
+                  </Button>
+                </StockMTProRegisterDialog>
 
                 <div className="mt-4 flex items-center justify-center gap-1.5 text-xs sm:text-sm lg:text-xs text-neutral-500 font-medium">
                   <Lock className="size-3 text-[#C3944E]" />

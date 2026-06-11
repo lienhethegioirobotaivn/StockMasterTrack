@@ -1,5 +1,6 @@
 import { Award, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { StockMTProRegisterDialog } from "@/components/layout/dialog";
 
 const REQUIREMENTS_DATA = {
   title: "ĐIỀU KIỆN ĐĂNG KÝ",
@@ -63,9 +64,11 @@ export function Requirements() {
         </div>
 
         <div className="text-center">
-          <Button className="inline-flex h-10 sm:h-12 items-center justify-center rounded-lg border border-[#C3944E]/40 bg-transparent px-8 text-sm sm:text-base lg:text-sm font-bold text-white uppercase transition-all hover:bg-[#C3944E]/10">
-            Kiểm tra điều kiện & đăng ký
-          </Button>
+          <StockMTProRegisterDialog>
+            <Button className="inline-flex h-10 sm:h-12 items-center justify-center rounded-lg border border-[#C3944E]/40 bg-transparent px-8 text-sm sm:text-base lg:text-sm font-bold text-white uppercase transition-all hover:bg-[#C3944E]/10">
+              Kiểm tra điều kiện & đăng ký
+            </Button>
+          </StockMTProRegisterDialog>
         </div>
       </div>
     </section>

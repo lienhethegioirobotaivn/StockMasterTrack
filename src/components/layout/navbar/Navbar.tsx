@@ -15,7 +15,10 @@ import { FaGraduationCap } from "react-icons/fa";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { CourseRegisterDialog } from "@/components/layout/dialog";
+import {
+  CourseRegisterDialog,
+  StockMTProRegisterDialog,
+} from "@/components/layout/dialog";
 
 const navItems = [
   {
@@ -365,17 +368,19 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:block shrink-0">
-          <CourseRegisterDialog>
-            <Button
-              className={`h-11.5 rounded-md px-7 text-[13px] font-bold shadow-none transition-colors duration-300 ${
-                isStockMTProPage
-                  ? "border border-[#d4b26f]/50 bg-transparent text-[#d4b26f] hover:bg-[#d4b26f]/10"
-                  : "bg-fuchsia-700 text-white hover:bg-fuchsia-800"
-              }`}
-            >
-              ĐĂNG KÝ NGAY
-            </Button>
-          </CourseRegisterDialog>
+          {isStockMTProPage ? (
+            <StockMTProRegisterDialog>
+              <Button className="h-11.5 rounded-md px-7 text-[13px] font-bold shadow-none border border-[#d4b26f]/50 bg-transparent text-[#d4b26f] hover:bg-[#d4b26f]/10">
+                ĐĂNG KÝ NGAY
+              </Button>
+            </StockMTProRegisterDialog>
+          ) : (
+            <CourseRegisterDialog>
+              <Button className="h-11.5 rounded-md px-7 text-[13px] font-bold shadow-none bg-fuchsia-700 text-white hover:bg-fuchsia-800">
+                ĐĂNG KÝ NGAY
+              </Button>
+            </CourseRegisterDialog>
+          )}
         </div>
 
         <button
@@ -561,18 +566,25 @@ export function Navbar() {
           })}
 
           <div className="pt-2">
-            <CourseRegisterDialog>
-              <Button
-                onClick={() => setMobileOpen(false)}
-                className={`h-12 w-full text-base font-bold shadow-md active:scale-[0.98] transition-transform rounded-xl ${
-                  isStockMTProPage
-                    ? "bg-transparent border border-[#d4b26f]/50 text-[#d4b26f]"
-                    : "bg-fuchsia-700 text-white hover:bg-fuchsia-800"
-                }`}
-              >
-                ĐĂNG KÝ NGAY
-              </Button>
-            </CourseRegisterDialog>
+            {isStockMTProPage ? (
+              <StockMTProRegisterDialog>
+                <Button
+                  onClick={() => setMobileOpen(false)}
+                  className="h-12 w-full text-base font-bold shadow-md active:scale-[0.98] bg-transparent border border-[#d4b26f]/50 text-[#d4b26f]"
+                >
+                  ĐĂNG KÝ NGAY
+                </Button>
+              </StockMTProRegisterDialog>
+            ) : (
+              <CourseRegisterDialog>
+                <Button
+                  onClick={() => setMobileOpen(false)}
+                  className="h-12 w-full text-base font-bold shadow-md active:scale-[0.98] bg-fuchsia-700 text-white hover:bg-fuchsia-800"
+                >
+                  ĐĂNG KÝ NGAY
+                </Button>
+              </CourseRegisterDialog>
+            )}
           </div>
         </div>
       </div>

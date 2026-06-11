@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, LineChart, Target, Users } from "lucide-react";
 import { Button } from "@/components/ui";
+import { StockMTProRegisterDialog } from "@/components/layout/dialog";
 
 const HERO_DATA = {
   breadcrumb: [
@@ -103,13 +104,21 @@ export function Hero() {
             </div>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Button className="w-full sm:w-fit h-11 px-8 text-sm font-bold text-black border-0 bg-linear-to-r from-[#E1BB70] via-[#F4E3C1] via-50% to-[#C3944E]">
-                {HERO_DATA.buttons[0].text}
-              </Button>
+              <StockMTProRegisterDialog>
+                <Button className="w-full sm:w-fit h-11 px-8 text-sm font-bold text-black border-0 bg-linear-to-r from-[#E1BB70] via-[#F4E3C1] via-50% to-[#C3944E]">
+                  {HERO_DATA.buttons[0].text}
+                </Button>
+              </StockMTProRegisterDialog>
 
-              <Button className="w-full sm:w-fit h-11 px-8 text-sm font-bold text-white/90 hover:text-white bg-white/5 border-white/30">
-                {HERO_DATA.buttons[1].text}
-              </Button>
+              <Link
+                href={"https://zalo.me/0394783239"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full sm:w-fit h-11 px-8 text-sm font-bold text-white/90 hover:text-white bg-white/5 border-white/30">
+                  {HERO_DATA.buttons[1].text}
+                </Button>
+              </Link>
             </div>
           </div>
 
