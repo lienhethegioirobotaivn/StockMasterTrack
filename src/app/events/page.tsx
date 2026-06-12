@@ -6,10 +6,11 @@ import {
   BottomCTA,
 } from "@/app/events/_components";
 import { getPastEvents, getUpcomingEvents } from "@/features/events/api";
+import { EventsService } from "@/services/events.service";
 
 export default async function EventsPage() {
-  //   const pageData = await EventsService.getData();
-  //   if (!pageData) return null;
+  const pageData = await EventsService.getData();
+  if (!pageData) return null;
 
   const [pastEvents, upcomingEvents] = await Promise.all([
     getPastEvents(4),
@@ -18,11 +19,11 @@ export default async function EventsPage() {
 
   return (
     <main className="overflow-hidden">
-      <Hero />
+      <Hero hero={pageData.hero} />
       <UpcomingEvents upcomingEvents={upcomingEvents} />
-      <EventTypes />
+      <EventTypes event_types={pageData.event_types} />
       <PastEvents pastEvents={pastEvents} />
-      <BottomCTA />
+      <BottomCTA bottom_cta={pageData.bottom_cta} />
     </main>
   );
 }

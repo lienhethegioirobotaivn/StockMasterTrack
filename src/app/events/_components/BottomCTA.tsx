@@ -2,8 +2,11 @@
 
 import { Lock, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui";
+import { EventsData } from "@/services/events.service";
 
-export function BottomCTA() {
+type BottomCTAProps = Pick<EventsData, "bottom_cta">;
+
+export function BottomCTA({ bottom_cta }: BottomCTAProps) {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
@@ -18,11 +21,10 @@ export function BottomCTA() {
             </div>
             <div className="space-y-1">
               <h3 className="text-xl font-black text-slate-900">
-                Không bỏ lỡ sự kiện hấp dẫn!
+                {bottom_cta.text_1}
               </h3>
               <p className="text-sm font-medium text-gray-500 leading-relaxed">
-                Đăng ký nhận thông tin để cập nhật sớm nhất về các sự kiện,
-                workshop và ưu đãi từ Stock MasterTrack.
+                {bottom_cta.text_2}
               </p>
             </div>
           </div>

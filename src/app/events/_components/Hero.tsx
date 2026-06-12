@@ -1,30 +1,15 @@
 import Image from "next/image";
-import { Calendar, Users, Video } from "lucide-react";
+import { EventsData } from "@/services/events.service";
+import { LucideIcon } from "@/components/lucide-icon";
 
-const eventFeatures = [
-  {
-    icon: Calendar,
-    title: "Nội dung thực chiến",
-    description: "Cập nhật xu hướng mới nhất",
-  },
-  {
-    icon: Users,
-    title: "Kết nối chất lượng",
-    description: "Giao lưu cùng chuyên gia và nhà đầu tư",
-  },
-  {
-    icon: Video,
-    title: "Hình thức đa dạng",
-    description: "Offline, Online, Webinar phù hợp mọi nhu cầu",
-  },
-];
+type HeroProps = Pick<EventsData, "hero">;
 
-export function Hero() {
+export function Hero({ hero }: HeroProps) {
   return (
     <section className="relative w-full overflow-hidden bg-white py-10 flex items-center">
       <div className="absolute lg:left-165 inset-y-0 right-0 z-0 hidden w-1/2 lg:block">
         <Image
-          src="/events/hero.jpg"
+          src={hero.background_image}
           alt="Stock MasterTrack Workshop"
           fill
           priority
@@ -37,39 +22,41 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-center">
           <div className="flex flex-col lg:col-span-7 justify-center">
             <span className="text-sm font-black text-lime-600 uppercase">
-              Sự kiện
+              {hero.tag}
             </span>
 
             <h1 className="mt-2 text-3xl sm:text-4xl lg:text-[40px] font-black text-slate-900 leading-[1.4]">
-              Cập nhật sự kiện
+              {hero.title}
               <br />
-              <span className="text-lime-600">Kết nối</span>{" "}
+              <span className="text-lime-600">
+                {hero.sub_title.text_1}
+              </span>{" "}
               <span className="text-slate-900">—</span>{" "}
-              <span className="text-fuchsia-700">Học hỏi</span>{" "}
+              <span className="text-fuchsia-700">{hero.sub_title.text_2}</span>{" "}
               <span className="text-slate-900">—</span>{" "}
-              <span className="text-slate-900">Bứt phá</span>
+              <span className="text-slate-900">{hero.sub_title.text_3}</span>
             </h1>
 
             <p className="mt-4 lg:w-130 text-base lg:text-[15px] font-medium text-gray-600 leading-relaxed">
-              Tham gia các sự kiện, workshop, webinar được tổ chức bởi Stock
-              MasterTrack để cập nhật xu hướng thị trường, học hỏi kinh nghiệm
-              thực chiến và mở rộng mối quan hệ.
+              {hero.description}
             </p>
 
             <div className="mt-6 grid sm:grid-cols-3 gap-5 lg:gap-4">
-              {eventFeatures.map((feature, index) => {
-                const Icon = feature.icon;
+              {hero.stats.map((item, index) => {
                 return (
                   <div key={index} className="flex items-center gap-3">
                     <div className="flex size-11 shrink-0 items-center justify-center rounded-full border border-lime-500/20 bg-lime-50">
-                      <Icon className="size-5 text-lime-600" />
+                      <LucideIcon
+                        name={item.icon}
+                        className="size-5 text-lime-600"
+                      />
                     </div>
                     <div className="flex flex-col min-w-0">
                       <span className="text-sm lg:text-[13px] font-bold text-gray-900 leading-tight">
-                        {feature.title}
+                        {item.title}
                       </span>
                       <span className="mt-0.5 text-xs lg:text-[11px] font-medium text-gray-500 leading-normal">
-                        {feature.description}
+                        {item.description}
                       </span>
                     </div>
                   </div>
@@ -81,7 +68,7 @@ export function Hero() {
           <div className="relative w-full lg:col-span-5 lg:hidden">
             <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-slate-100">
               <Image
-                src="/events/hero.jpg"
+                src={hero.background_image}
                 alt="Stock MasterTrack Workshop"
                 fill
                 className="object-cover"
