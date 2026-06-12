@@ -37,7 +37,7 @@ export function Hero({ hero }: HeroProps) {
               <span className="text-slate-900">{hero.sub_title.text_3}</span>
             </h1>
 
-            <p className="mt-4 lg:w-130 text-base lg:text-[15px] font-medium text-gray-600 leading-relaxed">
+            <p className="mt-4 lg:w-130 text-base lg:text-[15px] font-medium text-gray-600 leading-relaxed whitespace-pre-wrap">
               {hero.description}
             </p>
 

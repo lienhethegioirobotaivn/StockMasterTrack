@@ -5,29 +5,17 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { StockMTProData } from "@/services/courses/stockmtpro.service";
 
-const INITIAL_IMAGES = [
-  { src: "/courses/stock-mt-pro/elite-1.jpg", alt: "MT Pro Elite Community 1" },
-  { src: "/courses/stock-mt-pro/elite-2.jpg", alt: "MT Pro Elite Community 2" },
-  { src: "/courses/stock-mt-pro/elite-3.jpg", alt: "MT Pro Elite Community 3" },
-];
+type EliteProps = Pick<StockMTProData, "elite">;
 
-const ELITE_DATA = {
-  title: "CỘNG ĐỒNG MT PRO ELITE",
-  subtitle: (
-    <>
-      Nơi quy tụ những nhà đầu tư nghiêm túc, kỷ luật và luôn hướng tới{" "}
-      <strong className="font-bold text-white">kết quả vượt trội.</strong>
-    </>
-  ),
-  cta: "THAM GIA CỘNG ĐỒNG",
-};
+export function Elite({ elite }: EliteProps) {
+  const validImages = elite.images.filter((image) => image.trim() !== "");
 
-export function Elite() {
-  const [images] = useState(() => {
-    const last = INITIAL_IMAGES[INITIAL_IMAGES.length - 1];
-    return [last, ...INITIAL_IMAGES, ...INITIAL_IMAGES];
-  });
+  const images =
+    validImages.length > 0
+      ? [validImages[validImages.length - 1], ...validImages, ...validImages]
+      : [];
 
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -51,8 +39,8 @@ export function Elite() {
       setIsTransitioning(false);
 
       if (currentIndex === 0) {
-        setCurrentIndex(INITIAL_IMAGES.length);
-      } else if (currentIndex === INITIAL_IMAGES.length + 1) {
+        setCurrentIndex(validImages.length);
+      } else if (currentIndex === validImages.length + 1) {
         setCurrentIndex(1);
       }
     }, 500);
@@ -68,21 +56,21 @@ export function Elite() {
             <div className="lg:col-span-4 flex flex-col justify-between h-full py-2 text-center lg:text-left">
               <div>
                 <h2 className="text-xl sm:text-3xl lg:text-2xl font-bold text-white uppercase">
-                  {ELITE_DATA.title}
+                  {elite.title}
                 </h2>
                 <p className="mt-4 text-sm sm:text-base lg:text-sm leading-relaxed text-neutral-400 font-medium max-w-sm mx-auto lg:mx-0">
-                  {ELITE_DATA.subtitle}
+                  {elite.sub_title}
                 </p>
               </div>
 
               <div className="mt-6">
                 <Button className="h-10 rounded-lg bg-linear-to-br from-[#E1BB70] to-[#C3944E] px-6 text-sm font-bold text-black uppercase hover:opacity-90 transition-all">
                   <Link
-                    href={"https://zalo.me/g/tmf9comkbyxqsqiv2ler"}
+                    href={elite.button.endpoint}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {ELITE_DATA.cta}
+                    {elite.button.text}
                   </Link>
                 </Button>
               </div>
@@ -103,13 +91,13 @@ export function Elite() {
                   {images.map((image, index) => {
                     return (
                       <div
-                        key={`${image.src}-${index}`}
+                        key={index}
                         className="w-full shrink-0 px-2 lg:w-1/3"
                       >
                         <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl border border-white/5 bg-[#141419]">
                           <Image
-                            src={image.src}
-                            alt={image.alt}
+                            src={image}
+                            alt={`Elite Image ${index + 1}`}
                             fill
                             className="object-cover"
                           />
