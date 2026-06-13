@@ -6,7 +6,16 @@ import {
   BottomCTA,
 } from "@/app/events/_components";
 import { getPastEvents, getUpcomingEvents } from "@/features/events/api";
+import { createPageMetadata } from "@/lib/metadata";
 import { EventsService } from "@/services/events.service";
+import { Metadata } from "next";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Sự kiện",
+  description: "Cập nhật sự kiện - Kết nối — Học hỏi — Bứt phá",
+  path: "/events",
+  ogImage: "/events/hero.jpg",
+});
 
 export default async function EventsPage() {
   const pageData = await EventsService.getData();

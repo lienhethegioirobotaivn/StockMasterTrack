@@ -13,6 +13,15 @@ import {
 } from "@/features/knowledge/api";
 import { mapKnowledgeArticleList } from "@/features/knowledge/utils/mapKnowledgeArticle";
 import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
+import { createPageMetadata } from "@/lib/metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Chủ đề",
+  description: "Thư viện chủ đề - Khám phá kiến thức đầu tư theo chủ đề",
+  path: "/knowledge/topic",
+  ogImage: "/knowledge/topic/hero.jpg",
+});
 
 export default async function KnowledgeTopicPage() {
   const [popularIdsData, categoriesData, allArticlesData] = await Promise.all([

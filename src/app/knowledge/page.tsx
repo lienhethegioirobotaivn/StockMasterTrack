@@ -16,6 +16,15 @@ import {
 
 import { mapKnowledgeArticleList } from "@/features/knowledge/utils/mapKnowledgeArticle";
 import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
+import { createPageMetadata } from "@/lib/metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Kiến thức",
+  description: "Kiến thức thực chiến - Cho nhà đầu tư thông minh",
+  path: "/knowledge",
+  ogImage: "/knowledge/hero.jpg",
+});
 
 export default async function KnowledgePage() {
   const popularIdsData = await getPopularKnowledgeArticleIds();

@@ -5,7 +5,17 @@ import {
   WhyChoose,
   FAQ,
 } from "@/app/contact/_components";
+import { createPageMetadata } from "@/lib/metadata";
 import { ContactService } from "@/services/contact.service";
+import { Metadata } from "next";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Liên hệ",
+  description:
+    "Liên hệ Stock MasterTrack - Chúng tôi luôn sẵn sàng đồng hành cùng bạn",
+  path: "/contact",
+  ogImage: "/contact/hero.jpg",
+});
 
 export default async function ContactPage() {
   const pageData = await ContactService.getData();

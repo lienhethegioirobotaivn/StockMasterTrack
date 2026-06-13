@@ -17,6 +17,7 @@ import {
   mapKnowledgeArticleList,
 } from "@/features/knowledge/utils/mapKnowledgeArticle";
 import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
+import { env } from "@/lib/env";
 import { Metadata } from "next";
 
 interface KnowledgeDetailPageProps {
@@ -34,30 +35,50 @@ export async function generateMetadata({
   if (!article) {
     return {
       title: "Không tìm thấy bài viết",
+      robots: { index: false },
     };
   }
 
+  const BASE_URL = env.NEXT_PUBLIC_SITE_URL;
+  const pageUrl = `${BASE_URL}/knowledge/${slug}`;
   const image = article.featuredImage?.node?.sourceUrl || "";
 
-  const description = (article.excerpt || article.title) ?? "";
+  const rawExcerpt = article.excerpt || article.title || "";
+  const description = rawExcerpt.replace(/<[^>]*>/g, "").trim();
+
+  const keywords =
+    article.knowledgeCategories?.nodes
+      ?.map((cat) => cat.name)
+      .filter((name): name is string => Boolean(name)) ?? [];
 
   return {
-    title: article.title,
+    title: article.title ?? "Bài viết",
     description,
+    keywords,
+    alternates: { canonical: pageUrl },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
 
     openGraph: {
       title: article.title ?? "",
-      description: article.excerpt ?? "",
-      url: `/knowledge/${slug}`,
+      description,
+      url: pageUrl,
+      siteName: "Stock Master Track",
       type: "article",
+
+      publishedTime: article.date ?? undefined,
+      modifiedTime: article.date ?? undefined,
+
       images: image
-        ? [
-            {
-              url: image,
-              width: 1200,
-              height: 630,
-            },
-          ]
+        ? [{ url: image, width: 1200, height: 630, alt: article.title ?? "" }]
         : [],
     },
 

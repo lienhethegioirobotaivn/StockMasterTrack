@@ -9,7 +9,16 @@ import {
 } from "@/app/(home)/_components";
 import { getKnowledgeArticles } from "@/features/knowledge/api";
 import { mapKnowledgeArticleList } from "@/features/knowledge/utils/mapKnowledgeArticle";
+import { createPageMetadata } from "@/lib/metadata";
 import { HomeService } from "@/services/home.service";
+import { Metadata } from "next";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Trang chủ",
+  description: "Học đầu tư chứng khoán bài bản cùng chuyên gia thực chiến",
+  path: "/",
+  ogImage: "/home/hero.jpg",
+});
 
 export default async function HomePage() {
   const [pageData, knowledgeData] = await Promise.all([

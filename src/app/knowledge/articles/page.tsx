@@ -18,12 +18,22 @@ import {
 import { KNOWLEDGE_ARTICLES_PER_PAGE } from "@/features/knowledge/constants";
 import { mapKnowledgeArticleList } from "@/features/knowledge/utils/mapKnowledgeArticle";
 import { mapKnowledgeCategory } from "@/features/knowledge/utils/mapKnowledgeCategory";
+import { createPageMetadata } from "@/lib/metadata";
+import { Metadata } from "next";
 
 interface KnowledgePageProps {
   searchParams: Promise<{
     page?: string;
   }>;
 }
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Bài viết",
+  description:
+    "Bài viết - Cập nhật kiến thức thực chiến, phương pháp đầu tư và góc nhìn thị trường từ Stock MasterTrack.",
+  path: "/knowledge/articles",
+  ogImage: "/knowledge/articles/hero.jpg",
+});
 
 export default async function KnowledgePage({
   searchParams,

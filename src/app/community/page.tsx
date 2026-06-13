@@ -5,7 +5,16 @@ import {
   BackupChannels,
   Testimonials,
 } from "@/app/community/_components";
+import { createPageMetadata } from "@/lib/metadata";
 import { CommunityService } from "@/services/community.service";
+import { Metadata } from "next";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Cộng đồng",
+  description: "Kết nối – Chia sẻ – Cùng nhau phát triển",
+  path: "/community",
+  ogImage: "/community/hero.jpg",
+});
 
 export default async function CommunityPage() {
   const pageData = await CommunityService.getData();
