@@ -101,8 +101,8 @@ export function ArticleContent({ article }: ArticleContentProps) {
                   [&>p]:mt-2 [&>p]:text-slate-600
                   [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-700
                 [&_a_*]:text-blue-600 hover:[&_a_*]:text-blue-700
-                  [&>img]:rounded-lg [&>img]:mt-4 [&>img]:w-full [&>img]:h-auto
-                  [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-1 [&>ul]:mt-2
+                  [&_figure]:w-full! [&_figure]:max-w-full [&_figure]:mx-auto [&_figure]:my-4
+                  [&_img]:max-w-full! [&_img]:w-auto! [&_img]:h-auto [&_img]:rounded-lg [&_img]:mx-auto [&_img]:block                  
                   [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:space-y-1 [&>ol]:mt-2
                   [&_li]:text-slate-600"
         dangerouslySetInnerHTML={{ __html: article.content ?? "" }}
